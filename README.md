@@ -3,7 +3,16 @@
 
 [Licença (DEFINIR) do Projeto](./LICENSE) (alterar depois)
 
-Colocar uma descriçãozinha aqui depois pra ficar bonito...
+### 💭| Sobre a Plataforma:
+Overflow é uma plataforma gamificada de aprendizagem e maratonas de programação, pensada para conectar estudantes e entusiastas da tecnologia por meio de desafios interativos, rankings e colaboração em equipe. Com foco em educação prática e engajamento, a ferramenta transforma o aprendizado de programação em uma experiência dinâmica e divertida!
+
+### 🔗| Links Importantes:
+
+| Aplicações       | Descrição                                                                                      | Link |
+|:----------------:|-----------------------------------------------------------------------------------------------|:----:|
+| ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)             | Plataforma de design colaborativo utilizada para o desenvolvimento das interfaces e protótipos do projeto. | [Acessar Figma](https://www.figma.com/design/7KvFe5zj3b4og8Tm8tvXRI/Overflows--Plataforma?node-id=864-3896&t=8j7bmH85RYkQUSlo-1) |
+| ![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)         | Painel de gerenciamento de tarefas e etapas do projeto, utilizado para planejar e acompanhar o progresso. | [Acessar Trello](https://trello.com/invite/b/673e0929c5a08c4c2020f7d3/ATTI25eef743694811373f6d4af1c42fc05f5A5EC004/overflows-plataforma) |
+| ![Documentação](https://img.shields.io/badge/Google%20Docs-4285F4.svg?style=for-the-badge&logo=Google-Docs&logoColor=white) | Documento com os requisitos funcionais e não funcionais, além das regras de negócio da aplicação. | [Em breve](https://) |
 
 ---
 ## ⚙️| Configurações do Projeto:
