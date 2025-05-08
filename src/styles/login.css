@@ -1,0 +1,193 @@
+@import './variables.css';
+
+body{
+    overflow: hidden;
+    background: rgb(22,21,48);
+    background: linear-gradient(35deg, rgba(22,21,48,1) 54%, rgba(25,23,60,1) 80%, rgba(27,25,70,1) 97%);
+}
+
+.barra{
+    text-align: center;
+}
+
+.barra .container .logo img{
+    height: 100rem;
+}
+
+.contPrincipal{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contPrincipal .login-space{
+    background-color: #ffffff;
+    padding: 34px 40px;
+    border-radius: 20px;
+}
+
+.texto-titulo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+form label{
+    font-weight: bolder;
+    font-size: larger;
+}
+
+form .mb-3 button{
+    background-color: var(--color-white);
+}
+
+.input-group .btn .bi{
+    color: var(--color-black-heavy);
+}
+
+.form-text .bi{
+    color: var(--color-blackk);
+}
+
+#passwordHelp, #accessHelp{
+    color: var(--color-black-heavy);
+    font-weight: 500;
+}
+#helpDecoration{
+    text-decoration: underline;
+}
+
+.social{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botao-login{
+    width: 100%;
+    font-weight: bold;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: solid 1px var(--color-green);
+}
+
+.botao-login:hover{
+    background-color: var(--color-green-black);
+    border: 1px solid var(--color-primary);
+    color: var(--color-white);
+}
+
+
+.btn-social {
+    width: 50px;
+}
+
+.btn-sm {
+    padding: 9px 15px !important;
+    border-radius: 15px !important;
+    font-size: 18px !important;
+}
+.btn-roxo {
+    background-color: var(--color-blackk);
+    color: var(--color-white);
+    border-radius: 20px;
+    padding: 0px 25px;
+    font-size: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+}
+.btn-roxo:hover{
+    background-color: var(--color-white);
+    color: var(--color-blackk);
+    border: 1px solid var(--color-blackk);
+    transition: 0.4s;
+}
+.social-infos .title{
+    text-align: center;
+    font-weight: 600;
+}
+
+.saiba-mais{
+    margin-top: 8px;
+    text-align: center;
+}
+
+.text-logo{
+    margin-top: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 86px;
+    text-shadow: #0f0f0f 6px 2px 6px;
+}
+
+.text-logo .imagem-logo img{
+    position: absolute;
+    margin-top: -142px;
+    margin-left: -137px;
+    opacity: 1;
+    transform: rotate(-10deg);
+
+}
+#sub-do-sub{
+    position: absolute;
+    margin-top: 29px;
+    font-size: 30px;
+    font-weight: lighter;
+    margin-left: -10px;
+}
+
+#sub-text{
+    position: absolute;
+    margin-top: 94px;
+    margin-right: -20px;
+    font-size: 26px;
+}
+
+.imagem {
+    width: 570px;
+    height: 590px;
+    /*background:url("/src/imgs/logo-caistech.png");*/
+}
+.texto-imagem {
+    position: absolute;
+    padding: 10px 18px;
+    bottom: 58px;
+    border-radius: 20px;
+    background-color: var(--color-black);
+    color: var(--color-black-heavy);
+    box-shadow: 2px 2px 10px var(--color-primary);
+}
+
+.texto-imagem p{
+    margin: 0px;
+}
+.equipe-caistech{
+    color: var(--color-green);
+    font-weight: bold;
+    right: 0px;
+    display: flex;
+}
+
+.mensagem-equipe{
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.texto-imagem:after{ /*Triangulo*/
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--color-white);
+    bottom: -20px;
+    left: 10%;
+}
