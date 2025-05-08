@@ -1,5 +1,6 @@
+@import './styles/reset.css';
 :root {
-  font-family: Poppins, Montserrat;
+  font-family: Nunito, Montserrat;
 }
 
 * {
@@ -9,6 +10,7 @@
 }
 
 body {
+  font-family: Nunito, Montserrat;
   background-size: cover;
   background-position: center;
   min-height: 100vh;

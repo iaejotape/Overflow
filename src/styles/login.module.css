@@ -1,8 +1,14 @@
 @import './variables.css';
 
-body{
+.main{
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    height: 100vh;
     overflow: hidden;
-    background: rgb(22,21,48);
     background: linear-gradient(35deg, rgba(22,21,48,1) 54%, rgba(25,23,60,1) 80%, rgba(27,25,70,1) 97%);
 }
 
@@ -22,13 +28,13 @@ body{
     align-items: center;
 }
 
-.contPrincipal .login-space{
+.contPrincipal .loginSpace{
     background-color: #ffffff;
     padding: 34px 40px;
     border-radius: 20px;
 }
 
-.texto-titulo{
+.textoTitulo{
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -42,15 +48,15 @@ form label{
     font-size: larger;
 }
 
-form .mb-3 button{
+form .mb3 button{
     background-color: var(--color-white);
 }
 
-.input-group .btn .bi{
+.inputGroup .btn .bi{
     color: var(--color-black-heavy);
 }
 
-.form-text .bi{
+.formText .bi{
     color: var(--color-blackk);
 }
 
@@ -106,17 +112,17 @@ form .mb-3 button{
     border: 1px solid var(--color-blackk);
     transition: 0.4s;
 }
-.social-infos .title{
+.socialInfos .title{
     text-align: center;
     font-weight: 600;
 }
 
-.saiba-mais{
+.saibaMais{
     margin-top: 8px;
     text-align: center;
 }
 
-.text-logo{
+.textLogo{
     margin-top: 500px;
     display: flex;
     flex-direction: column;
@@ -127,7 +133,7 @@ form .mb-3 button{
     text-shadow: #0f0f0f 6px 2px 6px;
 }
 
-.text-logo .imagem-logo img{
+.textLogo .imagem-logo img{
     position: absolute;
     margin-top: -142px;
     margin-left: -137px;
@@ -135,27 +141,12 @@ form .mb-3 button{
     transform: rotate(-10deg);
 
 }
-#sub-do-sub{
-    position: absolute;
-    margin-top: 29px;
-    font-size: 30px;
-    font-weight: lighter;
-    margin-left: -10px;
-}
-
-#sub-text{
-    position: absolute;
-    margin-top: 94px;
-    margin-right: -20px;
-    font-size: 26px;
-}
 
 .imagem {
     width: 570px;
     height: 590px;
-    /*background:url("/src/imgs/logo-caistech.png");*/
 }
-.texto-imagem {
+.textoImagem {
     position: absolute;
     padding: 10px 18px;
     bottom: 58px;
@@ -165,22 +156,22 @@ form .mb-3 button{
     box-shadow: 2px 2px 10px var(--color-primary);
 }
 
-.texto-imagem p{
+.textoImagem p{
     margin: 0px;
 }
-.equipe-caistech{
+.equipeCaistech{
     color: var(--color-green);
     font-weight: bold;
     right: 0px;
     display: flex;
 }
 
-.mensagem-equipe{
+.mensagemEquipe{
     font-weight: 500;
     color: var(--color-text);
 }
 
-.texto-imagem:after{ /*Triangulo*/
+.textoImagem:after{ /*Triangulo*/
     content: "";
     width: 0;
     height: 0;
