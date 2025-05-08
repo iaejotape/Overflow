@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Nunito', sans-serif;
+}
+body{
+    padding: 2rem 3rem 1rem 2rem;
+    height: 100vh;
+    background: linear-gradient(54deg,rgba(35, 32, 89, 1) 30%, rgba(22, 20, 67, 1) 45%, rgba(22, 21, 48, 1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content:space-around;
+    user-select: none;
+}
+.cadastro{
+    padding: 1.4rem;
+    background-color: white;
+    width: 100%;
+    max-width: 32rem;
+    height: 41.4rem;
+    border-radius: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+h1{
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: bold;
+}
+h3{
+    padding-left:0.2rem ;
+    font-size: 0.88rem;
+}
+input[type = "text"],
+input[type = "email"],
+input[type = "password"],
+input[type = "date"]{
+    border-radius: 0.25rem;
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.7rem;
+}
+#data_sexo{
+    display: flex;
+    flex-direction: row;
+    gap:4rem;
+}
+
+#nome_apelido{
+    display: flex;
+    flex-direction: row;
+    gap: 1.9rem;
+}
+#sexo #sexo_input{
+margin-left: 1.6rem;
+word-wrap: break-word;
+}
+#sexo h3{
+ margin-left: 1.9rem;
+}
+#tipo_usuario #tipo_estudante{
+    margin-left: 1.5rem;
+}
+#tipo_usuario #tipo_professor{
+    margin-top: 0.5rem;
+    margin-left: 6.8rem;
+}
+.senha{
+    display: flex;
+    flex-direction: column;
+}
+#botao{
+    padding-top: 1rem;
+    align-self: center;
+}
+#botao button{
+    border-radius: 1.7rem;
+    padding: 0.7rem 5rem;
+    background-color:#1FC47A;
+    border: 0;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+button:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+/* #termo{
+    margin-top: 0;
+    margin-left: 10px;
+} */
+.fundo{
+    /* margin-left:11rem ; */
+    align-self: center;
+
+}
+.fundo #logo img{
+    width: 40rem;
+    padding: 0rem 0rem 0.9rem 2rem;
+    animation: piscar 4s infinite;
+}
+.fundo #login{
+    text-align: center;
+    padding-top: 0.9rem;
+}
+.fundo #login button{
+    border-radius: 1.7rem;
+    padding: 0.7rem 4rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+hr{
+    width: 42rem;
+}
+
+@keyframes piscar {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.05;
+    }
+  }
