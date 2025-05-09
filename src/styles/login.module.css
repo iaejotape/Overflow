@@ -9,173 +9,313 @@
     align-items: center;
     gap: 100px;
     height: 100vh;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 .container{
-    width: auto;
-    height: auto;
+    max-width: 500px;
+    width: 100%;
+    max-height: 690px;
+    height: 90%;
     border-radius: 20px;
     gap:10px;
     padding: 40px 30px;
     background-color: var(--color-white);
     display: flex;
+    flex-direction: column;
     align-items: space-between;
     justify-content: center;
     position: relative;
 }
 
-.barra{
-    text-align: center;
-}
-
-.barra .container .logo img{
-    height: 100rem;
-}
-
-.contPrincipal{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.contPrincipal .loginSpace{
-    background-color: #ffffff;
-    padding: 34px 40px;
-    border-radius: 20px;
-}
-
-.textoTitulo{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-form label{
-    font-weight: bolder;
-    font-size: larger;
-}
-
-form .mb3 button{
-    background-color: var(--color-white);
-}
-
-.inputGroup .btn .bi{
-    color: var(--color-black-heavy);
-}
-
-.formText .bi{
-    color: var(--color-blackk);
-}
-
-#passwordHelp, #accessHelp{
-    color: var(--color-black-heavy);
-    font-weight: 500;
-}
-#helpDecoration{
-    text-decoration: underline;
-}
-
-.social{
-    display: flex;
-    justify-content: space-around;
-}
-
-.botao-login{
-    width: 100%;
-    font-weight: bold;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: solid 1px var(--color-green);
-}
-
-.botao-login:hover{
-    background-color: var(--color-green-black);
-    border: 1px solid var(--color-primary);
-    color: var(--color-white);
-}
-
-
-.btn-social {
-    width: 50px;
-}
-
-.btn-sm {
-    padding: 9px 15px !important;
-    border-radius: 15px !important;
-    font-size: 18px !important;
-}
-.btn-roxo {
-    background-color: var(--color-blackk);
-    color: var(--color-white);
-    border-radius: 20px;
-    padding: 0px 25px;
-    font-size: 20px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
-}
-.btn-roxo:hover{
-    background-color: var(--color-white);
-    color: var(--color-blackk);
-    border: 1px solid var(--color-blackk);
-    transition: 0.4s;
-}
-.socialInfos .title{
-    text-align: center;
-    font-weight: 600;
-}
-
-.saibaMais{
-    margin-top: 8px;
-    text-align: center;
-}
-
-.textLogo{
-    margin-top: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 86px;
-    text-shadow: #0f0f0f 6px 2px 6px;
-}
-
-.textLogo .imagem-logo img{
-    position: absolute;
-    margin-top: -142px;
-    margin-left: -137px;
-    opacity: 1;
-    transform: rotate(-10deg);
-
+.formulario{
+    margin-top:20px;
 }
 
 .imagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index:1;
     width: 570px;
     height: 590px;
 }
+
+.textLogo{
+    animation: suma 3s linear infinite;
+}
+
+@keyframes suma{
+    0%   { opacity: 0.3; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
 .textoImagem {
-    position: absolute;
+    position: fixed;
+    bottom: 27px;
+    left:50px;
     padding: 10px 18px;
-    bottom: 58px;
     border-radius: 20px;
     background-color: var(--color-black);
     color: var(--color-black-heavy);
     box-shadow: 2px 2px 10px var(--color-primary);
+    animation: flutue 2s ease-out infinite alternate;
+    gap:20px;
+}
+
+@keyframes flutue {
+    0% { 
+        transform: translateY(0px);
+    }
+    100% { 
+        transform: translateY(-10px);
+    }
 }
 
 .textoImagem p{
     margin: 0px;
 }
+
+.textoImagem img{
+    margin:-15px;
+}
+
+input::placeholder{
+    color: var(--color-text-placeholder);
+    font-size: 1.0rem;
+}
+
+.lembrarSenha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.lembrar{
+    margin:0;
+    width:1.0rem;
+    margin-right: 5px;
+}
+
+.senhas{
+    margin:10px 2px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.btnEntrar{
+    background-color:var(--color-botoes);
+    border:none;
+    color: var(--color-white);
+    padding: 10px 20px; 
+    margin-botom:30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family:'Nunito';
+    transition: background-color 0.3s ease;
+}
+
+.btnEntrar:hover{
+    background-color: var(--color-green-black);
+    cursor: pointer;
+}
+
+
+.textoTitulo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.titulo1{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.titulo2{
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.mb3{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom:  5px;
+}
+.inputGroup{
+    border: 1px solid var(--color-text-placeholder);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+input{
+    border:none;
+    width: 100%;
+    outline:none;
+    font-size: 1.0rem;
+}
+{/*form label{
+    font-weight: bolder; //aumenta o peso da fonte
+    font-size: larger; //aumenta o tamanho da fonte em relação ao pai
+}*/}
+
+.ajuda{
+    text-align: center;
+    margin:10px 0px;
+    
+}
+
+.ajuda p{
+    margin-top:20px;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.socialLink{
+    background-color: var(--color-icones);
+    padding: 5px 7px;
+    border-radius: 20px;
+
+}
+
+.socialInfos .title{
+    margin-top:5px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.integracoes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:10px;
+}
+
+
+.integracao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-red-icon);
+    border-radius: 7px;
+    transition:background-color 0.3s ease;
+}
+
+.integracao:hover{
+    background-color:var(--color-red-escuro);
+    cursor: pointer;
+}
+
+.integracao p{
+    font-size:0.8rem;
+}
+
+.integracao1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-lilas);
+    border-radius: 7px;
+    transition:background-color 0.3s ease;
+}
+
+.integracao1:hover{
+    background-color:var(--color-lilas-escuro);
+    cursor: pointer;
+}
+
+.integracao1 p{
+    font-size:0.8rem;
+}
+
+.integracao2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-cian);
+    border-radius: 7px;
+}
+
+.integracao2:hover{
+    background-color:var(--color-cian-escuro);
+    cursor: pointer;
+}
+
+.integracao2 p{
+    font-size:0.8rem;
+}
+
+.iconIntegracao{
+    background-color: var(--color-red-escuro);
+    width: 17%;
+    height: 100%;
+    border-radius: 7px;
+    margin-right: 2px;
+    text-align:center;
+    padding-top: 4px;
+}
+
+
+.iconIntegracao1{
+    background-color: var(--color-lilas-escuro);
+    width: 17%;
+    height: 100%;
+    border-radius: 7px;
+    margin-right: 2px;
+    text-align:center;
+    padding-top: 4px;
+}
+
+.iconIntegracao2{
+    background-color: var(--color-cian-escuro);
+    width: 17%;
+    height: 100%;
+    border-radius: 7px;
+    margin-right: 2px;
+    text-align:center;
+    padding-top: 4px;
+}
+
+ svg {
+    color: var(--color-white);
+}
+
+.integracoes p{
+    color: var(--color-white);
+}
+
+
 .equipeCaistech{
-    color: var(--color-green);
+    color: var(--color-equipe-caisTech);
     font-weight: bold;
     right: 0px;
     display: flex;
@@ -184,6 +324,25 @@ form .mb3 button{
 .mensagemEquipe{
     font-weight: 500;
     color: var(--color-text);
+}
+
+.textoImagem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-white);   
+    box-shadow: 5px 10px 15px -3px var(--color-equipe-caisTech);
+}
+
+.mensagem{
+    display: flex;
+    flex-direction: column;
+}
+
+.textoImagem img{
+    max-width:7.0rem;
+    max-height:7.0rem;
+    transform: scaleX(-1);
 }
 
 .textoImagem:after{ /*Triangulo*/
