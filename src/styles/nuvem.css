@@ -1,0 +1,33 @@
+.ceu {
+  position: absolute;
+  z-index:0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, #181848 0%, #0a0a23 100%);
+  overflow: hidden;
+}
+
+.nuvem {
+  position: absolute;
+  left: -150px;
+  opacity: 0.9;
+  animation: moverNuvem 27s linear infinite;
+}
+
+.nuvem1 { animation-duration: 25s; }
+.nuvem2 { animation-duration: 19s; }
+.nuvem3 { animation-duration: 15s; }
+.nuvem4 { animation-duration: 13s; }
+.nuvem5 { animation-duration: 12s; }
+.nuvem6 { animation-duration: 17s; }
+.nuvem7 { animation-duration: 21s; }
+.nuvem8 { animation-duration: 23s; } 
+
+@keyframes moverNuvem {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 100vw;
+  }
+}

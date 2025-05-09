@@ -1,4 +1,4 @@
-/* @import './styles/reset.css';
+@import './styles/reset.css';
 :root {
   font-family: Nunito, Montserrat;
 }
@@ -7,11 +7,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
+} 
 body {
   font-family: Nunito, Montserrat;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-} */
+}
