@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "../styles/nuvem.css";
 
 const Nuvem = ({ style, className }) => (
@@ -21,40 +21,30 @@ const Nuvem = ({ style, className }) => (
 const NuvensAnimadas = () => {
   const gerarNuvens = () => {
     const linhasNuvens = [];
-
-
-    // Linha superior (8 nuvens em vez de 12)
     for (let i = 0; i < 8; i++) {
       linhasNuvens.push({
-        top: `${3 + Math.random() * 20}%`, // Entre 3% e 23%
-        size: 0.7 + Math.random() * 0.5, // Tamanhos um pouco menores
-        delay: i * 0.15, // Delay maior entre cada nuvem (0.15s)
+        top: `${3 + Math.random() * 20}%`,
+        size: 0.7 + Math.random() * 0.5,
+        delay: i * 0.15,
         tipo: i % 8,
       });
     }
-
-    // Linha inferior (8 nuvens em vez de 12)
     for (let i = 0; i < 8; i++) {
       linhasNuvens.push({
-        top: `${75 + Math.random() * 20}%`, // Entre 75% e 95%
+        top: `${75 + Math.random() * 20}%`,
         size: 0.7 + Math.random() * 0.5,
-        delay: i * 0.15 + 0.07, // Offset para não coincidir
+        delay: i * 0.15 + 0.07,
         tipo: (i + 3) % 8,
       });
     }
-
-    // Reduzindo as nuvens do meio para apenas 3
     for (let i = 0; i < 3; i++) {
       linhasNuvens.push({
-        top: `${35 + Math.random() * 30}%`, // Entre 35% e 65%
-        size: 0.6 + Math.random() * 0.3, // Ainda menores no meio
+        top: `${35 + Math.random() * 30}%`,
+        size: 0.6 + Math.random() * 0.3,
         delay: i * 0.25 + 0.1,
         tipo: (i + 5) % 8,
       });
     }
-
-    // Segundo conjunto com menos nuvens (6 em vez de 12)
-    // Parte superior
     for (let i = 0; i < 6; i++) {
       linhasNuvens.push({
         top: `${5 + Math.random() * 20}%`,
@@ -63,8 +53,6 @@ const NuvensAnimadas = () => {
         tipo: (i + 2) % 8,
       });
     }
-
-    // Parte inferior
     for (let i = 0; i < 6; i++) {
       linhasNuvens.push({
         top: `${75 + Math.random() * 20}%`,
@@ -73,11 +61,10 @@ const NuvensAnimadas = () => {
         tipo: (i + 6) % 8,
       });
     }
-
     return linhasNuvens;
   };
 
-  const nuvens = gerarNuvens();
+  const nuvens = useMemo(() => gerarNuvens(), []);
 
   return (
     <div className="ceu">
