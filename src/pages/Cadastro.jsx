@@ -92,9 +92,9 @@ function Cadastro() {
             </label>
           </div>
 
-          {erro && <p style={{ color: "red", marginTop: "10px" }}>{erro}</p>}
         <div id='botao'>
-            <button>Criar Conta</button>
+          {erro && <p className="mensagem-erro">{erro}</p>}
+          <button>Criar Conta</button>
         </div>
       </form>
       </div>
