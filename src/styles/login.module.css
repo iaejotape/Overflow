@@ -93,12 +93,11 @@ input::placeholder{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin:0;
 }
 
-.lembrar{
+.lembrar input{
     margin:0;
-    width:1.0rem;
-    margin-right: 5px;
 }
 
 .senhas{
@@ -160,7 +159,7 @@ input::placeholder{
 .label{
     font-weight: 700;
     font-size: 1.1rem;
-    margin-bottom:  5px;
+    margin:  5px 0px;
 }
 .inputGroup{
     border: 1px solid var(--color-text-placeholder);
@@ -173,21 +172,34 @@ input::placeholder{
     gap: 7px;
 }
 
-input{
+.input{
     border:none;
     width: 100%;
     outline:none;
     font-size: 1.0rem;
 }
-{/*form label{
+
+.lembrar{
+    border:none;
+    outline:none;
+    font-size: 1.0rem;
+    margin:0px 4px;
+}
+/*form label{
     font-weight: bolder; //aumenta o peso da fonte
     font-size: larger; //aumenta o tamanho da fonte em relação ao pai
-}*/}
+}*/
 
 .ajuda{
     text-align: center;
     margin:10px 0px;
     
+}
+
+.ajuda a{
+    text-decoration:underline;
+    cursor: pointer;
+    color:  #0066cc; 
 }
 
 .ajuda p{
@@ -284,7 +296,6 @@ input{
     padding-top: 4px;
 }
 
-
 .iconIntegracao1{
     background-color: var(--color-lilas-escuro);
     width: 17%;
@@ -305,7 +316,11 @@ input{
     padding-top: 4px;
 }
 
- svg {
+.iconIntegracao svg {
+    color: var(--color-white);
+}
+
+.socialLink svg {
     color: var(--color-white);
 }
 
