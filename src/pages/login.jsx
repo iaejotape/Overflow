@@ -37,7 +37,7 @@ const Login = () => {
                   <path d="M20 21.5V19.5C20 18.4391 19.5786 17.4217 18.8284 16.6716C18.0783 15.9214 17.0609 15.5 16 15.5H8C6.93913 15.5 5.92172 15.9214 5.17157 16.6716C4.42143 17.4217 4 18.4391 4 19.5V21.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12 11.5C14.2091 11.5 16 9.70914 16 7.5C16 5.29086 14.2091 3.5 12 3.5C9.79086 3.5 8 5.29086 8 7.5C8 9.70914 9.79086 11.5 12 11.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <input
+                <input className={styles.input}
                   type="text"
                   id="accessKey"
                   placeholder="Digite seu username ou email..."
@@ -50,7 +50,7 @@ const Login = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 6 8" fill="none">
                   <path d="M3 1C3.26522 1 3.51957 1.10536 3.70711 1.29289C3.89464 1.48043 4 1.73478 4 2V3H2V2C2 1.73478 2.10536 1.48043 2.29289 1.29289C2.48043 1.10536 2.73478 1 3 1ZM5 3.076V2C5 1.46957 4.78929 0.960859 4.41421 0.585786C4.03914 0.210714 3.53043 0 3 0C2.46957 0 1.96086 0.210714 1.58579 0.585786C1.21071 0.960859 1 1.46957 1 2V3.076C0.46 3.242 0 3.673 0 4.3V6.7C0 7.516 0.781 8 1.5 8H4.5C5.219 8 6 7.516 6 6.7V4.3C6 3.673 5.54 3.242 5 3.076ZM1.105 4.125C1.21917 4.04069 1.35812 3.99672 1.5 4H4.5C4.64188 3.99672 4.78084 4.04069 4.895 4.125C4.98 4.193 5 4.258 5 4.3V6.7C5 6.742 4.98 6.807 4.895 6.875C4.78084 6.95931 4.64188 7.00328 4.5 7H1.5C1.35812 7.00328 1.21917 6.95931 1.105 6.875C1.02 6.807 1 6.742 1 6.7V4.3C1 4.258 1.02 4.193 1.105 4.125Z" fill="black"/>
                 </svg>
-                  <input
+                  <input className={styles.input}
                     type="password"
                     id="password"
                     placeholder="Digite sua senha..."
@@ -75,7 +75,7 @@ const Login = () => {
               <div className={styles.integracoes}>
                   <div className={styles.integracao}>
                     <div className={styles.iconIntegracao}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                    <svg className={styles.google}  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
                       <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
                     </svg>
                     </div>
@@ -156,12 +156,12 @@ const Login = () => {
                 </svg>
               </a>
 
-              <a
+              <a 
                 href="#"
                 target="_blank"
                 className={styles.socialLink}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
                   <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
                 </svg>
               </a>

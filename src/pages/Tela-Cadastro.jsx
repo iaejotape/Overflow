@@ -41,7 +41,7 @@ function Cadastro() {
           <div className={style.nome_apelido}>
             <div className={style.nome_cadastro}>
               <h3>Nome:</h3>
-              <input
+              <input className={style.inputPadrao}
                 type="text"
                 placeholder="Digite seu nome..."
                 value={nome}
@@ -50,7 +50,7 @@ function Cadastro() {
             </div>
             <div className={style.apelido}>
               <h3>Apelido:</h3>
-              <input
+              <input className={style.inputPadrao}
                 type="text"
                 placeholder="Digite seu apelido..."
                 value={apelido}
@@ -61,7 +61,7 @@ function Cadastro() {
 
           <div className={style.email_cadastro}>
             <h3>Email:</h3>
-            <input
+            <input className={style.inputPadrao}
               type="email"
               placeholder="Digite seu e-mail..."
               value={email}
@@ -105,14 +105,14 @@ function Cadastro() {
 
           <div className={style.senha_cadastro}>
             <h3>Senha:</h3>
-            <input
+            <input className={style.inputPadrao}
               type="password"
               placeholder="Digite sua senha..."
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
             />
             <h3>Confirmação de senha:</h3>
-            <input
+            <input className={style.inputPadrao}
               type="password"
               placeholder="Confirme sua senha..."
               value={confirmarSenha}
@@ -126,7 +126,7 @@ function Cadastro() {
 
           <div className={style.botao_cadastro}>
             {erro && <p className={style["mensagem-erro"]}>{erro}</p>}
-            <button type="submit">Criar Conta</button>
+            <button className={style.button} type="submit">Criar Conta</button>
           </div>
         </form>
       </div>
@@ -135,7 +135,7 @@ function Cadastro() {
         <div className={style.logo}>
           <img src={logo} alt="imagem overflow" />
         </div>
-        <hr />
+        <hr className={style.hr}/>
         <div className={style.login}>
           <button>Realizar Login</button>
         </div>
