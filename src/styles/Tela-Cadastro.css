@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background: linear-gradient(35deg, rgba(22, 21, 48, 1) 54%, rgba(25, 23, 60, 1) 80%, rgba(27, 25, 70, 1) 97%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  height: 100vh;
+  overflow: hidden;
+  flex-wrap: wrap;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  width: 100%;
+  max-width: 32rem;
+  height: 41.4rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+
+h3 {
+  padding-left: 0.2rem;
+  font-size: 0.88rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  border-radius: 0.7rem;
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+}
+
+.data_sexo {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+
+.data {
+  white-space: nowrap;
+}
+
+.nome_apelido {
+  display: flex;
+  flex-direction: row;
+  gap: 1.9rem;
+}
+
+.sexo {
+  margin-left:1.28rem;
+  font-size: 1rem;
+}
+
+.sexo label{
+    margin-left: 1rem;
+}
+
+.tipo_usuario label {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: -1rem;
+}
+
+.tipo_usuario input[value="Estudante"] {
+  margin-left: 1.5rem;
+}
+
+.tipo_usuario input[value="Professor"] {
+  margin-top: 0.5rem;
+  margin-left: 6.8rem;
+}
+
+.senha label {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.senha input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.botao {
+  text-align: center;
+  position: relative;
+}
+
+.botao button {
+  border-radius: 1.7rem;
+  padding: 0.7rem 5rem;
+  background-color: #1FC47A;
+  border: 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.fundo {
+  align-self: center;
+  position: relative;
+}
+
+.fundo .logo img {
+  width: 40rem;
+  padding: 0rem 0rem 0.9rem 2rem;
+  animation: piscar 4s infinite;
+}
+
+.fundo .login {
+  text-align: center;
+  padding-top: 0.9rem;
+}
+
+.fundo .login button {
+  border-radius: 1.7rem;
+  padding: 0.7rem 4rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+hr {
+  width: 42rem;
+}
+
+@keyframes piscar {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.05;
+  }
+}
+
+.mensagem-erro {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: -1rem;
+  padding: 0rem 0rem 0.2rem 0rem;
+}
