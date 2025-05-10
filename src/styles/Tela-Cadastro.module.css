@@ -6,14 +6,11 @@
   font-family: 'Nunito', sans-serif;
 }
 
-body {
+.main_cadastro {
   background: linear-gradient(35deg, rgba(22, 21, 48, 1) 54%, rgba(25, 23, 60, 1) 80%, rgba(27, 25, 70, 1) 97%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
-
-.main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +23,7 @@ body {
   z-index: 1;
 }
 
-.container {
+.container_cadastro{
   background-color: white;
   padding: 2rem;
   width: 100%;
@@ -36,19 +33,19 @@ body {
   position: relative;
 }
 
-form {
+.form_cadastro {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.titulo {
+.titulo_cadastro{
   text-align: center;
   font-size: 2.7rem;
   font-weight: bold;
 }
 
-h3 {
+.nome_cadastro h3 {
   padding-left: 0.2rem;
   font-size: 0.88rem;
 }
@@ -68,7 +65,7 @@ input[type="date"] {
   gap: 4rem;
 }
 
-.data {
+.data_cadastro {
   white-space: nowrap;
 }
 
@@ -78,13 +75,13 @@ input[type="date"] {
   gap: 1.9rem;
 }
 
-.sexo {
-  margin-left:1.28rem;
+.sexo_cadastro {
+  margin-left: 1.28rem;
   font-size: 1rem;
 }
 
-.sexo label{
-    margin-left: 1rem;
+.sexo_cadastro label {
+  margin-left: 1rem;
 }
 
 .tipo_usuario label {
@@ -102,22 +99,22 @@ input[type="date"] {
   margin-left: 6.8rem;
 }
 
-.senha label {
+.senha_cadastro label {
   display: block;
   margin-top: 0.8rem;
   font-size: 0.85rem;
 }
 
-.senha input[type="checkbox"] {
+.senha_cadastro input[type="checkbox"] {
   margin-right: 0.5rem;
 }
 
-.botao {
+.botao_cadastro {
   text-align: center;
   position: relative;
 }
 
-.botao button {
+.botao_cadastro button {
   border-radius: 1.7rem;
   padding: 0.7rem 5rem;
   background-color: #1FC47A;
@@ -138,18 +135,18 @@ button:hover {
   position: relative;
 }
 
-.fundo .logo img {
+.logo img {
   width: 40rem;
   padding: 0rem 0rem 0.9rem 2rem;
   animation: piscar 4s infinite;
 }
 
-.fundo .login {
+.login {
   text-align: center;
   padding-top: 0.9rem;
 }
 
-.fundo .login button {
+.login button {
   border-radius: 1.7rem;
   padding: 0.7rem 4rem;
   font-weight: bold;

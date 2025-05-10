@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/logo_page.svg";
-import  "../styles/Tela-Cadastro.css"
+import style from "../styles/Tela-Cadastro.module.css";
 import NuvensAnimadas from "../componentes/nuvem.jsx";
 
 function Cadastro() {
@@ -32,14 +32,14 @@ function Cadastro() {
   }
 
   return (
-    <div className="main">
+    <div className={style.main_cadastro}>
       <NuvensAnimadas />
-      <div className="container">
-        <form onSubmit={handleSubmit}>
-          <h1 className="titulo">Criar nova conta</h1>
+      <div className={style.container_cadastro}>
+        <form onSubmit={handleSubmit} className={style.form_cadastro}>
+          <h1 className={style.titulo_cadastro}>Criar nova conta</h1>
 
-          <div className="nome_apelido">
-            <div className="nome">
+          <div className={style.nome_apelido}>
+            <div className={style.nome_cadastro}>
               <h3>Nome:</h3>
               <input
                 type="text"
@@ -48,7 +48,7 @@ function Cadastro() {
                 onChange={(e) => setNome(e.target.value)}
               />
             </div>
-            <div className="apelido">
+            <div className={style.apelido}>
               <h3>Apelido:</h3>
               <input
                 type="text"
@@ -59,7 +59,7 @@ function Cadastro() {
             </div>
           </div>
 
-          <div className="email">
+          <div className={style.email_cadastro}>
             <h3>Email:</h3>
             <input
               type="email"
@@ -69,53 +69,41 @@ function Cadastro() {
             />
           </div>
 
-          <div className="data_sexo">
-            <div className="data">
+          <div className={style.data_sexo}>
+            <div className={style.data_cadastro}>
               <h3>Data de Nascimento:</h3>
               <input
                 type="date"
-                className="data_input"
+                className={style.data_input}
                 value={dataNascimento}
                 onChange={(e) => setDataNascimento(e.target.value)}
               />
             </div>
-            <div className="sexo">
+            <div className={style.sexo_cadastro}>
               <h3>Sexo:</h3>
               <label>
-                <input type="radio" name="sexo" value="Masculino" onChange={(e) => setSexo(e.target.value)}/>Masculino
+                <input type="radio" name="sexo" value="Masculino" onChange={(e) => setSexo(e.target.value)} />Masculino
               </label>
               <label>
-                <input type="radio" name="sexo" value="Feminino" onChange={(e) => setSexo(e.target.value)}/>Feminino
+                <input type="radio" name="sexo" value="Feminino" onChange={(e) => setSexo(e.target.value)} />Feminino
               </label>
               <label>
-                <input type="radio" name="sexo" value="Outro" onChange={(e) => setSexo(e.target.value)}/>Outro
+                <input type="radio" name="sexo" value="Outro" onChange={(e) => setSexo(e.target.value)} />Outro
               </label>
             </div>
           </div>
 
-          <div className="tipo_usuario">
+          <div className={style.tipo_usuario}>
             <h3>Tipo de Usuário:</h3>
             <label>
-              <input
-                type="radio"
-                name="tipo_user"
-                value="Estudante"
-                onChange={(e) => setTipoUsuario(e.target.value)}
-              />
-              Estudante
+              <input type="radio" name="tipo_user" value="Estudante" onChange={(e) => setTipoUsuario(e.target.value)} />Estudante
             </label>
             <label>
-              <input
-                type="radio"
-                name="tipo_user"
-                value="Professor"
-                onChange={(e) => setTipoUsuario(e.target.value)}
-              />
-              Professor
+              <input type="radio" name="tipo_user" value="Professor" onChange={(e) => setTipoUsuario(e.target.value)} />Professor
             </label>
           </div>
 
-          <div className="senha">
+          <div className={style.senha_cadastro}>
             <h3>Senha:</h3>
             <input
               type="password"
@@ -136,19 +124,19 @@ function Cadastro() {
             </label>
           </div>
 
-          <div className="botao">
-            {erro && <p className="mensagem-erro">{erro}</p>}
+          <div className={style.botao_cadastro}>
+            {erro && <p className={style["mensagem-erro"]}>{erro}</p>}
             <button type="submit">Criar Conta</button>
           </div>
         </form>
       </div>
 
-      <div className="fundo">
-        <div className="logo">
+      <div className={style.fundo}>
+        <div className={style.logo}>
           <img src={logo} alt="imagem overflow" />
         </div>
         <hr />
-        <div className="login">
+        <div className={style.login}>
           <button>Realizar Login</button>
         </div>
       </div>
