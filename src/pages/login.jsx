@@ -2,8 +2,15 @@ import React from "react";
 import styles from "../styles/login.module.css";
 import logo from "../assets/logo_page.svg";
 import Nuvem from "../componentes/nuvem.jsx";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Login = () => {
+  const navigate = useNavigate();
+  const handleClick = () =>{
+    navigate("/cadastro");
+  }
   return (
     <div className={styles.main}>
       <Nuvem />
@@ -68,7 +75,7 @@ const Login = () => {
                     Entrar
                   </button>
                 <div className={styles.ajuda}>
-                  <a href="#">Ainda não tem conta? Cadastre-se!</a>
+                  <a onClick={handleClick}>Ainda não tem conta? Cadastre-se!</a>
                   <p>Ou</p>
                 </div>
               </div>

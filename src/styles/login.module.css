@@ -196,6 +196,12 @@ input::placeholder{
     
 }
 
+.ajuda a{
+    text-decoration:underline;
+    cursor: pointer;
+    color:  #0066cc; 
+}
+
 .ajuda p{
     margin-top:20px;
 }
