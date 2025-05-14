@@ -20,4 +20,12 @@
     --color-cian-escuro:#007F93;
     --color-lilas:#738BD7;
     --color-lilas-escuro:#245FAD;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    
+    /* Config. da Barra + Header  */
+    --header-height: 3.2rem;
+    --nav-width-collapsed: 78px;
+    --nav-width-expanded: 250px;
 }
