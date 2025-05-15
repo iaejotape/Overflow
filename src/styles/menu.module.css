@@ -17,7 +17,7 @@ body{ /* Tá influenciando um pouco */
   top: 0;
   left: 0;
   z-index: 1001;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .header_toggle {
