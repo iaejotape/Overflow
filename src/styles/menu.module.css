@@ -7,7 +7,7 @@ body{ /* Tá influenciando um pouco */
 
 .header {
   width: 100%;
-  height: var(--header-height);
+  height: 3.2rem;
   background: var(--color-roxo-claro);
   display: flex;
   justify-content: space-between;
@@ -103,7 +103,7 @@ body{ /* Tá influenciando um pouco */
   left: 0;
   height: 100vh;
   background-color: var(--color-roxo-claro);
-  padding-top: var(--header-height);
+  padding-top: 3.2rem;
   transition: width 0.3s ease;
   z-index: var(--z-fixed);
   overflow-x: hidden;
@@ -180,12 +180,12 @@ body{ /* Tá influenciando um pouco */
 }
 
 .l_navbar.show {
-  width: var(--nav-width-expanded);
+  width: 250px;
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .l_navbar:not(.show) {
-  width: var(--nav-width-collapsed);
+  width: 78px;
 }
 
 .nav_icon {
@@ -223,12 +223,12 @@ body{ /* Tá influenciando um pouco */
 }
 
 .body_pd {
-  padding-left: var(--nav-width-collapsed);
+  padding-left: 78px;
   transition: padding-left 0.5s;
 }
 
 .body_pd.expanded {
-  padding-left: var(--nav-width-expanded);
+  padding-left: 250px;
 }
 
 .fluxo_central{
@@ -274,12 +274,12 @@ body{ /* Tá influenciando um pouco */
 }
 
 .body_pd {
-  padding-left: var(--nav-width-expanded);
+  padding-left: 250px;
   transition: padding-left 0.5s;
 }
 
-body:not(.body_pd) {
-  padding-left: var(--nav-width-collapsed);
+.body_pd.expanded {
+  padding-left: 250px;
 }
 
 .toggle {
@@ -347,7 +347,7 @@ body:not(.body_pd) {
 .principal{
   /* #16151d;*/
   margin-top: 80px;
-  margin-left: -240px;
+  margin-left: -160px;
   color: var(--white-color);
   color: var(--color-white);
 }
@@ -358,7 +358,7 @@ body:not(.body_pd) {
   }
   
   .body_pd {
-    padding-left: var(--nav-width-expanded);
+    padding-left: 250px;
   }
   
   .l_navbar .nav_logo_name, .l_navbar .nav_name {
