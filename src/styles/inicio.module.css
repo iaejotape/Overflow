@@ -1,3 +1,355 @@
+:root {
+    --color-roxo-background: #0D0C15;
+    --color-roxo-claro: #161530; /* Card Conquistas e Insignias */
+    --color-white: #ffffff; /* Texto também */
+    --color-icones: #6325CE; /* E texto também */
+    --color-black: #000000;
+    --color-text-placeholder: #686868;
+    --color-cinza-icon:#7B7B7B;
+    --color-botoes: #1FC47A; /* E texto também */
+    --color-green-black: #19945c;
+    --color-equipe-caisTech:#25D366;
+    --color-white-secondary: #fff2cc;
+    --color-red-icon: #DD2C2C;
+    --color-red:#DB4437;
+    --color-red-escuro: #7C0000;
+    --color-blue: #0099FF;
+    --color-pink: #B70089;
+    --color-yellow:#FBBC05;
+    --color-cian:#17A2B8;
+    --color-cian-escuro:#007F93;
+    --color-lilas:#738BD7;
+    --color-lilas-escuro:#245FAD;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    --backgroundcolor-card: #161424;
+}
+
+.container{
+    display: flex;
+    gap: 14px;
+    margin-right: 14px;
+}
+
+.tempoOn, .data, .nomeIntegrante{
+    color: var(--color-icones);
+    font-weight: bold;
+}
+
+.bx {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.linguagem {
+    font-size: 24px;
+    vertical-align: middle;
+    color: var(--color-icones);
+}
+
 .lateral_esquerda{
-    background-color: aliceblue;
+    color: var(--color-white);
+    flex:4.6; /* Aumenta o tamanho da área do editor */
+}
+
+.info_perfil{
+    position: relative; /* precisa disso pra posicionar elementos filhos */
+    background-color: var(--backgroundcolor-card);
+    border-radius: 20px;
+}
+
+.parteSuperior{
+    display: flex;
+    justify-content: center;
+    padding: 14px 0px;
+}
+
+.dadosGerais{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tituloPrincipal h2{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.nome_usuario{
+    color: var(--color-botoes)
+}
+
+.dados{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.tempoLinguagens{
+    margin-top: 14px;
+}
+
+
+.linha{ /* Ajuste no hr */
+    margin: 0px 40px;
+}
+
+.consquistasInsignias{
+    display: flex;
+    justify-content: space-around;
+    padding: 24px 0px 24px 0px;
+}
+
+.conquistas, .insignias{
+    display: flex;
+    height: 64px;
+    width: 20rem;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+    align-items: center;
+    background-color: #161530;
+    border-radius: 20px;
+    overflow: hidden; /* Garante que sos badges fiquem dentro do contêiner */
+}
+
+.conquistas button, .insignias button{
+    background-color: var(--color-roxo-claro);
+    border: none;
+    color: var(--color-icones);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tituloPartes{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.configuracao {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-white); /* roxinho estiloso */
+  transition: transform 0.2s ease;
+}
+
+.parteInferior{
+    margin-top: 8px;
+    background-color: var(--backgroundcolor-card);
+    border-radius: 20px;
+}
+
+.graficoPerfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.tituloGrafico{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 6px 0px;
+    gap: 6px;
+}
+
+.heatmap img{
+    width: 650px;
+}
+
+.infoPlataforma{
+    padding: 4px 0px 10px 0px;
+}
+
+.ano{
+    color: var(--color-icones);
+    font-weight: bold;
+}
+
+.containerCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.clima{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #161424;
+    border-radius: 20px;
+    width: 100%;
+    padding: 6px 0px;
+    gap: 5px;
+}
+
+/* .clima img{
+    width: 64px;
+    height: 64px;
+} */
+
+.clima img{
+    width: 3.5rem;
+    gap: 4px;
+}
+
+.cidade, .modo_clima{
+    font-size: 20px;
+}
+
+.temp{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.temperatura_num{
+    font-size: 30px;
+}
+
+
+.calendarioContainer {
+    background-color: #161424;
+    border-radius: 20px;
+  /* padding: 10px; */
+    color: #fff;
+    font-size: 14px;
+}
+
+.tituloCalendario {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    padding-top: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.anoCalendario {
+    margin-top: 3px;
+    color: var(--color-botoes);
+    font-weight: bold;
+}
+
+.calendario {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.calendario th {
+  background-color: #351164;
+  color: #ccc;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.calendario td {
+  padding: 4px;
+  transition: background 0.2s ease;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.today {
+  background-color: var(--color-icones);
+  border-radius: 100%;
+}
+
+.today {
+  background-color: var(--first-color); /* ou #6325ce se preferir fixo */
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.centralMusica{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #161424;
+    border-radius: 20px;
+    width: 100%;
+    gap: 5px;
+}
+
+.tituloCentral{
+    margin-top: 6px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    font-weight: bold;
+}
+
+.bi{
+    font-size: 20px;
+}
+
+.card_wrapper{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.card_btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .card_btn path {
+    fill: var(--color-white);
+  }
+  
+  .card_btn_play {
+    width: 45px;
+    height: 45px;
+    background: var(--color-botoes);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card_btn_play path {
+    fill: var(--color-white);
+}
+
+.logoAlbum{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.logoAlbum img{
+    background-color: #351164;
+    border-radius: 20px;
+    width: 80px;
+    padding: 1px 0px;
+    margin: 4px 0px;
 }
