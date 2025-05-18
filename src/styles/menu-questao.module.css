@@ -1,0 +1,279 @@
+@import './variables.css';
+
+
+
+.container {
+    margin: 0px 20px;
+}
+
+.columns{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    gap:25px;
+}
+
+@media(max-width: 768px){
+    .columns{
+        grid-template-columns:1fr;
+    }
+}
+
+.box_dados{
+    background-color: var(--color-roxo-box);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    min-height:86vh;
+    gap:30px;
+}
+
+@media (max-height:730px){
+    .box_dados{
+        gap:20px;
+    }
+}
+
+.box_listaquestoes{
+    background-color: var(--color-roxo-box);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    gap:10px;
+    padding:20px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    max-height: calc(100vh - 90px);
+    padding-top:250px;
+}
+
+@media (max-width:620px){
+    .box_listaquestoes{
+        paddin-top:0px;
+    }
+}
+
+.progresso{
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    background-color:var(--color-roxo-claro);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    border: 8px solid var(--color-icones);
+    filter: 
+    drop-shadow(0 0 5px #391B6C)
+    drop-shadow(0 0 7px #391B6C)
+    drop-shadow(0 0 9px #391B6C);
+
+}
+
+@media (max-height:730px){
+    .progresso{
+        width:170px;
+        height:170px;
+    }
+}
+
+.progresso h3{
+    font-size: 2.5rem;
+}
+
+.progresso span{
+    font-size: 1.2rem;
+}
+
+.progresso p{
+    color:var(--color-icones);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.retanguleRancking{
+    background-color:var(--color-roxo-claro);
+    padding:20px;
+    border-radius:20px;
+    box-shadow: 0px 0px 20px 5px rgba(67, 65, 65, 0.25);
+    gap:7px;
+    display:flex;
+    flex-direction:column;
+}
+
+.retanguleRancking h4{
+    font-weight:700;
+    font-size:1.3rem;
+    text-align:center;
+}
+
+@media (max-height:730px){
+    .retanguleRancking{
+        padding: 10px;
+        gap:5px;
+    }
+}
+
+.colocados span{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.equipes{
+    font-size:1.1rem;
+    font-weight:700;
+    color:#551A8B;
+}
+
+.envios{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    width:190px;
+    height:190px;
+    background-color:var(--color-roxo-claro);
+    filter: 
+    drop-shadow(0 0 5px rgba(37, 209, 21, 0.36))
+    drop-shadow(0 0 7px rgba(37, 209, 21, 0.36))
+    drop-shadow(0 0 9px rgba(37, 209, 21, 0.36));
+    border: 8px solid var(--color-equipe-caisTech);
+    gap:6px;
+}
+
+@media(max-height:730px){
+    .envios{
+        width:170px;
+        height:170px;
+        gap:5px;
+    }
+
+    .envios span{
+        font-size: 1.1rem;
+    }
+}
+
+.envios span{
+    display:flex;
+    flex-direction:inline;
+    gap:5px;
+    font-size: 1.2rem;
+}
+
+.correto{
+    color :var(--color-equipe-caisTech);
+    font-weight: 700;
+    
+}
+
+.questao{
+    background-color:var(--color-roxo-claro);
+    border-radius: 20px;
+    min-height: 20%;
+    min-width:100%;
+    max-width:100%;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowwrap;
+    padding:15px 20px;
+    gap:7px;
+    flex-shrink: 0;
+}
+
+@media (max-height:620px){
+    .questao{
+        flex-wrap:wrap;
+    }
+}
+
+.questao_name{
+    font-weight:700;
+    font-size: 1.8rem;
+    color: var(--color-icones);
+    transition: color 0.3s ease;
+}
+
+.questao_name:hover{
+    color: #551A8B;
+}
+
+.questao p{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.info_questoes{
+    display:flex;
+    flex-direction:row;
+    align-items:end;
+    justify-content:space-between;
+    margin-top:25px;
+}
+
+@media (max-height:620px){
+    .info_questoes{
+        flex-wrap:wrap;
+    }
+}
+
+.info_pessoas{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+}
+
+
+.infos_gerais{
+    display:flex;
+    flex-direction:row;
+    gap: 10px;
+}
+
+
+@media (max-height:620px){
+    .info_gerais{
+        flex-wrap:wrap;
+    }
+}
+
+.Criador span{
+    color:#551A8B;
+    font-weight:700;
+    font-size: 1rem;
+}
+
+.tags{
+    background-color: var(--color-cinza-icon);
+    border-radius:10px;
+    padding:7px 20px;
+}
+
+.nivel_facil{
+    background-color: var(--color-equipe-caisTech);
+    border-radius:10px;
+    padding:7px 20px;
+}
+
+.nivel_intermediario{
+    background-color: var(--color-yellow);
+    border-radius:10px;
+    padding:7px 20px;
+}
+
+.nivel_dificil{
+    background-color: var(--color-red-icon);
+    border-radius:10px;
+    padding:7px 20px;
+}
+
+.pontos{
+    background-color: var(--color-icones);
+    border-radius:10px;
+    padding:7px 20px;
+}
+

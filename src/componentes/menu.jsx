@@ -14,6 +14,7 @@ export default function Menu() {
 
   return (
     <>
+    <div className={styles.body}>
       <header className={styles.header} id="header">
         <div className={styles.header_toggle} onClick={toggleSidebar}>
           {isSidebarExpanded ? <BsX id="header-toggle" /> : <BsList id="header-toggle" />}
@@ -92,6 +93,7 @@ export default function Menu() {
             </div>
           </div>
         </nav>
+      </div>
       </div>
     </>
   );

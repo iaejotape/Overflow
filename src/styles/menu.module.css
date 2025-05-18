@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 body{ /* Tá influenciando um pouco */
-  background-color: #0f0f18;
+  background-color: var(--color-roxo-background);
 }
 
 .header {

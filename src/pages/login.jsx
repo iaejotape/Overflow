@@ -38,7 +38,7 @@ const Login = () => {
           <div className={styles.formulario}>
             <form>
               <div className={styles.mb3}>
-                <label className={styles.label}htmlFor="accessKey">Username ou Email:</label>
+                <label className={styles.label}htmlFor="accessKey">Email:</label>
                 <div className={styles.inputGroup}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                   <path d="M20 21.5V19.5C20 18.4391 19.5786 17.4217 18.8284 16.6716C18.0783 15.9214 17.0609 15.5 16 15.5H8C6.93913 15.5 5.92172 15.9214 5.17157 16.6716C4.42143 17.4217 4 18.4391 4 19.5V21.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -47,7 +47,7 @@ const Login = () => {
                 <input className={styles.input}
                   type="text"
                   id="accessKey"
-                  placeholder="Digite seu username ou email..."
+                  placeholder="Digite seu email..."
                 />
                 </div>
               </div>

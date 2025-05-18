@@ -1,5 +1,6 @@
 :root {
     --color-roxo-background: #0D0C15;
+    --color-roxo-box: #161424;
     --color-roxo-claro: #161530;
     --color-white: #ffffff;
     --color-icones: #6325CE;
@@ -10,7 +11,7 @@
     --color-green-black: #19945c;
     --color-equipe-caisTech:#25D366;
     --color-white-secondary: #fff2cc;
-    --color-red-icon: #DD2C2C;
+    --color-red-icon: #E60019;
     --color-red:#DB4437;
     --color-red-escuro: #7C0000;
     --color-blue: #0099FF;
