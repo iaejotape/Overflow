@@ -16,6 +16,7 @@
   align-items: stretch;
   max-width: 1700px;
   margin: 0 20px;
+  width: 100%;
 }
 
 .resolucao-enunciado {
@@ -204,7 +205,7 @@
   background: var(--color-roxo-claro);
 }
 
-/* Estilização da barra de rolagem do CodeMirror */
+/* EstilizaÃ§Ã£o da barra de rolagem do CodeMirror */
 .cm-scroller::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -224,7 +225,7 @@
   background: #888;
 }
 
-/* Estilização dos números das linhas */
+/* EstilizaÃ§Ã£o dos nÃºmeros das linhas */
 .cm-editor .cm-gutters {
   background: rgba(0, 0, 0, 0.2) !important;
   border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -241,14 +242,14 @@
   color: #6e7681 !important;
 }
 
-/* Destaque do número da linha atual */
+/* Destaque do nÃºmero da linha atual */
 .cm-editor .cm-activeLineGutter {
   background: rgba(255, 255, 255, 0.04) !important;
   color: #e6edf3 !important;
   font-weight: 500 !important;
 }
 
-/* Ajuste do editor para mostrar os números */
+/* Ajuste do editor para mostrar os nÃºmeros */
 .cm-editor {
   background: transparent !important;
   height: 100% !important;
@@ -396,4 +397,300 @@
 
 .btn-atualizar:active {
   transform: scale(0.95);
+}
+
+/* Modal de feedback */
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.feedback-modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.feedback-content {
+  background-color: var(--color-roxo-escuro);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feedback-header h2 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 1.5rem;
+}
+
+.feedback-close {
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.feedback-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.feedback-body {
+  padding: 24px;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.feedback-body img {
+  max-width: 200px;
+  margin: 16px auto;
+  display: block;
+}
+
+.feedback-body h3 {
+  font-size: 1.8rem;
+  margin: 16px 0;
+}
+
+.feedback-body p {
+  margin: 16px 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.feedback-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feedback-button {
+  background-color: var(--color-botoes);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.feedback-button:hover {
+  background-color: #16a665;
+  transform: scale(1.05);
+}
+
+.feedback-button.error {
+  background-color: var(--color-red-icon);
+}
+
+.feedback-button.error:hover {
+  background-color: #f44336;
+}
+
+.feedback-button.warning {
+  background-color: var(--color-yellow);
+}
+
+.feedback-button.warning:hover {
+  background-color: #ffd54f;
+}
+
+/* Responsividade */
+@media screen and (max-width: 1600px) {
+  .resolucao-content {
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .resolucao-content {
+    max-width: 98%;
+    gap: 16px;
+  }
+  
+  .resolucao-lateral {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .resolucao-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .resolucao-enunciado, 
+  .resolucao-lateral {
+    width: 100%;
+    min-width: auto;
+    max-width: 900px;
+    margin-bottom: 20px;
+  }
+  
+  .resolucao-enunciado h2 {
+    font-size: 2rem;
+  }
+  
+  .resolucao-enunciado p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resolucao-container {
+    padding: 10px 0;
+  }
+  
+  .resolucao-content {
+    margin: 0 10px;
+  }
+  
+  .resolucao-enunciado {
+    padding: 20px;
+  }
+  
+  .resolucao-lateral {
+    padding: 20px;
+    min-height: 600px;
+  }
+  
+  .resolucao-lateral .botoes {
+    top: 10px;
+    right: 20px;
+  }
+  
+  .btn-debug, 
+  .btn-executar {
+    transform: scale(0.9);
+  }
+  
+  .painel-testes {
+    height: 500px;
+  }
+  
+  .botoes-direita,
+  .language-selector {
+    transform: scale(0.9);
+  }
+  
+  .botoes-direita {
+    right: 20px;
+  }
+  
+  .language-selector {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .resolucao-enunciado h2 {
+    font-size: 1.5rem;
+  }
+  
+  .resolucao-enunciado p {
+    font-size: 16px;
+  }
+  
+  .resolucao-exemplo {
+    grid-template-columns: 1fr;
+  }
+  
+  .resolucao-exemplo > div:nth-child(3) {
+    grid-column: 1;
+  }
+  
+  .resolucao-lateral .botoes {
+    flex-direction: column;
+    gap: 8px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .btn-debug, 
+  .btn-executar {
+    transform: scale(0.8);
+  }
+  
+  .btn-executar {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .botoes-direita {
+    right: 10px;
+    bottom: 10px;
+    transform: scale(0.8);
+  }
+  
+  .language-selector {
+    left: 10px;
+    bottom: 10px;
+    transform: scale(0.8);
+  }
+  
+  .painel-testes {
+    margin-top: 80px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .resolucao-lateral {
+    min-height: 500px;
+  }
+  
+  .painel-testes {
+    height: 350px;
+  }
+  
+  .btn-language span {
+    display: none;
+  }
+  
+  .feedback-body img {
+    max-width: 150px;
+  }
+  
+  .feedback-body h3 {
+    font-size: 1.5rem;
+  }
+  
+  .feedback-body p {
+    font-size: 1rem;
+  }
 }

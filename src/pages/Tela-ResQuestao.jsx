@@ -24,6 +24,9 @@ const TelaResQuestao = () => {
   const editorRef = useRef(null);
   const editorViewRef = useRef(null);
   const [selectedLanguage, setSelectedLanguage] = useState("python");
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [feedbackType, setFeedbackType] = useState(""); // "success", "error", "undefined"
+  const [userCode, setUserCode] = useState("");
 
   // Configuração do autocomplemento para Python
   const completions = [
@@ -111,6 +114,28 @@ const TelaResQuestao = () => {
     // Atualiza o editor com a nova linguagem quando necessário
   };
 
+  const handleCloseFeedback = () => {
+    setShowFeedback(false);
+  };
+
+  const showSuccessFeedback = (code) => {
+    setUserCode(code);
+    setFeedbackType("success");
+    setShowFeedback(true);
+  };
+
+  const showErrorFeedback = (code) => {
+    setUserCode(code);
+    setFeedbackType("error");
+    setShowFeedback(true);
+  };
+
+  const showUndefinedFeedback = (code) => {
+    setUserCode(code);
+    setFeedbackType("undefined");
+    setShowFeedback(true);
+  };
+
   return (
     <Layout>
       <div className="resolucao-container">
@@ -173,22 +198,24 @@ const TelaResQuestao = () => {
                       const currentLine = lines[lineNumber - 1].trim();
 
                       if (currentLine && !currentLine.startsWith("#")) {
-                        alert(`Linha ${lineNumber}: ${currentLine}`);
+                        // Substituído alert por console.log para debug
+                        console.log(`Linha ${lineNumber}: ${currentLine}`);
 
                         // Se encontrar o print com a saída esperada
                         if (
                           currentLine.includes('print("Olá Overflows!!")') ||
                           currentLine.includes("print('Olá Overflows!!')")
                         ) {
-                          alert(
-                            "✅ Debug: Encontrada a linha com a saída correta!"
-                          );
+                          // Substituído alert por feedback visual
+                          showSuccessFeedback(code);
+                          clearInterval(debugInterval);
                         }
                       }
                       lineNumber++;
                     } else {
                       clearInterval(debugInterval);
-                      alert("🔍 Debug finalizado!");
+                      // Substituído alert por feedback visual
+                      showUndefinedFeedback(code);
                     }
                   }, 1500); // Intervalo de 1.5 segundos entre cada linha
 
@@ -224,11 +251,11 @@ const TelaResQuestao = () => {
                     code.includes(`print("${expectedOutput}")`) ||
                     code.includes(`print('${expectedOutput}')`)
                   ) {
-                    alert("✅ Correto! Sua solução está correta!");
+                    // Substituído alert por feedback visual
+                    showSuccessFeedback(code);
                   } else {
-                    alert(
-                      "❌ Incorreto! A saída esperada deve ser: 'Olá Overflows!!'"
-                    );
+                    // Substituído alert por feedback visual
+                    showErrorFeedback(code);
                   }
                 }}
               >
@@ -421,6 +448,83 @@ const TelaResQuestao = () => {
             </div>
           </aside>
         </div>
+
+        {/* Modal de Feedback */}
+        {showFeedback && (
+          <div className={`feedback-modal ${showFeedback ? "visible" : ""}`}>
+            <div className="feedback-content">
+              <div className="feedback-header">
+                <h2>
+                  {feedbackType === "success"
+                    ? "Resposta Correta!"
+                    : feedbackType === "error"
+                    ? "Resposta Incorreta"
+                    : "Código Indefinido"}
+                </h2>
+                <button
+                  className="feedback-close"
+                  onClick={handleCloseFeedback}
+                >
+                  ×
+                </button>
+              </div>
+              <div className="feedback-body">
+                {feedbackType === "success" && (
+                  <>
+                    <img
+                      src="/src/assets/img_tela_verificacao/parabens.png"
+                      alt="Parabéns"
+                    />
+                    <h3>Questão Concluída! Continue assim!! :)</h3>
+                    <p>Você conseguiu 5 Pts!</p>
+                  </>
+                )}
+                {feedbackType === "error" && (
+                  <>
+                    <img
+                      src="/src/assets/img_tela_verificacao/alerta.png"
+                      alt="Erro"
+                    />
+                    <h3>Ops! Houve algum erro, tente novamente!! :)</h3>
+                    <p>A saída esperada deve ser: 'Olá Overflows!!'</p>
+                  </>
+                )}
+                {feedbackType === "undefined" && (
+                  <>
+                    <img
+                      src="/src/assets/img_tela_verificacao/pensando.png"
+                      alt="Indefinido"
+                    />
+                    <h3>Ops!! O código enviado não pode ser interpretado :/</h3>
+                    <p>
+                      Ajuste seu código da maneira correta e tente enviar
+                      novamente!
+                    </p>
+                  </>
+                )}
+                <div className="code-preview">
+                  <pre>{userCode}</pre>
+                </div>
+              </div>
+              <div className="feedback-footer">
+                <button
+                  className={`feedback-button ${
+                    feedbackType === "error"
+                      ? "error"
+                      : feedbackType === "undefined"
+                      ? "warning"
+                      : ""
+                  }`}
+                  onClick={handleCloseFeedback}
+                >
+                  {feedbackType === "success"
+                    ? "Continuar"
+                    : "Voltar e Tentar Novamente"}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </Layout>
   );
