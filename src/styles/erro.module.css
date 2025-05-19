@@ -49,7 +49,7 @@
     padding-bottom: 1rem;
 }
 .barra_esquerda .status h2{
-    background-color: var(--color-botoes);
+    background-color: var(--color-red-icon);
     justify-self: center;
     width: 6.4rem;
     padding-top: 0.4rem;
@@ -90,12 +90,15 @@
     font-size: 1.8rem;
 }
 .barra_direita .mensagem img{
-    width: 40rem;
-    padding: 1rem 0rem;
+    width: 27rem;
+    padding: 2.4rem 0rem;
 }
 .barra_direita .mensagem p{
     padding-top: 0.8rem;
-    padding-bottom: 0.7rem;
+    padding-bottom: 0rem;
+}
+.barra_direita .mensagem .comparacao img{
+    width: 42rem;
 }
 .barra_direita hr{
     width: 50rem;
@@ -103,9 +106,9 @@
 }
 .barra_direita button{
     margin-bottom: 0.7rem;
-    background-color: var(--color-botoes);
-    width: 7.5rem;
-    padding: 0.7rem;
+    background-color: var(--color-red-icon);
+    width: 9rem;
+    padding: 1.1rem 0.8rem ;
     border-radius: 0.8rem;
     color: var(--color-white);
     font-weight: bold;
@@ -123,11 +126,11 @@
     font-size: 1.9rem;
 }
 .barra_direita .code img{
-    width: 38rem;
+    width: 39rem;
     background-color: var(--color-roxo-terminal);
-    padding: 2rem 6rem 6rem 6rem;
+    padding: 2rem 4rem 2rem 2rem;
     border-radius: 0.8rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -136,8 +139,8 @@
 }
 
 .barra_direita::-webkit-scrollbar-track {
-    background: var( --color-white-secondary);
-    border-radius: 5px;
+background-color: #555;
+border-radius: 5px;
 }
 
 .barra_direita::-webkit-scrollbar-thumb {
