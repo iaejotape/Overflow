@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Login from "./pages/login.jsx";
 import Cadastro from "./pages/Tela-Cadastro.jsx";
+import Resolucao from "./pages/Tela-ResQuestao.jsx";
 import Barra from "./pages/teste-menu.jsx";
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
              <Route path="/" element={<Login />}/> 
             <Route path="/cadastro" element={<Cadastro />}/>
             <Route path="/testebarra" element={<Barra />}/>
+            <Route path="/resolucao" element={<Resolucao />}/>
           </Routes>
         </BrowserRouter>
       </div>
