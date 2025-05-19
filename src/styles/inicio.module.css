@@ -55,6 +55,7 @@
 
 .info_perfil{
     position: relative; /* precisa disso pra posicionar elementos filhos */
+    z-index: 0;
     background-color: var(--backgroundcolor-card);
     border-radius: 20px;
 }

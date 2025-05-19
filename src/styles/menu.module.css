@@ -105,7 +105,7 @@ body{ /* Tá influenciando um pouco */
   background-color: var(--color-roxo-claro);
   padding-top: 3.2rem;
   transition: width 0.3s ease;
-  z-index: var(--z-fixed);
+  z-index: 1;
   overflow-x: hidden;
 }
 
