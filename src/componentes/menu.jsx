@@ -37,8 +37,8 @@ export default function Menu() {
       <div className={`${styles.l_navbar} ${isSidebarExpanded ? styles.show : ''}`} id="nav-bar">
         <nav className={styles.nav}>
           <div className={styles.fluxo_central}>
-            <div className={styles.opcao}>
-              <a href="#" className={`${styles.nav_link} ${styles.active}`}>
+            <div className={styles.opcao} >
+              <a href="#" title="Inicio" className={`${styles.nav_link} ${styles.active}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-grid-alt ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Início</span>
@@ -46,7 +46,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" className={styles.nav_link}>
+              <a href="#" title="Classificações" className={styles.nav_link}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-trophy ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Classificações</span>
@@ -54,7 +54,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" className={styles.nav_link}>
+              <a href="#" title="Lista de Questões" className={styles.nav_link}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bxs-balloon ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Questões</span>
@@ -62,7 +62,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" className={styles.nav_link}>
+              <a href="#" title="Editor de Código" className={styles.nav_link}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-terminal ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Editor</span>
@@ -70,7 +70,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" className={styles.nav_link}>
+              <a href="#" title="Todos os Eventos" className={styles.nav_link}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-joystick ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Eventos</span>
@@ -78,7 +78,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" className={styles.nav_link}>
+              <a href="#" title="Bibliotecas" className={styles.nav_link}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-coffee ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Bibliotecas</span>
@@ -86,7 +86,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.sair_plataforma}>
-              <a href="#" className={styles.nav_link}>
+              <a href="#" title="Sair da Plataforma" className={styles.nav_link}>
                 <i className={`bx bx-log-out ${styles.nav_icon}`}></i>
                 <span className={styles.nav_name}>Sair</span>
               </a>
