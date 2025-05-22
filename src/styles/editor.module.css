@@ -1,0 +1,208 @@
+@import "./variables.css";
+
+.container{
+    display: flex;
+    gap: 10px;
+    background-color: var(--color-roxo-editor);
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.editor, .editor_dados{
+    height: calc(50rem - 90px);
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+
+.code{
+    padding: 20px;
+}
+
+.opcoesEditor{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    height: 40px;
+}
+
+.inputGroup{
+    display: flex;
+}
+
+.inputGroup select{
+    background-color: var(--color-roxo-claro);
+    color: var(--color-white);
+    padding: 10px 10px;
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.inputGroup label{
+    background-color: var(--color-icones);
+    padding: 10px 15px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.inputGroupText{
+    background-color: var(--color-icones);
+}
+
+.btn{
+    padding: 10px 20px;
+    gap: 0px;
+    margin: 0px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.btn_download{
+    background-color: #027BCC;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.btn_copiar{
+    background-color: #7B7B7B;
+}
+
+.btn_limpar{
+    background-color: #FBBC05;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.btn_success{
+    background-color: var(--color-botoes);
+    border-radius: 20px;
+}
+
+.btn_debug{
+    background-color: var(--color-red-icon);
+    padding: 10px 12px;
+    border-radius: 50%;
+}
+
+.editor_dados{
+    width: calc(50rem - 400px);
+    margin-right: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre os textareas */
+    height: calc(100vh - 100px); 
+}
+
+.entradaTeste, .saidaTeste{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 48%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    min-height: 100px;
+}
+
+.entradaTeste, .saidaTeste span{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.entradaTeste textarea{
+    background: #161424;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    resize: none; 
+    padding: 10px; 
+    color: white; 
+    margin-top: 5px; 
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.entradaTeste textarea {
+    height: 28rem;
+}
+
+.saidaTeste textarea{
+    background: #161424;
+    border: none;
+    border-radius: 20px;
+    width: 100%; 
+    resize: none;
+    padding: 10px; 
+    color: white; 
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.saidaTeste textarea {
+    height: 28rem; /* Altura para a área de entrada */
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Empilha editor e editor_dados verticalmente */
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .editor, .editor_dados {
+    width: 100% !important; /* Força ocupar toda a largura */
+    height: auto; /* Altura ajustável */
+    margin-right: 0;
+  }
+
+  .editor_dados {
+    order: -1; /* Opcional: coloca a seção de dados acima do editor */
+  }
+
+  .code {
+    padding: 10px;
+  }
+
+  .opcoesEditor {
+    flex-direction: column; /* Empilha os botões */
+    height: auto;
+    gap: 10px;
+  }
+
+  .inputGroup, .btnGroup, .execucao {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .entradaTeste textarea, 
+  .saidaTeste textarea {
+    height: 150px; /* Altura fixa menor para mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 12px; /* Botões mais compactos */
+    font-size: 14px;
+  }
+
+  .entradaTeste, .saidaTeste {
+    height: auto;
+    padding: 8px;
+  }
+
+  .entradaTeste textarea, 
+  .saidaTeste textarea {
+    height: 120px;
+  }
+}
