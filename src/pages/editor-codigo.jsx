@@ -32,7 +32,7 @@ const customTheme = EditorView.theme({
   "&": {
     fontSize: "16px",
     height: "100%",
-    backgroundColor: "", // Cor de fundo principal
+    backgroundColor: "",
     color: "#e74b77",
     fontWeight: 600,
     border: "none",
@@ -43,7 +43,7 @@ const customTheme = EditorView.theme({
     height: "100%",
     padding: "1rem",
     fontFamily: "monospace",
-    backgroundColor: "#161424", // Fundo do conteúdo
+    backgroundColor: "#161424",
     borderRadius: "20px",
     border: "none",
   },
@@ -54,19 +54,18 @@ const customTheme = EditorView.theme({
     border: "none",
   },
   ".cm-gutters": {
-    backgroundColor: "#161424", // Fundo dos números de linha
+    backgroundColor: "#161424",
     color: "#6c7086",
     border: "none",
   },
   ".cm-activeLine": {
-    backgroundColor: "#313244", // Cor da linha ativa (opcional)
+    backgroundColor: "#313244",
   },
-  // Adicione estas linhas para garantir que não haja vazamentos de cor:
   ".cm-line": {
-    backgroundColor: "transparent", // Remove fundo das linhas individuais
+    backgroundColor: "transparent",
   },
   ".cm-editor": {
-    backgroundColor: "#161424", // Garante que o container principal também use a cor
+    backgroundColor: "#161424",
     borderRadius: "20px",
     border: "none",
   },

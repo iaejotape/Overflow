@@ -103,13 +103,13 @@
 .entradaTeste, .saidaTeste{
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    height: 48%; /* Ocupa toda a altura da div pai (.editor_dados) */
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 20px; /* Borda arredondada igual ao editor */
-    margin-bottom: 10px; /* Espaço entre os textareas */
-    flex-grow: 1; /* Ocupa o espaço disponível */
-    min-height: 100px; /* Evita que fiquem muito pequenos */
+    justify-content: center;
+    height: 48%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    min-height: 100px;
 }
 
 .entradaTeste, .saidaTeste span{
@@ -121,28 +121,28 @@
     background: #161424;
     border: none;
     border-radius: 20px;
-    width: 100%; /* Largura total do container pai */
-    resize: none; /* Remove a barrinha de redimensionamento */
-    padding: 10px; /* Espaçamento interno para melhor legibilidade */
-    color: white; /* Cor do texto */
-    margin-top: 5px; /* Espaçamento entre o label e o textarea */
+    width: 100%;
+    resize: none; 
+    padding: 10px; 
+    color: white; 
+    margin-top: 5px; 
     font-size: 16px;
     font-weight: bold;
 }
 
 .entradaTeste textarea {
-    height: 28rem; /* Altura para a área de entrada */
+    height: 28rem;
 }
 
 .saidaTeste textarea{
     background: #161424;
     border: none;
     border-radius: 20px;
-    width: 100%; /* Largura total do container pai */
-    resize: none; /* Remove a barrinha de redimensionamento */
-    padding: 10px; /* Espaçamento interno para melhor legibilidade */
-    color: white; /* Cor do texto */
-    margin-top: 5px; /* Espaçamento entre o label e o textarea */
+    width: 100%; 
+    resize: none;
+    padding: 10px; 
+    color: white; 
+    margin-top: 5px;
     font-size: 16px;
     font-weight: bold;
 }
