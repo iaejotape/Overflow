@@ -154,7 +154,7 @@
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Empilha editor e editor_dados verticalmente */
+    flex-direction: column;
     gap: 15px;
     padding: 10px;
   }
@@ -186,13 +186,13 @@
 
   .entradaTeste textarea, 
   .saidaTeste textarea {
-    height: 150px; /* Altura fixa menor para mobile */
+    height: 150px;
   }
 }
 
 @media (max-width: 480px) {
   .btn {
-    padding: 8px 12px; /* Botões mais compactos */
+    padding: 8px 12px; 
     font-size: 14px;
   }
 

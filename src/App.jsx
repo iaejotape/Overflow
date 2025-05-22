@@ -10,6 +10,7 @@ import Erro from "./pages/erro.jsx"
 import Barra from "./pages/teste-menu.jsx";
 import MenuQuestao from "./pages/menu-questao.jsx";
 import Editor from "./pages/editor-codigo.jsx";
+import QuestoesEvento from "./pages/questoes-evento.jsx";
 
 
 
@@ -23,7 +24,7 @@ function App() {
             <Route path="/cadastro" element={<Cadastro />}/>
             <Route path="menuquestao" element={<MenuQuestao/>}/>
             <Route path="/editor" element={<Editor />}/>
-            <Route path="/testebarra" element={<Barra />}/>
+            <Route path="/questoesevento" element={<QuestoesEvento />}/>
             <Route path="/resolucao" element={<Resolucao />}/>
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erro_indefinido" element={<Erro_indefinido/>}/>

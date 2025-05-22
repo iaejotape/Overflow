@@ -1,0 +1,112 @@
+@import url(variables.css);
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tituloEvento{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #161424;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tituloEvento h1{
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    gap: 15px;
+}
+
+.tituloEvento button{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    gap: 6px;
+    padding: 1px 24px;
+    border-radius: 20px;
+    background-color: #E60019;
+    color: var(--color-white);
+    border: none;
+    padding-top: 0px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.tituloEvento h1 .icone{
+    color: #6325CE;
+    font-size: 64px;
+}
+
+.box_listaquestoes{
+    height: calc(100vh - 320px);
+    background-color: var(--color-roxo-box);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    overflow-y: auto;
+} 
+
+.box_listaquestoes::-webkit-scrollbar {
+  width: 10px;
+}
+
+.box_listaquestoes::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.box_listaquestoes::-webkit-scrollbar-thumb {
+  background-color: var(--color-icones);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.box_listaquestoes::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+.opcoesEvento{
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #161424;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: #8B2CF5 0px 0px 10px;
+}
+
+.opcoesEvento a{
+    color: var(--color-white);
+    padding: 20px;
+    width: 16rem;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    vertical-align: middle;
+}
+
+.questoes{
+    background-color: #8B2CF5;
+}
+
+.classificacao{
+    background-color: #0099FF;
+}
+
+.opcaoIcone{
+    font-size: 20px;
+}
