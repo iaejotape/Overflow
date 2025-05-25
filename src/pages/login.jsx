@@ -71,7 +71,8 @@ const Login = () => {
                   </div>
                 <a href="#" >Esqueci minha senha</a>
                 </div>
-                  <button type="button" className={styles.btnEntrar}>
+                  <button //onClick={navigate='/'}
+                  type="button" className={styles.btnEntrar}>
                     Entrar
                   </button>
                 <div className={styles.ajuda}>

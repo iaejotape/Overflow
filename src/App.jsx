@@ -20,7 +20,7 @@ function App() {
       <div>
         <BrowserRouter>
           <Routes>
-             <Route path="/" element={<Login />}/> 
+            <Route path="/" element={<Login />}/> 
             <Route path="/cadastro" element={<Cadastro />}/>
             <Route path="menuquestao" element={<MenuQuestao/>}/>
             <Route path="/editor" element={<Editor />}/>
@@ -29,6 +29,8 @@ function App() {
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erro_indefinido" element={<Erro_indefinido/>}/>
            <Route path="/erro" element={<Erro />}/>
+           
+
           </Routes>
         </BrowserRouter>
       </div>
