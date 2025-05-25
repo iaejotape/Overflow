@@ -5,8 +5,13 @@ import prata from "../assets/Rank/prata.png"
 import bronze from "../assets/Rank/bronze.png"
 import coroa from "../assets/Rank/coroa.png"
 import lupa from "../assets/Rank/lupa.png"
+import { useNavigate } from "react-router-dom";
 
 function rank_evento() {
+    const navigate = useNavigate();
+    const handleClick = () =>{
+    navigate("/questoesevento");
+  }
     return(
         <div className={styles.main}>
             <Barra/>
@@ -112,7 +117,7 @@ function rank_evento() {
                     </div>
                     <div className={styles.botao}>
                         <div className={styles.questao}>
-                            <button>
+                            <button onClick={handleClick}>
                                 <div className={styles.bolao}>
                                     <i className={`bx bxs-balloon`}></i>
                                 </div>
