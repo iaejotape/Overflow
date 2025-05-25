@@ -75,7 +75,7 @@ function rank_geral() {
                                 <td className={styles.nome }>Alguem</td>
                                 <td className={styles.usuario}>@Ninguem</td>
                                 <td className={styles.ano}>Over-2025</td>
-                                <td className={styles.insigna}>5</td>
+                                <td className={styles.insigna}></td>
                                 <td className={styles.pontos}>300Pts</td>
                         </tr>
                             <tr className={styles.t7}>
@@ -83,7 +83,7 @@ function rank_geral() {
                                 <td className={styles.nome }>Alguem</td>
                                 <td className={styles.usuario}>@Ninguem</td>
                                 <td className={styles.ano}>Over-2025</td>
-                                <td className={styles.insigna}>4</td>
+                                <td className={styles.insigna}></td>
                                 <td className={styles.pontos}>200Pts</td>
                         </tr>
                             <tr className={styles.t8}>
@@ -91,7 +91,7 @@ function rank_geral() {
                                 <td className={styles.nome }>Alguem</td>
                                 <td className={styles.usuario}>@Ninguem</td>
                                 <td className={styles.ano}>Over-2025</td>
-                                <td className={styles.insigna}>3</td>
+                                <td className={styles.insigna}></td>
                                 <td className={styles.pontos}>100Pts</td>
                         </tr>
                                 <tr className={styles.t9}>
@@ -99,7 +99,7 @@ function rank_geral() {
                                 <td className={styles.nome }>Alguem</td>
                                 <td className={styles.usuario}>@Ninguem</td>
                                 <td className={styles.ano}>Over-2025</td>
-                                <td className={styles.insigna}>2</td>
+                                <td className={styles.insigna}></td>
                                 <td className={styles.pontos}>100Pts</td>
                         </tr>
                         

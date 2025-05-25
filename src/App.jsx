@@ -31,11 +31,11 @@ function App() {
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erroindefinido" element={<Erro_indefinido/>}/>
             <Route path="/erro" element={<Erro />}/>
-           <Route path="/meuseventos" element={<MeusEventos />}/>
+            <Route path="/meuseventos" element={<MeusEventos />}/>
             <Route path="/testebarra" element={<Barra />}/>
+            <Route path="/rank_evento" element={<Rank_evento />}/>
+            <Route path="/rank_geral" element={<Rank_geral />}/>
             <Route path="/inicio" element={<Inicio />}/>
-            <Router path="/rank_geral" element={<Rank_geral/>}/>
-            <Router path="/rank_evento" element={<Rank_evento/>}/>
           </Routes>
         </BrowserRouter>
       </div>
