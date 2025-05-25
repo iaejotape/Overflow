@@ -11,10 +11,7 @@ import Barra from "./pages/teste-menu.jsx";
 import MenuQuestao from "./pages/menu-questao.jsx";
 import Editor from "./pages/editor-codigo.jsx";
 import QuestoesEvento from "./pages/questoes-evento.jsx";
-
-
 import Inicio from "./pages/tela-inicial.jsx";
-import './App.css';
 
 function App() {
   return (
@@ -22,7 +19,7 @@ function App() {
       <div>
         <BrowserRouter>
           <Routes>
-             <Route path="/" element={<Login />}/> 
+            <Route path="/" element={<Login />}/> 
             <Route path="/cadastro" element={<Cadastro />}/>
             <Route path="menuquestao" element={<MenuQuestao/>}/>
             <Route path="/editor" element={<Editor />}/>
@@ -30,7 +27,7 @@ function App() {
             <Route path="/resolucao" element={<Resolucao />}/>
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erroindefinido" element={<Erro_indefinido/>}/>
-           <Route path="/erro" element={<Erro />}/>
+            <Route path="/erro" element={<Erro />}/>
             <Route path="/testebarra" element={<Barra />}/>
             <Route path="/inicio" element={<Inicio />}/>
           </Routes>
