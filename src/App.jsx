@@ -11,6 +11,7 @@ import Barra from "./pages/teste-menu.jsx";
 import MenuQuestao from "./pages/menu-questao.jsx";
 import Editor from "./pages/editor-codigo.jsx";
 import QuestoesEvento from "./pages/questoes-evento.jsx";
+import MeusEventos from "./pages/tela-meus-eventos.jsx";
 import Inicio from "./pages/tela-inicial.jsx";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erroindefinido" element={<Erro_indefinido/>}/>
             <Route path="/erro" element={<Erro />}/>
+           <Route path="/meus_eventos" element={<MeusEventos />}/>
             <Route path="/testebarra" element={<Barra />}/>
             <Route path="/inicio" element={<Inicio />}/>
           </Routes>
