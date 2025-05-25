@@ -13,6 +13,8 @@ import Editor from "./pages/editor-codigo.jsx";
 import QuestoesEvento from "./pages/questoes-evento.jsx";
 
 
+import Inicio from "./pages/tela-inicial.jsx";
+import './App.css';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erroindefinido" element={<Erro_indefinido/>}/>
            <Route path="/erro" element={<Erro />}/>
+            <Route path="/testebarra" element={<Barra />}/>
+            <Route path="/inicio" element={<Inicio />}/>
           </Routes>
         </BrowserRouter>
       </div>

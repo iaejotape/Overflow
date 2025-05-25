@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BsList, BsX } from 'react-icons/bs';
 import 'boxicons/css/boxicons.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import logo from '../assets/img/logo-overflows.svg';
 import styles from '../styles/menu.module.css';
 
