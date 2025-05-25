@@ -73,7 +73,7 @@ const MenuQuestao = () => {
 
             <div className={styles.box_listaquestoes}>
               <div className={styles.questao}>
-                <a href="questao_tabuada.html" className={styles.questao_name}>
+                <a href="./resolucao" className={styles.questao_name}>
                   <h2>Dê um Oii para a Plataforma!</h2>
                 </a>
                 <p>
