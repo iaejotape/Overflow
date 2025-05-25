@@ -31,7 +31,7 @@ function App() {
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erroindefinido" element={<Erro_indefinido/>}/>
             <Route path="/erro" element={<Erro />}/>
-           <Route path="/meus_eventos" element={<MeusEventos />}/>
+           <Route path="/meuseventos" element={<MeusEventos />}/>
             <Route path="/testebarra" element={<Barra />}/>
             <Route path="/inicio" element={<Inicio />}/>
             <Router path="/rank_geral" element={<Rank_geral/>}/>
