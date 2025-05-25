@@ -13,6 +13,8 @@ import Editor from "./pages/editor-codigo.jsx";
 import QuestoesEvento from "./pages/questoes-evento.jsx";
 import MeusEventos from "./pages/tela-meus-eventos.jsx";
 import Inicio from "./pages/tela-inicial.jsx";
+import Rank_evento from "./pages/rank_evento.jsx";
+import Rank_geral from "./pages/rank_geral.jsx";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
             <Route path="/erro" element={<Erro />}/>
             <Route path="/meuseventos" element={<MeusEventos />}/>
             <Route path="/testebarra" element={<Barra />}/>
+            <Route path="/rank_evento" element={<Rank_evento />}/>
+            <Route path="/rank_geral" element={<Rank_geral />}/>
             <Route path="/inicio" element={<Inicio />}/>
           </Routes>
         </BrowserRouter>
