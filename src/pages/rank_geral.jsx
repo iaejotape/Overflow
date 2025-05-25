@@ -71,36 +71,36 @@ function rank_geral() {
                             <td className={styles.pontos}>500Pts</td>
                         </tr>
                             <tr className={styles.t6}>
-                            <td className={styles.posicao}>5</td>
-                            <td className={styles.nome }>Jotape</td>
-                            <td className={styles.usuario}>@iaejottape</td>
-                            <td className={styles.ano}>Over-2025</td>
-                            <td className={styles.insigna}></td>
-                            <td className={styles.pontos}>300Pts</td>
+                                <td className={styles.posicao}>5</td>
+                                <td className={styles.nome }>Alguem</td>
+                                <td className={styles.usuario}>@Ninguem</td>
+                                <td className={styles.ano}>Over-2025</td>
+                                <td className={styles.insigna}>5</td>
+                                <td className={styles.pontos}>300Pts</td>
                         </tr>
                             <tr className={styles.t7}>
-                            <td className={styles.posicao}>6</td>
-                            <td className={styles.nome }>Jotape</td>
-                            <td className={styles.usuario}>@iaejottape</td>
-                            <td className={styles.ano}>Over-2025</td>
-                            <td className={styles.insigna}></td>
-                            <td className={styles.pontos}>200Pts</td>
+                                <td className={styles.posicao}>6</td>
+                                <td className={styles.nome }>Alguem</td>
+                                <td className={styles.usuario}>@Ninguem</td>
+                                <td className={styles.ano}>Over-2025</td>
+                                <td className={styles.insigna}>4</td>
+                                <td className={styles.pontos}>200Pts</td>
                         </tr>
-                        <tr className={styles.t8}>
-                            <td className={styles.posicao}>7</td>
-                            <td className={styles.nome }>Jotape</td>
-                            <td className={styles.usuario}>@iaejottape</td>
-                            <td className={styles.ano}>Over-2025</td>
-                            <td className={styles.insigna}></td>
-                            <td className={styles.pontos}>100Pts</td>
+                            <tr className={styles.t8}>
+                                <td className={styles.posicao}>7</td>
+                                <td className={styles.nome }>Alguem</td>
+                                <td className={styles.usuario}>@Ninguem</td>
+                                <td className={styles.ano}>Over-2025</td>
+                                <td className={styles.insigna}>3</td>
+                                <td className={styles.pontos}>100Pts</td>
                         </tr>
-                        <tr className={styles.t9}>
-                            <td className={styles.posicao}>8</td>
-                            <td className={styles.nome }>Jotape</td>
-                            <td className={styles.usuario}>@iaejottape</td>
-                            <td className={styles.ano}>Over-2025</td>
-                            <td className={styles.insigna}></td>
-                            <td className={styles.pontos}>100Pts</td>
+                                <tr className={styles.t9}>
+                                <td className={styles.posicao}>8</td>
+                                <td className={styles.nome }>Alguem</td>
+                                <td className={styles.usuario}>@Ninguem</td>
+                                <td className={styles.ano}>Over-2025</td>
+                                <td className={styles.insigna}>2</td>
+                                <td className={styles.pontos}>100Pts</td>
                         </tr>
                         
                         </tbody>
