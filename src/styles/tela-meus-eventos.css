@@ -1,0 +1,340 @@
+.meus-eventos-container {
+  width: 100%;
+  padding: 20px;
+  color: var(--white-color);
+}
+
+.meus-eventos-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.meus-eventos-header h1 {
+  font-size: 2.5rem;
+  margin-left: 15px;
+  color: var(--white-color);
+}
+
+.meus-eventos-header .icon {
+  color: var(--color-icones);
+  font-size: 2.5rem;
+}
+
+.eventos-content {
+  display: flex;
+  gap: 20px;
+}
+
+.eventos-lista {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.evento-card {
+  background-color: var(--color-roxo-box);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.evento-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.evento-card-header .evento-nome {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 10px;
+  color: var(--white-color);
+  text-decoration: none;
+  border-left: 4px solid var(--color-icones);
+  padding-left: 10px;
+}
+
+.evento-card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 15px;
+}
+
+.info-item .icon {
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
+
+.info-item span {
+  color: var(--white-color);
+  font-size: 0.9rem;
+}
+
+.evento-card-expanded {
+  margin-top: 20px;
+}
+
+.evento-form-group {
+  margin-bottom: 15px;
+}
+
+.evento-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--white-color);
+}
+
+.evento-form-group input,
+.evento-form-group select,
+.evento-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-roxo-claro);
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: var(--white-color);
+}
+
+.evento-form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 1em;
+}
+
+.limite-usuarios {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.limite-usuarios button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.limite-usuarios button.minus {
+  background-color: #333;
+  color: white;
+}
+
+.limite-usuarios button.plus {
+  background-color: #333;
+  color: white;
+}
+
+.limite-usuarios span {
+  font-size: 1.2rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+.insignia-upload {
+  border: 2px dashed #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.insignia-upload p {
+  margin: 10px 0;
+  color: #777;
+}
+
+.mensagem-boas-vindas textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.botoes-questao {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-adicionar-questao {
+  background-color: var(--color-botoes);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-visualizar-questoes {
+  background-color: var(--color-yellow);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-salvar {
+  background-color: var(--color-botoes);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.estatisticas {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.estatistica-card {
+  background-color: var(--color-roxo-box);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 250px;
+}
+
+.estatistica-circulo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.estatistica-circulo.rosa {
+  border: 10px solid var(--color-pink);
+  box-shadow: 0 0 15px rgba(183, 0, 137, 0.5);
+}
+
+.estatistica-circulo.verde {
+  border: 10px solid var(--color-botoes);
+  box-shadow: 0 0 15px rgba(31, 196, 122, 0.5);
+}
+
+.estatistica-circulo .numero {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.estatistica-circulo .texto {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.estatistica-circulo .icone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  opacity: 0.2;
+}
+
+.nuvens-fixas-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nuvem-fixa {
+  opacity: 0.5;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: flex-end;
+}
+
+.btn-criar {
+  background-color: var(--color-botoes);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-voltar {
+  background-color: var(--color-icones);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.toggle-btn.open {
+  transform: rotate(180deg);
+}
+
+/* Estilos para a lista suspensa */
+.dropdown-content {
+  padding: 20px;
+  background-color: var(--color-roxo-box);
+  border-radius: 0 0 15px 15px;
+  margin-top: -5px;
+}
