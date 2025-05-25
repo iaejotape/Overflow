@@ -24,7 +24,7 @@ function rank_geral() {
                 <div className={styles.geral}>
                 <div className={styles.tabela}>
                     <table>
-                        <thead>
+                        <div className={styles.cabecario_tabela}>
                             <tr className={styles.t1}>
                             <th>Posição</th>
                             <th>Nome de Usuario</th>
@@ -33,8 +33,8 @@ function rank_geral() {
                             <th>Insignias</th>
                             <th>Pontuacao</th>
                         </tr>
-                        </thead>
-                        <tbody>
+                        </div>
+                        <div className={styles.main_tabela}>
                         <tr className={styles.t2}>
                             <td className={styles.posicao}><img src={ouro} alt="" /></td>
                             <td className={styles.nome }>Diogo B.</td>
@@ -103,12 +103,12 @@ function rank_geral() {
                                 <td className={styles.pontos}>100Pts</td>
                         </tr>
                         
-                        </tbody>
-                    <tfoot>
+                        </div>
+                    <div className={styles.final_tabela}>
                         <tr>
                             <td>Overflow💜</td>
                         </tr>
-                    </tfoot>
+                    </div>
                     </table>
                     </div>
                 </div>

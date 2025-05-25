@@ -52,7 +52,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" title="Classificações" className={`${styles.nav_link} ${currentPath === "/classificacoes" ? styles.active : ""}`}>
+              <a href="./rank_geral" title="Classificações" className={`${styles.nav_link} ${currentPath === "/rank_geral" ? styles.active : ""}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-trophy ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Classificações</span>

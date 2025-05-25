@@ -83,7 +83,7 @@
     height: 2.7rem;
     padding-top: 0.6rem;
 }
-tbody td{
+.main_tabela td{
     font-size: 1.2rem;
     /* border: 0.1rem solid var(--color-white); */
     border-right: 0.15rem  solid var(--color-white);
@@ -93,23 +93,23 @@ tbody td{
     font-weight:bold;
     color: var(--color-white);
 }
-tbody{
+.main_tabela{
     display: block;
     height: 22rem;
     overflow-y:scroll;
     padding-left: 0.2rem;
 }
-tbody::-webkit-scrollbar{
+.main_tabela::-webkit-scrollbar{
     width: 0.4rem;
 }
-tbody::-webkit-scrollbar-track{
+.main_tabela::-webkit-scrollbar-track{
     border-radius: 5px;
 }
-tbody::-webkit-scrollbar-thumb{
+.main_tabela::-webkit-scrollbar-thumb{
     background-color: rgb(129, 129, 129);
     border-radius: 5px;
 }
-tbody::-webkit-scrollbar-thumb:hover {
+.main_tabela::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
 .nome, .usuario, .ano, .insigna, .pontos {
@@ -162,16 +162,16 @@ tr{
     background-color: #8c6cd6;
     margin-bottom: 0.15rem;    
 }
-thead{
+.cabecario_tabela{
     table-layout: fixed;
 }
-tfoot td{
+.final_tabela td{
     color: #391B6C;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
 }
-tfoot{
+.final_tabela{
     padding: 0.5rem 0rem;
     justify-items: center;
     table-layout: fixed;
