@@ -11,6 +11,8 @@ import Barra from "./pages/teste-menu.jsx";
 import MenuQuestao from "./pages/menu-questao.jsx";
 import Editor from "./pages/editor-codigo.jsx";
 import QuestoesEvento from "./pages/questoes-evento.jsx";
+import Rank_evento from "./pages/rank_evento.jsx";
+import Rank_geral from "./pages/rank_geral.jsx";
 
 
 
@@ -29,6 +31,8 @@ function App() {
             <Route path="/verificacao" element={<Tela_acerto />}/>
             <Route path="/erro_indefinido" element={<Erro_indefinido/>}/>
            <Route path="/erro" element={<Erro />}/>
+           <Route path="/rank_evento" element={<Rank_evento />}/>
+           <Route path="/rank_geral" element={<Rank_geral />}/>
           </Routes>
         </BrowserRouter>
       </div>
