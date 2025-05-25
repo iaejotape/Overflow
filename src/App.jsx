@@ -27,7 +27,7 @@ function App() {
             <Route path="/questoesevento" element={<QuestoesEvento />}/>
             <Route path="/resolucao" element={<Resolucao />}/>
             <Route path="/verificacao" element={<Tela_acerto />}/>
-            <Route path="/erro_indefinido" element={<Erro_indefinido/>}/>
+            <Route path="/erroindefinido" element={<Erro_indefinido/>}/>
            <Route path="/erro" element={<Erro />}/>
           </Routes>
         </BrowserRouter>
