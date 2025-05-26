@@ -15,6 +15,7 @@ import MeusEventos from "./pages/tela-meus-eventos.jsx";
 import Inicio from "./pages/tela-inicial.jsx";
 import Rank_evento from "./pages/rank_evento.jsx";
 import Rank_geral from "./pages/rank_geral.jsx";
+import Eventos from "./pages/eventos.jsx";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/rank_evento" element={<Rank_evento />}/>
             <Route path="/rank_geral" element={<Rank_geral />}/>
             <Route path="/inicio" element={<Inicio />}/>
+            <Route path="/eventos" element={<Eventos/>}/>
           </Routes>
         </BrowserRouter>
       </div>

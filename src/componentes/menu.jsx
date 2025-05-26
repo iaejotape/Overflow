@@ -44,7 +44,7 @@ export default function Menu() {
         <nav className={styles.nav}>
           <div className={styles.fluxo_central}>
             <div className={styles.opcao} >
-              <a href="./inicio" title="Inicio" className={`${styles.nav_link} ${currentPath === "/inicio" ? styles.active : ""}`}>
+              <a href="/inicio" title="Inicio" className={`${styles.nav_link} ${currentPath === "/inicio" ? styles.active : ""}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-grid-alt ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Início</span>
@@ -52,7 +52,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="./rank_geral" title="Classificações" className={`${styles.nav_link} ${currentPath === "/rank_geral" ? styles.active : ""}`}>
+              <a href="/rank_geral" title="Classificações" className={`${styles.nav_link} ${currentPath === "/rank_geral" ? styles.active : ""}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-trophy ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Classificações</span>
@@ -60,7 +60,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="./menuquestao" title="Lista de Questões" className={`${styles.nav_link} ${currentPath === "/menuquestao" ? styles.active : ""}`}>
+              <a href="/menuquestao" title="Lista de Questões" className={`${styles.nav_link} ${currentPath === "/menuquestao" ? styles.active : ""}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bxs-balloon ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Questões</span>
@@ -68,7 +68,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="./editor" title="Editor de Código" className={`${styles.nav_link} ${currentPath === "/editor" ? styles.active : ""}`}>
+              <a href="/editor" title="Editor de Código" className={`${styles.nav_link} ${currentPath === "/editor" ? styles.active : ""}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-terminal ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Editor</span>
@@ -76,7 +76,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" title="Todos os Eventos" className={`${styles.nav_link} ${currentPath === "/eventos" ? styles.active : ""}`}>
+              <a href="/eventos" title="Todos os Eventos" className={`${styles.nav_link} ${currentPath === "/eventos" ? styles.active : ""}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-joystick ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Eventos</span>
