@@ -68,7 +68,7 @@
 .containerRow{
     display:flex;
     flex-direction:column;
-    min-height:80vh;
+    min-height:90vh;
 }
 
 .resumoEventos {
@@ -83,6 +83,7 @@
   padding: 2rem;
   flex-wrap: wrap;
   min-width:20vw;
+  
 }
 
 .boxResumo1 {
@@ -220,7 +221,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    height:80vh;
+    height:85vh;
     width:80vw;
     overflow-y:auto;
     overflow-x:hidden;
