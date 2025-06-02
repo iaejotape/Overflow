@@ -23,7 +23,6 @@ import { useNavigate } from "react-router-dom";
 import CodeMirror from "@uiw/react-codemirror";
 import { cpp } from "@codemirror/lang-cpp";
 import { HighlightStyle, tags as t } from "@codemirror/highlight";
-import { max } from "d3-array";
 
 // Estilos e tema do editor copiados do editor-codigo.jsx
 export const mochaHighlightStyle = HighlightStyle.define([
@@ -148,7 +147,7 @@ const TelaResQuestao = () => {
               backgroundColor: "rgba(0, 0, 0, 0.2)",
               color: "#666",
               border: "none",
-              minWidth: "80px",
+              minWidth: "50px",
             },
             ".cm-activeLineGutter": {
               backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -231,25 +230,20 @@ const TelaResQuestao = () => {
               <button
                 className="btn-debug"
                 onClick={() => {
-                  const code = editorViewRef.current.state.doc.toString();
-
-                  // Dividir o código em linhas
+                  // Usar a variável code ao invés de editorViewRef
                   const lines = code.split("\n");
                   let lineNumber = 1;
 
-                  // Simular debug linha por linha
                   const debugInterval = setInterval(() => {
                     if (lineNumber <= lines.length) {
                       const currentLine = lines[lineNumber - 1].trim();
 
                       if (currentLine && !currentLine.startsWith("#")) {
-                        // Se encontrar o print com a saída esperada
                         if (
                           currentLine.includes('print("Olá Overflows!!")') ||
                           currentLine.includes("print('Olá Overflows!!')")
                         ) {
                           clearInterval(debugInterval);
-                          // Navegar para a tela de acerto
                           navigate("/verificacao");
                           return;
                         }
@@ -257,15 +251,12 @@ const TelaResQuestao = () => {
                       lineNumber++;
                     } else {
                       clearInterval(debugInterval);
-                      // Navegar para a tela de erro indefinido
                       navigate("/erro");
                     }
-                  }, 1500); // Intervalo de 1.5 segundos entre cada linha
+                  }, 1500);
 
-                  // Feedback visual do botão
                   const btn = document.querySelector(".btn-debug");
                   btn.style.background = "#2196F3";
-
                   setTimeout(() => {
                     btn.style.background = "";
                   }, lines.length * 1500 + 1000);
@@ -287,7 +278,7 @@ const TelaResQuestao = () => {
               <button
                 className="btn-executar"
                 onClick={() => {
-                  const code = editorViewRef.current.state.doc.toString();
+                  // Usar a variável code ao invés de editorViewRef.current
                   const expectedOutput = "Olá Overflows!!";
 
                   if (
@@ -384,16 +375,9 @@ const TelaResQuestao = () => {
               <button
                 className="btn-download"
                 onClick={() => {
-                  // Obter o código do editor
-                  const code = editorViewRef.current.state.doc.toString();
-
-                  // Criar um blob com o código
+                  // Usar a variável code ao invés de editorViewRef
                   const blob = new Blob([code], { type: "text/plain" });
-
-                  // Criar um URL para o blob
                   const url = URL.createObjectURL(blob);
-
-                  // Criar um elemento de link para download
                   const a = document.createElement("a");
                   a.href = url;
                   a.download = `codigo_${selectedLanguage}.${
@@ -405,13 +389,9 @@ const TelaResQuestao = () => {
                       ? "java"
                       : "cpp"
                   }`;
-
-                  // Adicionar o link ao documento, clicar nele e removê-lo
                   document.body.appendChild(a);
                   a.click();
                   document.body.removeChild(a);
-
-                  // Liberar o URL
                   URL.revokeObjectURL(url);
                 }}
                 title="Baixar código"
@@ -435,14 +415,10 @@ const TelaResQuestao = () => {
               <button
                 className="btn-copiar"
                 onClick={() => {
-                  // Obter o código do editor
-                  const code = editorViewRef.current.state.doc.toString();
-
-                  // Copiar para a área de transferência
+                  // Usar a variável code ao invés de editorViewRef
                   navigator.clipboard
                     .writeText(code)
                     .then(() => {
-                      // Feedback visual temporário
                       const btn = document.querySelector(".btn-copiar");
                       btn.style.background = "#4CAF50";
                       setTimeout(() => {
@@ -473,15 +449,8 @@ const TelaResQuestao = () => {
               <button
                 className="btn-atualizar"
                 onClick={() => {
-                  // Resetar o editor para o estado inicial
-                  const transaction = editorViewRef.current.state.update({
-                    changes: {
-                      from: 0,
-                      to: editorViewRef.current.state.doc.length,
-                      insert: "# Escreva seu código aqui\n",
-                    },
-                  });
-                  editorViewRef.current.dispatch(transaction);
+                  // Usar setCode para resetar o editor
+                  setCode("// Digite o seu código aqui\n");
                 }}
                 title="Limpar editor"
               >
