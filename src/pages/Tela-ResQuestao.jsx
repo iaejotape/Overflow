@@ -23,6 +23,7 @@ import { useNavigate } from "react-router-dom";
 import CodeMirror from "@uiw/react-codemirror";
 import { cpp } from "@codemirror/lang-cpp";
 import { HighlightStyle, tags as t } from "@codemirror/highlight";
+import { max } from "d3-array";
 
 // Estilos e tema do editor copiados do editor-codigo.jsx
 export const mochaHighlightStyle = HighlightStyle.define([
@@ -147,7 +148,7 @@ const TelaResQuestao = () => {
               backgroundColor: "rgba(0, 0, 0, 0.2)",
               color: "#666",
               border: "none",
-              minWidth: "50px",
+              minWidth: "80px",
             },
             ".cm-activeLineGutter": {
               backgroundColor: "rgba(255, 255, 255, 0.1)",
