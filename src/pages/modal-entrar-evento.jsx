@@ -5,9 +5,11 @@ import badge from '../assets/img_eventos/Badge.png';
 import qtd from '../assets/img_eventos/qtd.png';
 import eye from '../assets/img_eventos/eye.png';
 import lock from '../assets/img_eventos/lock.png';
+import { useState } from 'react';
 
 
-const EntrarEventoModal = ({ onClose }) => {
+const EntrarEventoModal = ({ onClose, inputId }) => {
+    const [showPassword, setShowPassword] = useState(false);
   return (
     <div className={styles.overlay}>
       <div className={styles.modalContainer}>
@@ -73,10 +75,10 @@ const EntrarEventoModal = ({ onClose }) => {
           <div className={styles.actionSection}>
             <label htmlFor="eventPassword" className={styles.passwordLabel}>Senha:</label>
             <div className={styles.inputFieldContainer}>
-              <img  className={styles.lock} src={lock} alt="" />
+              <img  onClick={() => setShowPassword(!showPassword)} className={styles.lock} src={lock} alt="" />
               <input
                 type="password"
-                id="eventPassword"
+                id={inputId}
                 placeholder="Digite a senha do evento..."
                 className={styles.inputElement}
               />
