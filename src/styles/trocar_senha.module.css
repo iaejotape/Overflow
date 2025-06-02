@@ -1,0 +1,120 @@
+@import './variables.css';
+.main{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Nunito', sans-serif;
+}
+.logo{
+    position: relative;
+    align-self: center;
+}
+.logo img{
+    animation: piscar 4s infinite;
+    user-select: none;
+}
+.container{
+    margin-top: 3rem;
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    max-width: 29rem;
+    height: 40.5rem;
+    border-radius: 1rem;
+    position: relative;
+}
+.form_senha{
+    padding: 0rem 2rem;
+}
+.form_senha h1{
+    text-align: center;
+    font-size: 3rem;
+    font-weight:800;
+    padding: 4rem 0rem 3rem 0rem;
+}
+.form_senha h2{
+    padding: 1.5rem 0rem 0.2rem 0.3rem ;
+    font-weight: bold;
+}
+.form_senha input{
+  border-radius: 0.4rem;
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  font-size: 1.2rem;
+}
+.form_senha a{
+    color: var(--first-color);
+    text-decoration:underline;
+}
+.esqueci_senha{
+    text-align: right;
+    padding: 0.3rem 1rem 0rem 0rem;
+}
+
+.input_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input_container input {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    font-size: 1rem;
+}
+
+.icon {
+    position: absolute;
+    left: 0.7rem;
+    color: #464646;
+}
+
+.icon_eye {
+    position: absolute;
+    right: 0.7rem;
+    cursor: pointer;
+    color: #242323;
+}
+
+.botoes{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+.botao1 button{
+    width: 12rem;
+    height: 2.3rem;
+    border-radius: 1rem;
+    color: var(--color-white);
+    background-color: var(--color-botoes);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-weight: 550;
+    font-size: 1rem;
+}
+.botao2 button{
+    width: 9rem;
+    height: 2rem;
+    border-radius: 1rem;
+    color: var(--color-white);
+    background-color: var(--color-red-icon);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-weight: 550;
+    font-size: 1rem;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes piscar {
+0%   { opacity: 0.3; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.3; 
+    }
+}
