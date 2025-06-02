@@ -1,0 +1,427 @@
+:root {
+  /* Suas variáveis originais */
+  --color-background: var(--color-roxo-claro);
+  --color-container-bg: var(--color-roxo-claro);
+  --color-input-bg: var(--color-roxo-escuro);
+  --color-text: #ffffff;
+  --color-text-label: #b0aec4;
+  --color-border: #3b365b;
+  --color-dificil: var(--color-red-icon);
+  --color-intermediario: var(--color-yellow);
+  --color-facil: var(--color-equipe-caisTech);
+  --color-button-add: var(--color-botoes);
+  --color-button-add-hover: #2eb571;
+  --color-icon: #b0aec4;
+}
+
+/* Container principal - Classe Renomeada */
+.add-questao-container-addq {
+  padding: 30px;
+  background-color: var(--color-roxo-claro);
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+/* Formulário - Classe Renomeada */
+.add-questao-form-addq {
+  display: flex;
+  gap: 50px;
+  padding: 40px;
+  background-color: var(--color-container-bg);
+  border-radius: 15px;
+  color: var(--color-text);
+  width: 100%;
+  max-width: 1800px;
+}
+
+/* Colunas - Classe Renomeada */
+.form-column-addq {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Grupo de formulário - Classe Renomeada */
+.form-group-addq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Labels dentro do grupo específico */
+.form-group-addq label {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--color-text-label);
+}
+
+/* Wrapper de input - Classe Renomeada */
+.input-wrapper-addq {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Inputs e Textareas dentro do wrapper específico */
+.input-wrapper-addq input[type="text"],
+.input-wrapper-addq input[type="number"],
+.input-wrapper-addq textarea {
+  width: 100%;
+  padding: 15px 45px 15px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  font-size: 20px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-wrapper-addq input[type="text"]:focus,
+.input-wrapper-addq input[type="number"]:focus,
+.input-wrapper-addq textarea:focus {
+  border-color: var(--first-color-light);
+}
+
+.input-wrapper-addq textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* Ícone de lápis - Classe Renomeada */
+.pencil-icon-addq {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-icon);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Ajuste do ícone para Textarea */
+.input-wrapper-addq textarea + .pencil-icon-addq {
+  top: 20px; /* Ajuste para alinhar melhor com a primeira linha */
+  transform: none;
+}
+
+/* Categorias/Tags - Classe Renomeada */
+.categorias-tags-addq {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(70px, 1fr)
+  ); 
+  gap: 10px;
+}
+
+/* Label do Checkbox - Classe Renomeada */
+.checkbox-label-addq {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 22px !important; 
+  color: var(--color-text-label);
+  font-weight: 400;
+  position: relative;
+  padding-left: 20px; 
+}
+
+/* Esconde o checkbox padrão */
+.checkbox-label-addq input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+}
+
+/* Checkbox customizado - Classe Renomeada */
+.custom-checkbox-addq {
+  width: 15px; /* Reduzido de 20px para 15px */
+  height: 15px; /* Reduzido de 20px para 15px */
+  border: 2px solid var(--color-text-label);
+  border-radius: 50%;
+  margin-right: 8px; /* Reduzido de 10px para 8px */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Indicador do Checkbox - Classe Renomeada */
+.custom-checkbox-addq::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-text);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Checkbox marcado - Classe Renomeada */
+.checkbox-label-addq input[type="checkbox"]:checked + .custom-checkbox-addq {
+  border-color: var(--color-text);
+}
+
+.checkbox-label-addq
+  input[type="checkbox"]:checked
+  + .custom-checkbox-addq::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Opções de Dificuldade - Classe Renomeada */
+.dificuldade-options-addq {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Botão de Dificuldade - Classe Renomeada */
+.btn-dificuldade-addq {
+  padding: 20px 35px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-dificuldade-addq:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Rádio customizado - Classe Renomeada */
+.custom-radio-addq {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Indicador do Rádio - Classe Renomeada */
+.custom-radio-addq::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Botões de dificuldade específicos */
+.btn-dificuldade-addq.dificil {
+  background-color: var(--color-dificil);
+  color: white;
+}
+
+.btn-dificuldade-addq.intermediario {
+  background-color: var(--color-intermediario);
+  color: white;
+}
+.btn-dificuldade-addq.intermediario .custom-radio-addq {
+  border-color: white;
+}
+.btn-dificuldade-addq.intermediario .custom-radio-addq::after {
+  background-color: white;
+}
+
+.btn-dificuldade-addq.facil {
+  background-color: var(--color-facil);
+  color: white;
+}
+
+/* Botão selecionado - Classe Renomeada */
+.btn-dificuldade-addq.selected-addq .custom-radio-addq {
+  border-color: white;
+}
+.btn-dificuldade-addq.intermediario.selected-addq .custom-radio-addq {
+  border-color: white;
+}
+
+.btn-dificuldade-addq.selected-addq .custom-radio-addq::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Botão Adicionar - Classe Renomeada */
+.btn-adicionar-addq {
+  padding: 20px 37px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    var(--color-facil),
+    var(--color-button-add)
+  );
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  align-self: center;
+  margin-top: auto;
+}
+
+.btn-adicionar-addq:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-button-add),
+    var(--color-button-add-hover)
+  );
+  transform: translateY(-2px);
+}
+
+/* --- Responsividade (mantida, mas aplicada às classes renomeadas) --- */
+
+@media (max-width: 768px) {
+  .add-questao-form-addq {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+  }
+
+  .form-column-addq {
+    gap: 30px;
+  }
+
+  .form-group-addq label {
+    font-size: 22px;
+  }
+
+  .input-wrapper-addq input[type="text"],
+  .input-wrapper-addq input[type="number"],
+  .input-wrapper-addq textarea {
+    font-size: 18px;
+    padding: 15px 40px 15px 15px;
+  }
+
+  .btn-dificuldade-addq {
+    padding: 18px 30px;
+    font-size: 18px;
+  }
+
+  .btn-adicionar-addq {
+    font-size: 22px;
+    padding: 18px 35px;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-questao-container-addq {
+    padding: 20px;
+  }
+
+  .add-questao-form-addq {
+    padding: 25px;
+    gap: 30px;
+  }
+
+  .form-group-addq label {
+    font-size: 20px;
+  }
+
+  .input-wrapper-addq input[type="text"],
+  .input-wrapper-addq input[type="number"],
+  .input-wrapper-addq textarea {
+    font-size: 16px;
+    padding: 12px 35px 12px 15px;
+  }
+
+  .btn-dificuldade-addq {
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+
+  .pencil-icon-addq {
+    right: 12px;
+    font-size: 18px;
+  }
+
+  .btn-adicionar-addq {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+
+  .custom-checkbox-addq {
+    width: 18px;
+    height: 18px;
+  }
+
+  .custom-radio-addq {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .add-questao-form-addq {
+    max-width: 1800px;
+    gap: 50px;
+  }
+
+  .form-group-addq label {
+    font-size: 28px;
+  }
+
+  .input-wrapper-addq input[type="text"],
+  .input-wrapper-addq input[type="number"],
+  .input-wrapper-addq textarea {
+    font-size: 24px;
+    padding: 20px 50px 20px 25px;
+  }
+
+  .btn-dificuldade-addq {
+    padding: 25px 40px;
+    font-size: 24px;
+  }
+
+  .checkbox-label-addq {
+    font-size: 20px;
+  }
+
+  .custom-checkbox-addq {
+    width: 20px;
+    height: 20px;
+  }
+
+  .custom-radio-addq {
+    width: 24px;
+    height: 24px;
+  }
+
+  .btn-adicionar-addq {
+    font-size: 28px;
+    padding: 25px 45px;
+  }
+
+  .pencil-icon-addq {
+    font-size: 22px;
+    right: 20px;
+  }
+  .input-wrapper-addq textarea + .pencil-icon-addq {
+    top: 25px; /* Ajuste para telas maiores */
+  }
+}
