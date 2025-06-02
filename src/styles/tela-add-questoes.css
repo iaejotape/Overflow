@@ -1,0 +1,423 @@
+/* Estilos Globais (se necessário, ajuste as variáveis no seu arquivo CSS global) */
+:root {
+  --color-background: var(
+    --color-roxo-claro
+  ); /* Cor de fundo principal da página (ajuste conforme seu layout) */
+  --color-container-bg: var(
+    --color-roxo-claro
+  ); /* Cor de fundo do container do formulário */
+  --color-input-bg: var(
+    --color-roxo-escuro
+  ); /* Cor de fundo dos inputs e textareas */
+  --color-text: #ffffff; /* Cor principal do texto */
+  --color-text-label: #b0aec4; /* Cor do texto dos labels */
+  --color-border: #3b365b; /* Cor para bordas sutis, se necessário */
+  --color-dificil: var(--color-red-icon); /* Vermelho */
+  --color-intermediario: var(--color-yellow); /* Amarelo */
+  --color-facil: var(--color-equipe-caisTech); /* Verde */
+  --color-button-add: var(--color-botoes); /* Verde para o botão Adicionar */
+  --color-button-add-hover: #2eb571;
+  --color-icon: #b0aec4; /* Cor para ícones */
+}
+
+/* Container principal da tela de adicionar questões */
+.add-questao-container {
+  padding: 30px; /* Espaçamento interno */
+  background-color: var(
+    --color-roxo-claro
+  ); /* Fundo geral da área de conteúdo */
+  min-height: calc(
+    100vh - 60px
+  ); /* Ajuste a altura conforme o header do seu Layout */
+  display: flex;
+  justify-content: center; /* Centraliza o formulário na tela */
+  align-items: flex-start; /* Alinha no topo */
+  border-radius: 10px;
+}
+
+/* Estilização do formulário */
+.add-questao-form {
+  display: flex;
+  gap: 50px; /* Espaço entre as colunas */
+  padding: 40px;
+  background-color: var(--color-container-bg);
+  border-radius: 15px; /* Bordas mais arredondadas */
+  color: var(--color-text);
+  width: 100%;
+  max-width: 1800px; /* Largura máxima do formulário */
+}
+
+/* Colunas do formulário */
+.form-column {
+  flex: 1; /* Faz as colunas ocuparem espaço igual */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Espaço entre os grupos de formulário */
+}
+
+/* Grupo de formulário (label + input/textarea) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Espaço entre label e input */
+}
+
+/* Estilo dos Labels */
+label {
+  font-size: 26px;
+  font-weight: 500; /* Peso da fonte */
+  color: var(--color-text-label);
+}
+
+/* Wrapper para input e ícone */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo dos Inputs e Textareas */
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 15px 45px 15px 20px; /* Espaço interno (direita maior para o ícone) */
+  border: 1px solid var(--color-border); /* Borda sutil */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  font-size: 20px;
+  outline: none; /* Remove o contorno padrão */
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: var(--first-color-light); /* Muda a cor da borda ao focar */
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
+  min-height: 100px; /* Altura mínima */
+  font-family: inherit; /* Garante a mesma fonte */
+}
+
+/* Estilo do ícone de lápis (placeholder) */
+.pencil-icon {
+  position: absolute;
+  right: 15px; /* Posiciona o ícone à direita */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-icon);
+  font-size: 18px; /* Tamanho do ícone */
+  pointer-events: none; /* Não interfere no clique do input */
+}
+
+/* Seção Categoria/Tags - Checkboxes customizados */
+.categorias-tags {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* Layout responsivo */
+  gap: 15px; /* Espaço entre as opções */
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--color-text-label);
+  font-weight: 400;
+}
+
+/* Esconde o checkbox padrão */
+.checkbox-label input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+/* Estilo do checkbox customizado (círculo) */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-text-label);
+  border-radius: 50%; /* Faz ser um círculo */
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Estilo do indicador dentro do círculo (quando marcado) */
+.custom-checkbox::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-text);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Mostra o indicador quando o checkbox está marcado */
+.checkbox-label input[type="checkbox"]:checked + .custom-checkbox {
+  border-color: var(--color-text); /* Muda a cor da borda */
+}
+
+.checkbox-label input[type="checkbox"]:checked + .custom-checkbox::after {
+  transform: translate(-50%, -50%) scale(1); /* Mostra o círculo interno */
+}
+
+/* Seção Dificuldade - Botões customizados */
+.dificuldade-options {
+  display: flex;
+  gap: 30px; /* Espaço entre os botões */
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+.btn-dificuldade {
+  padding: 20px 35px;
+  border: none;
+  border-radius: 20px; /* Bordas bem arredondadas */
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o círculo e o texto */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden; /* Para o efeito de seleção */
+}
+
+.btn-dificuldade:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Círculo indicador dentro dos botões de dificuldade */
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.7); /* Borda branca semi-transparente */
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Indicador interno do círculo (quando selecionado) */
+.custom-radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Estilos específicos para cada botão de dificuldade */
+.btn-dificuldade.dificil {
+  background-color: var(--color-dificil);
+  color: white;
+}
+
+.btn-dificuldade.intermediario {
+  background-color: var(--color-intermediario);
+  color: white; /* Texto escuro para contraste com amarelo */
+}
+.btn-dificuldade.intermediario .custom-radio {
+  border-color: white; /* Borda escura */
+}
+.btn-dificuldade.intermediario .custom-radio::after {
+  background-color: white; /* Indicador escuro */
+}
+
+.btn-dificuldade.facil {
+  background-color: var(--color-facil);
+  color: white;
+}
+
+/* Estilo quando o botão de dificuldade está selecionado */
+.btn-dificuldade.selected .custom-radio {
+  border-color: white; /* Borda mais forte */
+}
+.btn-dificuldade.intermediario.selected .custom-radio {
+  border-color: white;
+}
+
+.btn-dificuldade.selected .custom-radio::after {
+  transform: translate(-50%, -50%) scale(1); /* Mostra o indicador */
+}
+
+/* Botão Adicionar Questão */
+.btn-adicionar {
+  padding: 20px 37px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    var(--color-facil),
+    var(--color-button-add)
+  ); /* Gradiente verde */
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  align-self: center; /* Alinha o botão à direita na coluna */
+  margin-top: auto; /* Empurra o botão para baixo */
+}
+
+.btn-adicionar:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-button-add),
+    var(--color-button-add-hover)
+  );
+  transform: translateY(-2px);
+}
+
+/* --- Responsividade --- */
+
+/* Telas menores (tablets e celulares) */
+@media (max-width: 768px) {
+  .add-questao-form {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+  }
+
+  .form-column {
+    gap: 30px;
+  }
+
+  label {
+    font-size: 22px; /* Reduzido um pouco, mas mantendo proporcional */
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    font-size: 18px;
+    padding: 15px 40px 15px 15px;
+  }
+
+  .btn-dificuldade {
+    padding: 18px 30px;
+    font-size: 18px;
+  }
+
+  .btn-adicionar {
+    font-size: 22px;
+    padding: 18px 35px;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+/* Telas muito pequenas (celulares menores) */
+@media (max-width: 480px) {
+  .add-questao-container {
+    padding: 20px;
+  }
+
+  .add-questao-form {
+    padding: 25px;
+    gap: 30px;
+  }
+
+  label {
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    font-size: 16px;
+    padding: 12px 35px 12px 15px;
+  }
+
+  .btn-dificuldade {
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+
+  .pencil-icon {
+    right: 12px;
+    font-size: 18px;
+  }
+
+  .btn-adicionar {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+
+  .custom-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .custom-radio {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Media Query para telas grandes (1920x1080 e similares) */
+@media screen and (min-width: 1920px) {
+  .add-questao-form {
+    max-width: 1800px;
+    gap: 50px;
+  }
+
+  label {
+    font-size: 28px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    font-size: 24px;
+    padding: 20px 50px 20px 25px;
+  }
+
+  .btn-dificuldade {
+    padding: 25px 40px;
+    font-size: 24px;
+  }
+
+  .checkbox-label {
+    font-size: 20px;
+  }
+
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .custom-radio {
+    width: 24px;
+    height: 24px;
+  }
+
+  .btn-adicionar {
+    font-size: 28px;
+    padding: 25px 45px;
+  }
+
+  .pencil-icon {
+    font-size: 22px;
+    right: 20px;
+  }
+}
