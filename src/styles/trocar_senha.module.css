@@ -1,8 +1,14 @@
 @import './variables.css';
 .main{
-    display: flex;
-    justify-content: space-around;
     font-family: 'Nunito', sans-serif;
+    position:relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    height: 100vh;
+    flex-wrap: wrap;
 }
 .logo{
     position: relative;
@@ -13,13 +19,20 @@
     user-select: none;
 }
 .container{
-    margin-top: 3rem;
+    /* margin-top: 3rem;
     position: relative;
     background-color: var(--color-white);
-    width: 100%;
+    border-radius: 1rem; */
     max-width: 29rem;
-    height: 40.5rem;
-    border-radius: 1rem;
+    width: 100%;
+    max-height: 40.5rem;
+    height: 90%;
+    border-radius: 20px;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
     position: relative;
 }
 .form_senha{
@@ -29,7 +42,7 @@
     text-align: center;
     font-size: 3rem;
     font-weight:800;
-    padding: 4rem 0rem 3rem 0rem;
+    padding: 1.2rem 0rem 2rem 0rem;
 }
 .form_senha h2{
     padding: 1.5rem 0rem 0.2rem 0.3rem ;
