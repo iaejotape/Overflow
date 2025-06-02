@@ -1,0 +1,255 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1003;
+  padding: 15px; 
+}
+
+.modalContainer {
+  background-color: var(--color-roxo-background);
+  padding: 20px; 
+  border-radius: 16px; 
+  width: 90%;
+  max-width: 550px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px; 
+  padding-bottom: 15px;
+  background:var(--color-roxo-box);
+  border-radius:16px 16px 0px 0px;
+  margin: -30px -20px 20px -20px; 
+  padding:10px 20px;
+  gap:20px;
+}
+
+.title {
+  font-size: 1.8rem; 
+  font-weight: 700; 
+  flex-grow: 1;
+  text-align: left;
+  position: relative;
+  padding-bottom: 5px; 
+  margin-bottom: -5px;
+  border-bottom: none; 
+  display: inline-block;
+}
+
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 73%;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+.lock{
+    margin-right:5px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px; 
+  color: #ffffff;
+  font-size: 1.9rem; 
+  font-weight: bold; 
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.contentBody {
+  display: flex;
+  flex-wrap: wrap; 
+  margin-bottom: 25px; 
+}
+
+
+.infoSection {
+  flex: 1.2; 
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+  gap: 18px; 
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+  gap: 15px 20px; 
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.infoItem .iconPlaceholder {
+  font-size: 1.3rem; 
+  color: #cccccc; 
+  flex-shrink: 0;
+}
+
+.infoItem div {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoLabel {
+  font-size: 0.8rem; 
+  color: #a0a0b0;
+  margin-bottom: 3px;
+  text-transform: uppercase; 
+}
+
+.infoValue {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #333; 
+  width: 100%;
+  margin: 5px 0; 
+}
+
+
+.actionSection {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.passwordLabel {
+  font-size: 0.9rem; 
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.inputFieldContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px; 
+  background-color: #1f1f30; 
+  border: 1px solid #4a4a6a; 
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 20px; 
+}
+
+.inputFieldContainer .iconPlaceholder 
+{
+  margin-right: 12px;
+  flex-shrink: 0;
+  color: #a0a0b0; 
+  font-size: 1.2rem;
+}
+
+.inputElement {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #e0e0e0;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.inputElement::placeholder {
+  color: #777; 
+
+}
+
+.submitButton {
+  padding: 14px 20px; 
+  background-color: var(--color-botoes);
+  color: #ffffff; 
+  border: none;
+  border-radius: 8px; 
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton:hover {
+  background-color: var(--color-green-black); 
+}
+
+.submitButton:active {
+  transform: scale(0.98); 
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px; 
+  padding-top: 15px;
+  border-top: 1px solid #333;
+}
+.footerText {
+  font-size: 0.9rem;
+  color: #888; 
+}
+
+.iconPlaceholder {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .modalContainer {
+    padding: 20px;
+    max-width: 95%;
+  }
+  .contentBody {
+    flex-direction: column; 
+    gap: 25px;
+  }
+  .infoSection, .actionSection {
+    flex: none; 
+    width: 100%; 
+    min-width: unset;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .header .iconPlaceholder {
+    font-size: 2rem;
+  }
+  .closeButton {
+    font-size: 1.7rem;
+  }
+}
+

@@ -9,9 +9,30 @@ import eye from "../assets/img_eventos/eye.png";
 import users from "../assets/img_eventos/users.png"
 import qtd from "../assets/img_eventos/qtd.png"
 import { useNavigate } from "react-router-dom";
+import ModalCriar from "./modal-criar-evento";
+import { useState } from "react";
+import EntrarEventoModal from "./modal-entrar-evento";
 
 export default function Eventos() {
     const navigate = useNavigate();
+    const [mostrarModal, setMostrarModal] = useState(false);
+    const [mostrarModalEntrar, setMostrarModalEntrar] = useState(false);
+
+    const abrirModal = () => {
+      setMostrarModal(true);
+    };
+
+    const fecharModal = () => {
+      setMostrarModal(false);
+    };
+
+    const abrirModalEntrar = () => {
+      setMostrarModalEntrar(true);
+    };
+
+    const fecharModalEntrar = () => {
+      setMostrarModalEntrar(false);
+    };
   return (
     <Layout>
       <div className={styles.eventosContainer}>
@@ -93,7 +114,8 @@ export default function Eventos() {
                 </svg>
                 Meus Eventos
               </button>
-              <button className={styles.btnVerde}>
+              <button className={styles.btnVerde}
+              onClick={abrirModal}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
@@ -125,6 +147,7 @@ export default function Eventos() {
                 </svg>
                 Criar
               </button>
+               {mostrarModal && <ModalCriar onClose={fecharModal} />}
             </div>
           </div>
           <div className={styles.listaEventos}>
@@ -191,9 +214,12 @@ export default function Eventos() {
                     <img src={users} alt="" />
                     Usuários:</strong> {evento.usuarios} Pessoas
                 </p>
+                <div onClick={abrirModalEntrar}>
                 <div className={styles.iconeEntrar}>
-                  <BsArrowRight />
+                  <BsArrowRight /> 
                 </div>
+                </div>
+                {mostrarModalEntrar && <EntrarEventoModal onClose={fecharModalEntrar} />}
               </div>
             ))}
           </div>

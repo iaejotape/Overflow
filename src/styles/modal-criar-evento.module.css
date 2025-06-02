@@ -1,0 +1,181 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
+}
+
+.modalContainer {
+  background-color: var(--color-roxo-background);
+  padding: 0px 30px;
+  border-radius: 16px;
+  width: 80%;
+  height:85%;
+  max-width: 410px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #ffff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px; 
+  background:var(--color-roxo-box);
+  margin: -30px -30px 20px -30px; 
+  border-radius:16px 16px 0px 0px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  flex-grow: 1;
+  text-align: center;
+  color: #ffffff;
+  margin-left:-100px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right:20px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.inputFieldContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.inputFieldContainer svg {
+  margin-right: 10px;
+  flex-shrink: 0;
+  fill: #888;
+}
+
+.inputElement {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #e0e0e0;
+  font-size: 1em;
+  width: 100%;
+}
+
+.inputElement::placeholder {
+  color: #888;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectField {
+  width: 100%;
+  padding: 12px;
+  padding-right: 40px;
+  background:none;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: var(--color-text-placeholder);
+  font-size: 1em;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 1em;
+  outline: none;
+  cursor: pointer;
+}
+
+.selectField option{
+    background:var(--color-roxo-box);
+    color:#fff;
+}
+
+.option1{
+    display:flex;
+    align-items:center;
+    border-radius:6px;
+}
+
+.option2{
+    display:flex;
+    align-items:center;
+     border-radius:6px;
+}
+.textareaField {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background:none;
+  color: var(--color-text-placeholder);
+  font-size: 1em;
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  box-sizing: border-box;
+  font-family:Nunito;
+}
+
+
+.submitButton {
+  padding: 12px 20px;
+  background-color: var(--color-botoes);
+  color: #ffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.submitButton:hover {
+  background-color: var(--color-green-black);
+}
+
