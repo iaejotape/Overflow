@@ -17,6 +17,7 @@ import Rank_evento from "./pages/rank_evento.jsx";
 import Rank_geral from "./pages/rank_geral.jsx";
 import Eventos from "./pages/eventos.jsx";
 import TelaAddQuestoes from "./pages/Tela-add-questoes.jsx";
+import Trocar_senha from "./pages/tela_trocar_senha.jsx";
 import Contato from "./pages/tela-contato.jsx"
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/inicio" element={<Inicio />}/>
             <Route path="/eventos" element={<Eventos/>}/>
             <Route path="/addquestoes" element={<TelaAddQuestoes />}/>
+            <Route path="/trocar_senha" element={<Trocar_senha/>}/>
             <Route path="/contato" element={<Contato/>}/>
           </Routes>
         </BrowserRouter>
