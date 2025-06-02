@@ -1,0 +1,141 @@
+@import url(variables.css);
+
+.container {
+    margin: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 100px);
+}
+
+.formulario{
+    margin-top: 10px;
+}
+
+.botaoMensagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botaoMensagem button{
+    background-color: var(--color-botoes);
+    padding: 16px 30px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+}
+
+/* Exemplo de estilos adicionais */
+.inputWrapper {
+  margin-bottom: 1rem;
+}
+
+.inputIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: solid 2px #777;
+  border-radius: 10px;
+  padding: 4px;
+  color: #ffffff;
+}
+
+.inputIcon i {
+  position: absolute;
+  left: 10px;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.inputIcon input{
+  padding-left: 1.8rem;
+}
+
+.camposEnvio .titulo{
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 900;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.inputIcon input,
+.inputIcon textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  height: 1.8rem;
+  background-color: #161424;
+}
+
+.inputIcon input::placeholder{
+    color: #ffffff;
+}
+
+.inputIcon textarea {
+  height: calc(100vh - 480px);
+  resize: vertical;
+  font-size: 16px;
+}
+
+.inputIcon textarea::placeholder{
+    color: #ffffff;
+}
+
+.camposEnvio{
+    background-color: #161424;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90vh;
+}
+
+.nomeUsuario{
+
+}
+
+.redesContato{
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 20px;
+    width: 40rem;
+    margin-left: 10px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.tituloRedes{
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 900;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.cardsContato{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 20px;
+}
+
+.cardContato{
+    background-color: #161424;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 20px;
+    border-left: var(--color-icones) 20px solid;
+}
+
+.cardContato a{
+    text-decoration: none;
+    color: white;
+}
+
+.cardContato{
+    font-size: 34px;
+}

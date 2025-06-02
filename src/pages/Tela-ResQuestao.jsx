@@ -20,11 +20,78 @@ import {
   StreamLanguage,
 } from "@codemirror/language";
 import { useNavigate } from "react-router-dom";
+import CodeMirror from "@uiw/react-codemirror";
+import { cpp } from "@codemirror/lang-cpp";
+import { HighlightStyle, tags as t } from "@codemirror/highlight";
+
+// Estilos e tema do editor copiados do editor-codigo.jsx
+export const mochaHighlightStyle = HighlightStyle.define([
+  { tag: t.keyword, color: "#e74b77", fontWeight: "bold" },
+  { tag: [t.string, t.special(t.string)], color: "#a6e3a1" },
+  { tag: [t.number, t.bool, t.null], color: "#fab387" },
+  { tag: [t.comment], color: "#767779" },
+  { tag: [t.variableName], color: "#cdd6f4" },
+  { tag: [t.definition(t.variableName)], color: "#7eaaf1" },
+  { tag: [t.typeName, t.className], color: "#f9e2af" },
+  { tag: [t.tagName, t.attributeName], color: "#fab387" },
+  { tag: [t.atom], color: "#b4befe" },
+  { tag: [t.meta], color: "#89b4fa" },
+  { tag: [t.propertyName], color: "#cdd6f4" },
+  { tag: [t.operator], color: "#e74b77" },
+  { tag: [t.function(t.variableName)], color: "#cdd6f4" },
+  { tag: [t.constant(t.variableName)], color: "#fab387" },
+  { tag: [t.regexp], color: "#89b4fa" },
+]);
+
+const customTheme = EditorView.theme({
+  "&": {
+    fontSize: "16px",
+    height: "100%",
+    backgroundColor: "",
+    color: "#e74b77",
+    fontWeight: 600,
+    border: "none",
+    borderRadius: "20px",
+  },
+  ".cm-scroller": {
+    overflow: "auto",
+    height: "100%",
+    padding: "1rem",
+    fontFamily: "monospace",
+    backgroundColor: "#161424",
+    borderRadius: "20px",
+    border: "none",
+  },
+  ".cm-content": {
+    color: "#ffffff",
+    caretColor: "#7f849c",
+    borderRadius: "20px",
+    border: "none",
+  },
+  ".cm-gutters": {
+    backgroundColor: "#161424",
+    color: "#6c7086",
+    border: "none",
+  },
+  ".cm-activeLine": {
+    backgroundColor: "#313244",
+  },
+  ".cm-line": {
+    backgroundColor: "transparent",
+  },
+  ".cm-editor": {
+    backgroundColor: "#161424",
+    borderRadius: "20px",
+    border: "none",
+  },
+});
 
 const TelaResQuestao = () => {
   const editorRef = useRef(null);
   const editorViewRef = useRef(null);
   const [selectedLanguage, setSelectedLanguage] = useState("python");
+  const [code, setCode] = React.useState(`// Digite o seu código aqui
+`);
   const navigate = useNavigate();
 
   // Configuração do autocomplemento para Python
@@ -163,41 +230,33 @@ const TelaResQuestao = () => {
               <button
                 className="btn-debug"
                 onClick={() => {
-                  const code = editorViewRef.current.state.doc.toString();
-
-                  // Dividir o código em linhas
+                  // Usar a variável code ao invés de editorViewRef
                   const lines = code.split("\n");
                   let lineNumber = 1;
 
-                  // Simular debug linha por linha
                   const debugInterval = setInterval(() => {
                     if (lineNumber <= lines.length) {
                       const currentLine = lines[lineNumber - 1].trim();
 
                       if (currentLine && !currentLine.startsWith("#")) {
-                        // Se encontrar o print com a saída esperada
                         if (
                           currentLine.includes('print("Olá Overflows!!")') ||
                           currentLine.includes("print('Olá Overflows!!')")
                         ) {
                           clearInterval(debugInterval);
-                          // Navegar para a tela de acerto
-                          navigate("/tela-acerto");
+                          navigate("/verificacao");
                           return;
                         }
                       }
                       lineNumber++;
                     } else {
                       clearInterval(debugInterval);
-                      // Navegar para a tela de erro indefinido
-                      navigate("/erro_indefinido");
+                      navigate("/erro");
                     }
-                  }, 1500); // Intervalo de 1.5 segundos entre cada linha
+                  }, 1500);
 
-                  // Feedback visual do botão
                   const btn = document.querySelector(".btn-debug");
                   btn.style.background = "#2196F3";
-
                   setTimeout(() => {
                     btn.style.background = "";
                   }, lines.length * 1500 + 1000);
@@ -219,7 +278,7 @@ const TelaResQuestao = () => {
               <button
                 className="btn-executar"
                 onClick={() => {
-                  const code = editorViewRef.current.state.doc.toString();
+                  // Usar a variável code ao invés de editorViewRef.current
                   const expectedOutput = "Olá Overflows!!";
 
                   if (
@@ -252,7 +311,21 @@ const TelaResQuestao = () => {
             </div>
 
             <div className="painel-testes">
-              <div ref={editorRef} className="editor-container" />
+              {/* Substitua o antigo editor pelo novo: */}
+              <CodeMirror
+                value={code}
+                onChange={setCode}
+                style={{
+                  height: "60vh",
+                  width: "100%",
+                  marginLeft: "10px",
+                  marginRight: "10px",
+                  marginTop: "10px",
+                  borderRadius: "20px",
+                }}
+                theme="dark"
+                extensions={[cpp(), customTheme]}
+              />
             </div>
 
             <div className="botoes-esquerda">
@@ -302,16 +375,9 @@ const TelaResQuestao = () => {
               <button
                 className="btn-download"
                 onClick={() => {
-                  // Obter o código do editor
-                  const code = editorViewRef.current.state.doc.toString();
-
-                  // Criar um blob com o código
+                  // Usar a variável code ao invés de editorViewRef
                   const blob = new Blob([code], { type: "text/plain" });
-
-                  // Criar um URL para o blob
                   const url = URL.createObjectURL(blob);
-
-                  // Criar um elemento de link para download
                   const a = document.createElement("a");
                   a.href = url;
                   a.download = `codigo_${selectedLanguage}.${
@@ -323,13 +389,9 @@ const TelaResQuestao = () => {
                       ? "java"
                       : "cpp"
                   }`;
-
-                  // Adicionar o link ao documento, clicar nele e removê-lo
                   document.body.appendChild(a);
                   a.click();
                   document.body.removeChild(a);
-
-                  // Liberar o URL
                   URL.revokeObjectURL(url);
                 }}
                 title="Baixar código"
@@ -353,14 +415,10 @@ const TelaResQuestao = () => {
               <button
                 className="btn-copiar"
                 onClick={() => {
-                  // Obter o código do editor
-                  const code = editorViewRef.current.state.doc.toString();
-
-                  // Copiar para a área de transferência
+                  // Usar a variável code ao invés de editorViewRef
                   navigator.clipboard
                     .writeText(code)
                     .then(() => {
-                      // Feedback visual temporário
                       const btn = document.querySelector(".btn-copiar");
                       btn.style.background = "#4CAF50";
                       setTimeout(() => {
@@ -391,15 +449,8 @@ const TelaResQuestao = () => {
               <button
                 className="btn-atualizar"
                 onClick={() => {
-                  // Resetar o editor para o estado inicial
-                  const transaction = editorViewRef.current.state.update({
-                    changes: {
-                      from: 0,
-                      to: editorViewRef.current.state.doc.length,
-                      insert: "# Escreva seu código aqui\n",
-                    },
-                  });
-                  editorViewRef.current.dispatch(transaction);
+                  // Usar setCode para resetar o editor
+                  setCode("// Digite o seu código aqui\n");
                 }}
                 title="Limpar editor"
               >

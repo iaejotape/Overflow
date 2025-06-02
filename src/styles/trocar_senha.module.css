@@ -1,0 +1,133 @@
+@import './variables.css';
+.main{
+    font-family: 'Nunito', sans-serif;
+    position:relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+.logo{
+    position: relative;
+    align-self: center;
+}
+.logo img{
+    animation: piscar 4s infinite;
+    user-select: none;
+}
+.container{
+    /* margin-top: 3rem;
+    position: relative;
+    background-color: var(--color-white);
+    border-radius: 1rem; */
+    max-width: 29rem;
+    width: 100%;
+    max-height: 40.5rem;
+    height: 90%;
+    border-radius: 20px;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    position: relative;
+}
+.form_senha{
+    padding: 0rem 2rem;
+}
+.form_senha h1{
+    text-align: center;
+    font-size: 3rem;
+    font-weight:800;
+    padding: 1.2rem 0rem 2rem 0rem;
+}
+.form_senha h2{
+    padding: 1.5rem 0rem 0.2rem 0.3rem ;
+    font-weight: bold;
+}
+.form_senha input{
+  border-radius: 0.4rem;
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  font-size: 1.2rem;
+}
+.form_senha a{
+    color: var(--first-color);
+    text-decoration:underline;
+}
+.esqueci_senha{
+    text-align: right;
+    padding: 0.3rem 1rem 0rem 0rem;
+}
+
+.input_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input_container input {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    font-size: 1rem;
+}
+
+.icon {
+    position: absolute;
+    left: 0.7rem;
+    color: #464646;
+}
+
+.icon_eye {
+    position: absolute;
+    right: 0.7rem;
+    cursor: pointer;
+    color: #242323;
+}
+
+.botoes{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+.botao1 button{
+    width: 12rem;
+    height: 2.3rem;
+    border-radius: 1rem;
+    color: var(--color-white);
+    background-color: var(--color-botoes);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-weight: 550;
+    font-size: 1rem;
+}
+.botao2 button{
+    width: 9rem;
+    height: 2rem;
+    border-radius: 1rem;
+    color: var(--color-white);
+    background-color: var(--color-red-icon);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-weight: 550;
+    font-size: 1rem;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes piscar {
+0%   { opacity: 0.3; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.3; 
+    }
+}
