@@ -6,13 +6,19 @@ import ImagemAlbum from '../assets/img/centralMusic/Teto.jpg';
 import Heatmap from '../assets/img/heatmap.png';
 import Clima from '../assets/img/iconsClima/tempestade.png';
 import Calendario from "../componentes/Calendario";
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 import * as d3 from 'd3';
 import moment from 'moment';
+import Usuario from "./usuario.jsx";
 // import calendarHeatmapMini from '../assets/apis-internas/heatmap/calendar-heatmap-mini.js';
 // import '../assets/apis-internas/heatmap/calendar-heatmap-mini.css';
 
 export default function PaginaInicial() {
+    const [mostrarModal, setMostrarModal] = useState(false);
+    
+    const abrirModal = () => setMostrarModal(true);
+    const fecharModal = () => setMostrarModal(false);
     // const heatmapRef = useRef(null);
 
 //   useEffect(() => {
@@ -57,7 +63,9 @@ export default function PaginaInicial() {
                     <div className={styles.parteSuperior}>
                     <div className={styles.dadosGerais}>
                         <div className={styles.foto_perfil}>
-                            <img src={ImagemPerfil} height="200px" alt=""/>
+                            
+                                <img src={ImagemPerfil} height="200px" alt=""/>
+                            
                         </div>
                         <div className={styles.tituloEquipe}>
                             <div className={styles.tituloPrincipal}>
@@ -95,7 +103,7 @@ export default function PaginaInicial() {
                             </div>
                         </div>
                         <div className={styles.configuracao}>
-                            <span><i class="bi bi-gear"></i></span>
+                            <span onClick={abrirModal}><i class="bi bi-gear"></i></span>
                         </div>
                     </div>
                 </div>
@@ -188,7 +196,7 @@ export default function PaginaInicial() {
             </div>
         </div>
         </div>
-        
+        {mostrarModal && <Usuario onClose={fecharModal} />}
     </Layout>
     </div>
   );
