@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../styles/usuario.module.css';
 import Coruja from "../assets/img/coruja-mascote.png";
+import { useNavigate } from 'react-router-dom';
+
 // Ícone de fechar
 const CloseIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -80,9 +82,10 @@ const Usuario = ({ onClose, userData = {} }) => {
   };
 
   const handlePasswordChange = () => {
-    // Lógica para alterar senha
-    console.log('Alterando senha...');
+    navigate('/trocar_senha');
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className={styles.overlay}>
