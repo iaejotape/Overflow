@@ -112,7 +112,7 @@ export default function PaginaInicial() {
                             <div className={styles.conquistas}>
                                 <button className={styles.nav_button}><i class={`bx bx-chevron-left`}></i></button>
                                 <div className={styles.badges}>
-                                    <img src={ImagemConquista} alt="Badge 2" className="badge" title="Continue Focado(a) - 20Pts"/>
+                                    <img src={ImagemConquista} alt="Conquista - Continue Focado(a)" className={styles.badge} title="Continue Focado(a) - 20Pts"/>
                                 </div>
                                 <button className={styles.navButton}><i class='bx bx-chevron-right'></i></button>
                             </div>
@@ -124,7 +124,7 @@ export default function PaginaInicial() {
                             <div className={styles.insignias}>
                                 <button className={styles.nav_button}><i class='bx bx-chevron-left'></i></button>
                                 <div className={styles.badges}>
-                                    <img src={ImagemCaisTech} alt="Badge 1" className="badge" title="CaisTech - 30Pts"/>
+                                    <img src={ImagemCaisTech} alt="Insígnia - CaisTech 2025" className={styles.badge} title="CaisTech 2K25 - 30Pts"/>
                                 </div>
                                 <button className={styles.navButton}><i class='bx bx-chevron-right'></i></button>
                             </div>
