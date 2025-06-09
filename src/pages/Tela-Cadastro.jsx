@@ -23,7 +23,6 @@ function Cadastro() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Verifica campos vazios
     const invalidos = [];
     if (!nome) invalidos.push('nome');
     if (!apelido) invalidos.push('apelido');
@@ -51,7 +50,6 @@ function Cadastro() {
     alert("Conta criada com sucesso!");
   }
 
-  // Função para verificar se um campo é inválido
   const isCampoInvalido = (campo) => camposInvalidos.includes(campo);
 
   return (
