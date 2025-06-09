@@ -19,12 +19,6 @@ function rank_evento() {
                 <div className={styles.cabecario}>
                     <img src={coroa} alt="" />
                     <h1>Tabela de Classificação do Evento</h1>
-                    {/* <select className={styles.barra_pesquisa}>
-                        <option value="1">Classificação Geral - 2025</option>
-                        <option value="2">Classificação Geral - 2024</option>
-                        <option value="3">Classificação Geral - 2023</option>
-                    </select>
-                    <div className={styles.pesquisa}><button>Buscar</button></div> */}
                 </div>
                 <div className={styles.geral}>
                 <div className={styles.tabela}>

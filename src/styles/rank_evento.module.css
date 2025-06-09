@@ -3,15 +3,15 @@
     flex-direction: column;
     padding-top: 5.5rem;
     align-items: center;
-    padding-left: 5rem;
     gap: 1rem;
     user-select: none;
 }
 .cabecario{
     display: flex;
     flex-direction: row;
-    max-width: 100%;
-    width: 86.7rem;
+    max-width: 96.8%;
+    width: 93%;
+    margin-left: 4.5rem;
     height: 6rem;
     border-radius: 1rem;
     background-color: var(--color-roxo-escuro);
@@ -56,7 +56,10 @@
     background-color: var(--color-roxo-escuro);
     padding: 1rem 1.5rem;
     border-radius: 1rem; 
-    width: 87rem;
+     max-width: 100%;
+    width: 93%;
+    height: 100%;
+    margin-left: 4.5rem; 
     justify-items: center;
 }
 .tabela h1{
@@ -66,7 +69,7 @@
     background-color: var(--color-white);
     border-radius: 1.5rem;
     max-width: 100%;
-    width: 85rem;
+    width: 100%;
     padding: 0.2rem;
 }
 .tabela table{
@@ -79,7 +82,7 @@
     color: #391B6C;
     font-weight: bold;
     font-size: 1.3rem;
-    width: 14rem;
+    width: 100%;
     height: 2.7rem;
     padding-top: 0.6rem;
 }
@@ -87,7 +90,7 @@
     font-size: 1.2rem;
     /* border: 0.1rem solid var(--color-white); */
     border-right: 0.15rem  solid var(--color-white);
-    width: 14rem;
+    width: 100%;
     text-align: center;
     height: 3.8rem;
     font-weight:bold;
@@ -95,7 +98,8 @@
 }
 .main_tabela{
     display: block;
-    height: 22rem;
+    max-height: 100%;
+    height: 53vh;
     overflow-y:scroll;
     padding-left: 0.2rem;
 }
@@ -175,13 +179,14 @@ tr{
     padding: 0.5rem 0rem;
     justify-items: center;
     table-layout: fixed;
+    height: min-content;
 }
 .botao{
     margin-top: 1.3rem;
     margin-bottom: 0.8rem;
     display: flex;
     flex-direction: row;
-    width: 47rem;
+    width: 50%;
     height: 5.7rem;
     background-color: var(--color-white);
     justify-content: center;
@@ -194,7 +199,8 @@ tr{
 .questao button, .classificacao button{
     justify-content: center;
     height: 3rem;
-    width: 12rem;
+    width: 100%;
+    padding: 0rem 0.5rem;
     border-radius: 0.7rem;
     cursor: pointer;
     font-weight: bold;
@@ -227,4 +233,9 @@ tr{
 
 .questao button:hover, .classificacao button:hover{
     transform: scale(1.1);
+}
+@media (min-height: 950px) {
+  .main_tabela {
+    height: 70vh;
+  }
 }
