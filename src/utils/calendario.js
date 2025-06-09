@@ -13,7 +13,7 @@ function createCalendar(month, year){
         const firstDayIndex = new Date(year, month, 1).getDay();
 
         let html = `<div class="titulo-calendario"><span id="month-year"><i class='bx bx-calendar-alt'></i> ${monthNames[month]}</span><span class="ano" id="month-year">${year}</span></div>`;
-        html += '<table>';
+        html += '<table style="width: 100%;">';
             html += '<tr><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr>';
 
             let day = 1;

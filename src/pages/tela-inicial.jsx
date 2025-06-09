@@ -48,6 +48,7 @@ export default function PaginaInicial() {
 
   return (
     // O que tiver aqui dentro já tem uma div pai chamada ".principal"
+    <div className="corpo" style={{ height: 'calc(100vh - 100px)', display: 'flex', flexDirection: 'column' }}>
     <Layout> 
         <div className={styles.container}>
         <div className={styles.lateral_esquerda}>
@@ -189,5 +190,6 @@ export default function PaginaInicial() {
         </div>
         
     </Layout>
+    </div>
   );
 }

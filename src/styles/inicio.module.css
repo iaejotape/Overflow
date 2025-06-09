@@ -26,6 +26,39 @@
     --backgroundcolor-card: #161424;
 }
 
+.corpo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.corpo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lateral_esquerda {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* cresce pra ocupar espaço */
+  overflow-y: auto; /* scrolla caso estoure */
+}
+
+.container_infos {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.info_perfil {
+  flex-shrink: 0; /* não encolhe */
+}
+
+.parteInferior {
+  margin-top: auto; /* joga pro final */
+}
+
 .container{
     display: flex;
     gap: 14px;
@@ -50,7 +83,7 @@
 
 .lateral_esquerda{
     color: var(--color-white);
-    flex:4.6; /* Aumenta o tamanho da área do editor */
+    flex:4; /* Aumenta o tamanho da área do editor */
 }
 
 .info_perfil{
@@ -64,6 +97,7 @@
     display: flex;
     justify-content: center;
     padding: 14px 0px;
+    height: calc(100vh - 450px);
 }
 
 .dadosGerais{
@@ -117,6 +151,21 @@
     overflow: hidden; /* Garante que sos badges fiquem dentro do contêiner */
 }
 
+.container_infos {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.info_perfil,
+.parteInferior {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
 .conquistas button, .insignias button{
     background-color: var(--color-roxo-claro);
     border: none;
@@ -148,6 +197,7 @@
     margin-top: 8px;
     background-color: var(--backgroundcolor-card);
     border-radius: 20px;
+    padding: 8px 0px;
 }
 
 .graficoPerfil{
@@ -179,13 +229,31 @@
     font-weight: bold;
 }
 
+.lateral_direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-white);
+  overflow-y: auto;
+}
+
+
 .containerCards{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 8px;
+    height: calc(100vh - 100px);
 }
+
+.containerCards {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ou space-around, ou center — você escolhe */
+}
+
 
 .clima{
     display: flex;
@@ -195,7 +263,6 @@
     background-color: #161424;
     border-radius: 20px;
     width: 100%;
-    padding: 6px 0px;
     gap: 5px;
 }
 
@@ -222,11 +289,59 @@
     font-size: 30px;
 }
 
+.clima,
+.calendarioContainer,
+.centralMusica {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clima {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  min-height: 100px;
+}
+
+.clima img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.calendarioContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; /* ESSENCIAL */
+}
+
+.calendarioContainer > #calendario {
+  width: 100%; /* ESSENCIAL também */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calendarioContainer table {
+  width: 100%;
+}
+
+.calendarioContainer {
+  min-width: 0; /* Impede travamento de largura com conteúdo fixo */
+}
 
 .calendarioContainer {
     background-color: #161424;
     border-radius: 20px;
-  /* padding: 10px; */
     color: #fff;
     font-size: 14px;
 }
@@ -353,4 +468,19 @@
     width: 80px;
     padding: 1px 0px;
     margin: 4px 0px;
+}
+
+.clima,
+.calendarioContainer,
+.centralMusica {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 20px; /* não deixa encolher mais que isso */
+  max-height: 100%;
+  overflow: hidden; /* impede quebra de layout */
+  box-sizing: border-box;
 }
