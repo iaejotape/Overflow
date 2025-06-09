@@ -1,8 +1,10 @@
 import Layout from '../componentes/layout';
 import styles from '../styles/inicio.module.css';
 import { pegarHora } from '../utils/momentoDia.js';
-import ImagemPerfil from '../assets/img/coruja-mascote.png'
+import ImagemPerfil from '../assets/img/coruja-mascote.png';
 import ImagemAlbum from '../assets/img/centralMusic/Teto.jpg';
+import ImagemCaisTech from '../assets/img/insignias/image.png';
+import ImagemConquista from '../assets/img/conquistas/image.png';
 import Heatmap from '../assets/img/heatmap.png';
 import Clima from '../assets/img/iconsClima/tempestade.png';
 import Calendario from "../componentes/Calendario";
@@ -109,11 +111,10 @@ export default function PaginaInicial() {
                             </div>
                             <div className={styles.conquistas}>
                                 <button className={styles.nav_button}><i class={`bx bx-chevron-left`}></i></button>
-                                <div className="badges">
-                                    <img src="/src/imgs/ifpi-logo-branco.png" alt="Badge 1" className="badge"/>
-                                    <img src="/src/imgs/ifpi-logo-branco.png" alt="Badge 2" className="badge"/>
+                                <div className={styles.badges}>
+                                    <img src={ImagemConquista} alt="Badge 2" className="badge" title="Continue Focado(a) - 20Pts"/>
                                 </div>
-                                <button className="nav-button"><i class='bx bx-chevron-right'></i></button>
+                                <button className={styles.navButton}><i class='bx bx-chevron-right'></i></button>
                             </div>
                         </div>
                         <div className={styles.parteConquista}>
@@ -122,11 +123,10 @@ export default function PaginaInicial() {
                             </div>
                             <div className={styles.insignias}>
                                 <button className={styles.nav_button}><i class='bx bx-chevron-left'></i></button>
-                                <div className="badges">
-                                    <img src="/src/imgs/ifpi-logo-branco.png" alt="Badge 1" className="badge"/>
-                                    <img src="/src/imgs/ifpi-logo-branco.png" alt="Badge 2" className="badge"/>
+                                <div className={styles.badges}>
+                                    <img src={ImagemCaisTech} alt="Badge 1" className="badge" title="CaisTech - 30Pts"/>
                                 </div>
-                                <button className="nav-button"><i class='bx bx-chevron-right'></i></button>
+                                <button className={styles.navButton}><i class='bx bx-chevron-right'></i></button>
                             </div>
                         </div>
                     </div>

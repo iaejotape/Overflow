@@ -103,6 +103,7 @@
 .dadosGerais{
     display: flex;
     justify-content: space-around;
+    gap: 20px;
     align-items: center;
 }
 
@@ -483,4 +484,33 @@
   max-height: 100%;
   overflow: hidden; /* impede quebra de layout */
   box-sizing: border-box;
+}
+
+.badges {
+  display: flex;
+  justify-content: flex-start; /* Alinha à esquerda */
+  align-items: center;
+  gap: 8px; /* Espaço entre as badges */
+}
+
+.badges img{
+    width: 46px;
+}
+
+.conquistas,
+.insignias {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.nav_button {
+  flex: none;
+}
+
+.navButton{
+    position: absolute;
+    right: 6px;
 }
