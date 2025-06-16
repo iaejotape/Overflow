@@ -107,7 +107,7 @@ export default function TelaMeusEventos() {
   };
 
   const handleCriar = () => {
-    alert("Criando novo evento...");
+    navigate("/modal-criar-evento");
   };
 
   const handleVoltar = () => {
