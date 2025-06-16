@@ -21,6 +21,7 @@ import Trocar_senha from "./pages/tela_trocar_senha.jsx";
 import Contato from "./pages/tela-contato.jsx"
 import Usuario from "./pages/usuario.jsx";
 import ModalDica from "./pages/modal-dica.jsx";
+import RecuperarSenha from "./pages/recuperar-senha.jsx";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path="/contato" element={<Contato/>}/>
             <Route path="/usuario" element={<Usuario/>}/>
             <Route path="/modaldica" element={<ModalDica/>}/>
+            <Route path="/recuperar-senha" element={<RecuperarSenha/>}/>
           </Routes>
         </BrowserRouter>
       </div>
