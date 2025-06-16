@@ -6,6 +6,7 @@ import { EditorView } from "@codemirror/view";
 import { python } from "@codemirror/lang-python";
 import { oneDark } from "@codemirror/theme-one-dark";
 import { autocompletion } from "@codemirror/autocomplete";
+import ModalDica from "./modal-dica.jsx";
 import {
   defaultKeymap,
   indentWithTab,
