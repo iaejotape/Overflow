@@ -138,20 +138,20 @@
   left: 0;
 }
 
-/* Checkbox customizado - Classe Renomeada */
+/* Checkbox customizado */
 .custom-checkbox-addq {
-  width: 15px; /* Reduzido de 20px para 15px */
-  height: 15px; /* Reduzido de 20px para 15px */
+  width: 15px; 
+  height: 15px; 
   border: 2px solid var(--color-text-label);
   border-radius: 50%;
-  margin-right: 8px; /* Reduzido de 10px para 8px */
+  margin-right: 8px;
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
 }
 
-/* Indicador do Checkbox - Classe Renomeada */
+/* Indicador do Checkbox */
 .custom-checkbox-addq::after {
   content: "";
   width: 7px;
@@ -165,7 +165,7 @@
   transition: transform 0.2s ease;
 }
 
-/* Checkbox marcado - Classe Renomeada */
+/* Checkbox marcado */
 .checkbox-label-addq input[type="checkbox"]:checked + .custom-checkbox-addq {
   border-color: var(--color-text);
 }
@@ -176,14 +176,14 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Opções de Dificuldade - Classe Renomeada */
+/* Opções de Dificuldade */
 .dificuldade-options-addq {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-/* Botão de Dificuldade - Classe Renomeada */
+/* Botão de Dificuldade */
 .btn-dificuldade-addq {
   padding: 20px 35px;
   border: none;
@@ -204,7 +204,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Rádio customizado - Classe Renomeada */
+/* Rádio customizado */
 .custom-radio-addq {
   width: 20px;
   height: 20px;
@@ -215,7 +215,7 @@
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Indicador do Rádio - Classe Renomeada */
+/* Indicador do Rádio */
 .custom-radio-addq::after {
   content: "";
   width: 10px;
@@ -251,7 +251,7 @@
   color: white;
 }
 
-/* Botão selecionado - Classe Renomeada */
+/* Botão selecionado */
 .btn-dificuldade-addq.selected-addq .custom-radio-addq {
   border-color: white;
 }
@@ -263,7 +263,7 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Botão Adicionar - Classe Renomeada */
+/* Botão Adicionar */
 .btn-adicionar-addq {
   padding: 20px 37px;
   border: none;
@@ -291,9 +291,7 @@
   transform: translateY(-2px);
 }
 
-/* Responsividade Aprimorada */
-
-/* Telas muito grandes (4K e ultrawide) */
+/* Telas muito grandes */
 @media screen and (min-width: 2560px) {
   .add-questao-container-addq {
     padding: 50px;
