@@ -1,35 +1,50 @@
 .container{
     display: flex;
     flex-direction: column;
-    padding-top: 6rem;
+    padding-top: 5rem;
     align-items: center;
-    padding-left: 5rem;
     gap: 1rem;
     user-select: none;
 }
 .cabecario{
     display: flex;
     flex-direction: row;
-    max-width: 100%;
-    width: 86.7rem;
+    justify-content:space-between;
+    max-width: 96.8%;
+    width: 93%;
+    margin-left: 4.5rem;
     height: 6rem;
     border-radius: 1rem;
     background-color: var(--color-roxo-escuro);
+    overflow-x: hidden;
+}
+.cabecario .nome_tabela{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.cabecario .nome_tabela h1{
+    padding-top: 1.9rem;
+    padding-left: 1rem;
+    color: var(--color-white);
+    font-size:2.5rem;
+    font-weight: bold;
 }
 .cabecario .barra_pesquisa{
+    display: flex;
     height: 3rem;
     width: 15rem;
-    margin-left: 31rem;
     align-self: center;
     border-radius: 0.5rem 0rem 0rem 0.5rem;
     font-size: 1.1rem;
     border: none;
-    padding-left: 0.6rem;
+    margin-right: 3rem;
 }
 .pesquisa{
     align-self: center;
 }
 .pesquisa button{
+    max-width: 100%;
     width: 6rem;
     height: 3rem;
     background-color: #6325CE;
@@ -37,13 +52,6 @@
     font-size: 1rem;
     border-radius: 0rem 1rem 1rem 0rem;
     border: none;
-    font-weight: bold;
-}
-.cabecario h1{
-    padding-top: 1.9rem;
-    padding-left: 1rem;
-    color: var(--color-white);
-    font-size:2.5rem;
     font-weight: bold;
 }
 .cabecario img{
@@ -55,7 +63,10 @@
 .geral{
     background-color: var(--color-roxo-escuro);
     padding: 1.5rem;
-    border-radius: 1rem; 
+    border-radius: 1rem;
+    max-width: 100%;
+    width: 93%;
+    margin-left: 4.5rem; 
 }
 .tabela h1{
     color: var(--color-white);
@@ -64,8 +75,14 @@
     background-color: var(--color-white);
     border-radius: 1.5rem;
     max-width: 100%;
-    width: 84rem;
+    width: 100%;
+    max-height: 98%;
     padding: 0.2rem;
+}
+@media (min-height: 950px) {
+  .main_tabela {
+    height: 70vh;
+  }
 }
 .tabela table{
     display: flex;
@@ -76,15 +93,15 @@
     color: #391B6C;
     font-weight: bold;
     font-size: 1.3rem;
-    width: 14rem;
-    height: 2.7rem;
+    width: 100%;
+    height: 3rem;
     padding-top: 0.6rem;
 }
 .main_tabela td{
     font-size: 1.2rem;
     /* border: 0.1rem solid var(--color-white); */
     border-right: 0.15rem  solid var(--color-white);
-    width: 14rem;
+    width: 100%;
     text-align: center;
     height: 3.8rem;
     font-weight:bold;
@@ -92,8 +109,8 @@
 }
 .main_tabela{
     display: block;
-    height: 22rem;
-    overflow-y:scroll;
+    max-height: 53vh;
+    overflow-y: auto;
     padding-left: 0.2rem;
 }
 .main_tabela::-webkit-scrollbar{
@@ -173,3 +190,11 @@ tr{
     justify-items: center;
     table-layout: fixed;
 }
+
+/* @media(min-height: 860px){
+
+.main_tabela td{
+    height: 5rem;
+    padding-top: 0.3rem;
+}
+} */

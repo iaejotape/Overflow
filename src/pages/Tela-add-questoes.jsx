@@ -3,7 +3,6 @@ import "../styles/tela-add-questoes.css"; // Mantém a importação do CSS
 import Layout from "../componentes/layout";
 
 // Ícone de lápis (placeholder)
-// Renomeei a classe para isolamento: pencil-icon -> pencil-icon-addq
 const PencilIcon = () => <span className="pencil-icon-addq">✎</span>;
 
 function TelaAddQuestoes() {
@@ -29,7 +28,10 @@ function TelaAddQuestoes() {
       if (checked) {
         return { ...prevForm, categoria: [...prevForm.categoria, value] };
       } else {
-        return { ...prevForm, categoria: prevForm.categoria.filter((cat) => cat !== value) };
+        return {
+          ...prevForm,
+          categoria: prevForm.categoria.filter((cat) => cat !== value),
+        };
       }
     });
   };
@@ -46,16 +48,11 @@ function TelaAddQuestoes() {
 
   return (
     <Layout>
-      {/* Renomeei a classe para isolamento: add-questao-container -> add-questao-container-addq */}
       <div className="add-questao-container-addq">
-        {/* Renomeei a classe para isolamento: add-questao-form -> add-questao-form-addq */}
         <form className="add-questao-form-addq" onSubmit={handleSubmit}>
-          {/* Renomeei a classe para isolamento: form-column -> form-column-addq */}
           <div className="form-column-addq form-esquerda">
-            {/* Renomeei a classe para isolamento: form-group -> form-group-addq */}
             <div className="form-group-addq">
               <label htmlFor="titulo">Título da Questão</label>
-              {/* Renomeei a classe para isolamento: input-wrapper -> input-wrapper-addq */}
               <div className="input-wrapper-addq">
                 <input
                   type="text"
@@ -100,55 +97,113 @@ function TelaAddQuestoes() {
 
             <div className="form-group-addq">
               <label>Categoria/Tags</label>
-              {/* Renomeei a classe para isolamento: categorias-tags -> categorias-tags-addq */}
               <div className="categorias-tags-addq">
-                {/* Renomeei a classe para isolamento: checkbox-label -> checkbox-label-addq */}
                 <label className="checkbox-label-addq">
-                  <input type="checkbox" name="categoria" value="Matemática" checked={form.categoria.includes("Matemática")} onChange={handleCategoriaChange} />
-                  {/* Renomeei a classe para isolamento: custom-checkbox -> custom-checkbox-addq */}
-                  <span className="custom-checkbox-addq"></span> Matemática
+                  <input
+                    type="checkbox"
+                    name="categoria"
+                    value="Matemática"
+                    checked={form.categoria.includes("Matemática")}
+                    onChange={handleCategoriaChange}
+                  />
+                  <span
+                    className={`custom-checkbox-addq ${
+                      form.categoria.includes("Matemática") ? "checked" : ""
+                    }`}
+                  ></span>{" "}
+                  Matemática
                 </label>
                 <label className="checkbox-label-addq">
-                  <input type="checkbox" name="categoria" value="Lógica" checked={form.categoria.includes("Lógica")} onChange={handleCategoriaChange} />
-                  <span className="custom-checkbox-addq"></span> Lógica
+                  <input
+                    type="checkbox"
+                    name="categoria"
+                    value="Lógica"
+                    checked={form.categoria.includes("Lógica")}
+                    onChange={handleCategoriaChange}
+                  />
+                  <span
+                    className={`custom-checkbox-addq ${
+                      form.categoria.includes("Lógica") ? "checked" : ""
+                    }`}
+                  ></span>{" "}
+                  Lógica
                 </label>
                 <label className="checkbox-label-addq">
-                  <input type="checkbox" name="categoria" value="Strings" checked={form.categoria.includes("Strings")} onChange={handleCategoriaChange} />
-                  <span className="custom-checkbox-addq"></span> Strings
+                  <input
+                    type="checkbox"
+                    name="categoria"
+                    value="Strings"
+                    checked={form.categoria.includes("Strings")}
+                    onChange={handleCategoriaChange}
+                  />
+                  <span
+                    className={`custom-checkbox-addq ${
+                      form.categoria.includes("Strings") ? "checked" : ""
+                    }`}
+                  ></span>{" "}
+                  Strings
                 </label>
                 <label className="checkbox-label-addq">
-                  <input type="checkbox" name="categoria" value="Iniciante" checked={form.categoria.includes("Iniciante")} onChange={handleCategoriaChange} />
-                  <span className="custom-checkbox-addq"></span> Iniciante
+                  <input
+                    type="checkbox"
+                    name="categoria"
+                    value="Iniciante"
+                    checked={form.categoria.includes("Iniciante")}
+                    onChange={handleCategoriaChange}
+                  />
+                  <span
+                    className={`custom-checkbox-addq ${
+                      form.categoria.includes("Iniciante") ? "checked" : ""
+                    }`}
+                  ></span>{" "}
+                  Iniciante
                 </label>
-                 <label className="checkbox-label-addq">
-                  <input type="checkbox" name="categoria" value="Intermediário" checked={form.categoria.includes("Intermediário")} onChange={handleCategoriaChange} />
-                  <span className="custom-checkbox-addq"></span> Intermediário
+                <label className="checkbox-label-addq">
+                  <input
+                    type="checkbox"
+                    name="categoria"
+                    value="Intermediário"
+                    checked={form.categoria.includes("Intermediário")}
+                    onChange={handleCategoriaChange}
+                  />
+                  <span
+                    className={`custom-checkbox-addq ${
+                      form.categoria.includes("Intermediário") ? "checked" : ""
+                    }`}
+                  ></span>{" "}
+                  Intermediário
                 </label>
               </div>
             </div>
 
             <div className="form-group-addq">
               <label>Dificuldade</label>
-              {/* Renomeei a classe para isolamento: dificuldade-options -> dificuldade-options-addq */}
               <div className="dificuldade-options-addq">
-                 {/* Renomeei classes para isolamento: btn-dificuldade -> btn-dificuldade-addq, selected -> selected-addq */}
                 <button
                   type="button"
-                  className={`btn-dificuldade-addq dificil ${form.dificuldade === "Difícil" ? "selected-addq" : ""}`}
-                  onClick={() => handleDificuldade("Difícil")} >
-                  {/* Renomeei a classe para isolamento: custom-radio -> custom-radio-addq */}
+                  className={`btn-dificuldade-addq dificil ${
+                    form.dificuldade === "Difícil" ? "selected-addq" : ""
+                  }`}
+                  onClick={() => handleDificuldade("Difícil")}
+                >
                   <span className="custom-radio-addq"></span> Difícil
                 </button>
                 <button
                   type="button"
-                  className={`btn-dificuldade-addq intermediario ${form.dificuldade === "Intermediário" ? "selected-addq" : ""}`}
-                  onClick={() => handleDificuldade("Intermediário")} >
+                  className={`btn-dificuldade-addq intermediario ${
+                    form.dificuldade === "Intermediário" ? "selected-addq" : ""
+                  }`}
+                  onClick={() => handleDificuldade("Intermediário")}
+                >
                   <span className="custom-radio-addq"></span> Intermediário
                 </button>
                 <button
                   type="button"
-                  className={`btn-dificuldade-addq facil ${form.dificuldade === "Fácil" ? "selected-addq" : ""}`}
-                  onClick={() => handleDificuldade("Fácil")} >
+                  className={`btn-dificuldade-addq facil ${
+                    form.dificuldade === "Fácil" ? "selected-addq" : ""
+                  }`}
+                  onClick={() => handleDificuldade("Fácil")}
+                >
                   <span className="custom-radio-addq"></span> Fácil
                 </button>
               </div>
@@ -198,8 +253,9 @@ function TelaAddQuestoes() {
                 <PencilIcon />
               </div>
             </div>
-            {/* Renomeei a classe para isolamento: btn-adicionar -> btn-adicionar-addq */}
-            <button type="submit" className="btn-adicionar-addq">Adicionar Questão</button>
+            <button type="submit" className="btn-adicionar-addq">
+              Adicionar Questão
+            </button>
           </div>
         </form>
       </div>
@@ -208,4 +264,3 @@ function TelaAddQuestoes() {
 }
 
 export default TelaAddQuestoes;
-
