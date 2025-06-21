@@ -119,10 +119,10 @@ const QuestaoEventos = () => {
               </div>
               <div className={styles.questao}>
                 <a href="" className={styles.questao_name}>
-                  <h2>Ajude a jardineira Flor!</h2>
+                  <h2>Ajude a jardineira Flor</h2>
                 </a>
                 <p>A jardineira Flor cuida de suas rosas com mais do que só água, ela as rega com ritmo, lembranças e esperança.
-Ela percebeu que as rosas só crescem quando são cuidadas em padrões muito específicos, como se respondessem a memórias escondidas entre os dias.🌹💧</p>
+Ela percebeu que as rosas só crescem quando são cuidadas em padrões muito específicos, ajude ela a encontrar esses padrões.🌹💧</p>
                 <div className={styles.info_questoes}>
                   <div className={styles.info_pessoas}>
                     <div className="criador">
