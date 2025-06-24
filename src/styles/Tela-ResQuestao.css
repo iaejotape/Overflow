@@ -196,6 +196,12 @@
   height: 570px;
   position: relative;
   box-sizing: border-box;
+  overflow: auto !important;
+}
+
+.painel-testes .cm-theme-dark{
+  width: 100%;
+  overflow: auto !important;
 }
 
 .painel-testes .cm-editor {
@@ -206,6 +212,8 @@
   font-weight: 600 !important;
   color: #e74b77 !important;
   height: 100% !important;
+  width: 100% !important;
+  overflow: auto !important;
 }
 
 .painel-testes .cm-scroller {
@@ -223,12 +231,14 @@
   caret-color: #7f849c !important;
   border-radius: 20px !important;
   border: none !important;
+  overflow: auto !important;
 }
 
 .painel-testes .cm-gutters {
   background-color: #161424 !important;
   color: #6c7086 !important;
   border: none !important;
+  overflow: auto !important;
 }
 
 .painel-testes .cm-activeLine {
@@ -239,7 +249,6 @@
   background-color: transparent !important;
 }
 
-/* EstilizaÃ§Ã£o da barra de rolagem do CodeMirror */
 .cm-scroller::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -259,7 +268,6 @@
   background: #888;
 }
 
-/* EstilizaÃ§Ã£o dos nÃºmeros das linhas */
 .cm-editor .cm-gutters {
   background: rgba(0, 0, 0, 0.2) !important;
   border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -276,14 +284,12 @@
   color: #6e7681 !important;
 }
 
-/* Destaque do nÃºmero da linha atual */
 .cm-editor .cm-activeLineGutter {
   background: rgba(255, 255, 255, 0.04) !important;
   color: #e6edf3 !important;
   font-weight: 500 !important;
 }
 
-/* Ajuste do editor para mostrar os nÃºmeros */
 .cm-editor {
   background-color: #161424 !important;
   border-radius: 20px !important;
@@ -311,7 +317,6 @@
   right: 32px;
 }
 
-/* Seletor de Linguagem */
 .language-selector {
   position: absolute;
   display: flex;
@@ -328,8 +333,8 @@
   background: var(--color-roxo-claro);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  padding: 0 24px; /* Ajustado o padding vertical */
-  height: 100%; /* Ocupa toda altura do container */
+  padding: 0 24px;
+  height: 100%;
   color: #fff;
   font-size: 18px;
   cursor: pointer;
@@ -342,10 +347,10 @@
 
 .language-options {
   position: absolute;
-  bottom: 100%; /* Altera de top para bottom para o menu abrir para cima */
+  bottom: 100%;
   left: 0;
   right: 0;
-  margin-bottom: 4px; /* Altera de margin-top para margin-bottom */
+  margin-bottom: 4px;
   background: #1e1e30;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -568,8 +573,6 @@
 .feedback-button.warning:hover {
   background-color: #ffd54f;
 }
-
-/* Responsividade Aprimorada */
 
 /* Telas muito grandes (4K e ultrawide) */
 @media screen and (min-width: 2560px) {

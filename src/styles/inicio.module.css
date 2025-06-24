@@ -41,8 +41,8 @@
 .lateral_esquerda {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* cresce pra ocupar espaço */
-  overflow-y: auto; /* scrolla caso estoure */
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 .container_infos {
@@ -52,11 +52,11 @@
 }
 
 .info_perfil {
-  flex-shrink: 0; /* não encolhe */
+  flex-shrink: 0;
 }
 
 .parteInferior {
-  margin-top: auto; /* joga pro final */
+  margin-top: auto;
 }
 
 .container{
@@ -68,6 +68,10 @@
 .tempoOn, .data, .nomeIntegrante{
     color: var(--color-icones);
     font-weight: bold;
+}
+
+.foto_perfil img{
+  width: 12rem;
 }
 
 .bx {
@@ -83,11 +87,11 @@
 
 .lateral_esquerda{
     color: var(--color-white);
-    flex:4; /* Aumenta o tamanho da área do editor */
+    flex:4;
 }
 
 .info_perfil{
-    position: relative; /* precisa disso pra posicionar elementos filhos */
+    position: relative;
     z-index: 0;
     background-color: var(--backgroundcolor-card);
     border-radius: 20px;
@@ -102,7 +106,7 @@
 
 .dadosGerais{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 20px;
     align-items: center;
 }
@@ -149,7 +153,7 @@
     align-items: center;
     background-color: #161530;
     border-radius: 20px;
-    overflow: hidden; /* Garante que sos badges fiquem dentro do contêiner */
+    overflow: hidden; 
 }
 
 .container_infos {
@@ -190,7 +194,7 @@
   right: 15px;
   cursor: pointer;
   font-size: 1.2rem;
-  color: var(--color-white); /* roxinho estiloso */
+  color: var(--color-white);
   transition: transform 0.2s ease;
 }
 
@@ -252,7 +256,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* ou space-around, ou center — você escolhe */
+  justify-content: space-between;
 }
 
 
@@ -291,7 +295,7 @@
 }
 
 .clima,
-.calendarioContainer,
+.discord,
 .centralMusica {
   flex: 1;
   display: flex;
@@ -299,107 +303,66 @@
   justify-content: center;
 }
 
-.clima {
+.clima .tituloAnucio{
+  background-color: #161530;
+  border-bottom: var(--color-icones) 4px solid;
+  height: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clima .tituloAnucio h2{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.clima .conteudo{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.clima .conteudo .biAnuncio{
+  font-size: 48px;
+}
+
+.discord {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
   width: 100%;
   min-height: 100px;
 }
 
-.clima img {
-  max-width: 100%;
-  height: auto;
+.discord iframe{
+  border-radius: 20px;
 }
 
-
-.calendarioContainer {
+.discord {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%; /* ESSENCIAL */
-}
-
-.calendarioContainer > #calendario {
-  width: 100%; /* ESSENCIAL também */
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.calendarioContainer table {
   width: 100%;
 }
 
-.calendarioContainer {
-  min-width: 0; /* Impede travamento de largura com conteúdo fixo */
+.discord {
+  min-width: 0;
 }
 
-.calendarioContainer {
+.discord{
     background-color: #161424;
     border-radius: 20px;
     color: #fff;
     font-size: 14px;
-}
-
-.tituloCalendario {
-    display: flex;
-    justify-content: space-between;
-    vertical-align: middle;
-    padding-top: 8px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    padding-bottom: 5px;
-}
-
-.anoCalendario {
-    margin-top: 3px;
-    color: var(--color-botoes);
-    font-weight: bold;
-}
-
-.calendario {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-}
-
-.calendario th {
-  background-color: #351164;
-  color: #ccc;
-  padding: 5px;
-  font-weight: bold;
-}
-
-.calendario td {
-  padding: 4px;
-  transition: background 0.2s ease;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.today {
-  background-color: var(--color-icones);
-  border-radius: 100%;
-}
-
-.today {
-  background-color: var(--first-color); /* ou #6325ce se preferir fixo */
-  color: white;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
 }
 
 .centralMusica{
@@ -471,9 +434,7 @@
     margin: 4px 0px;
 }
 
-.clima,
-.calendarioContainer,
-.centralMusica {
+.clima, .calendarioContainer, .centralMusica {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -488,17 +449,16 @@
 
 .badges {
   display: flex;
-  justify-content: flex-start; /* Alinha à esquerda */
+  justify-content: flex-start;
   align-items: center;
-  gap: 8px; /* Espaço entre as badges */
+  gap: 8px;
 }
 
 .badges img{
     width: 46px;
 }
 
-.conquistas,
-.insignias {
+.conquistas, .insignias {
   display: flex;
   justify-content: flex-start;
   align-items: center;

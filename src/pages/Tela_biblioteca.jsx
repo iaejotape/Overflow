@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/biblioteca.module.css";
 import Barra from "../componentes/menu.jsx";
 import CodeMirror from "@uiw/react-codemirror";
+import { FaDownload, FaPlay, FaRedo } from 'react-icons/fa';
 import { cpp } from "@codemirror/lang-cpp";
 import { java } from "@codemirror/lang-java";
 import { python } from "@codemirror/lang-python";
@@ -77,7 +78,7 @@ const languageData = {
     extension: python(),
     topics: {
       "Introdução": {
-        content: "Python é uma linguagem de programação interpretada, de alto nível e de propósito geral.",
+        content: " Este código é um exemplo básico que demonstra como escrever um programa simples que imprime uma mensagem. Ele ajuda a ilustrar a sintaxe da linguagem escolhida.",
         examples: `# Exemplo de Introdução ao Python\nprint("Olá Mundo")`
       },
       "Sintaxe": {
@@ -85,7 +86,7 @@ const languageData = {
         examples: `# Exemplo de Sintaxe\nif True:\n    print("Verdadeiro")\nelse:\n    print("Falso")`
       },
       "Variáveis": {
-        content: "Em Python, as variáveis são criadas quando você atribui um valor.",
+        content: "Python não tem comando para declarar uma variável. Uma variável é criada no momento em que você atribui um valor a ela pela primeira vez.",
         examples: `# Exemplo de Variáveis\nnome = "João"\nidade = 25\nprint(f"{nome} tem {idade} anos")`
       }
     }
@@ -101,7 +102,7 @@ const languageData = {
       },
       "Sintaxe": {
         content: "C usa chaves {} para delimitar blocos de código.",
-        examples: `// Exemplo de Sintaxe\n#include <stdio.h>\nint main() {\n    int x = 5;\n    if (x > 0) {\n        printf("Positivo");\n    }\n    return 0;\n}`
+        examples: `// Exemplo de Sintaxe\n#include <stdio.h>\nint main() {\n    int x = 5;\n    if (x > 0) {\n        printf("Positivo");\n    }\n    return 0;\n}`,
       },
       "Variáveis": {
         content: "Em C, as variáveis devem ser declaradas com seu tipo.",
@@ -202,13 +203,12 @@ export default function Linguagens() {
       <div className={style.geral}>
         <div className={style.exemplo}>
           <div className={style.botoes_editor}>
-            <button>Download</button>
+            <button><FaDownload/> Download</button>
             <button onClick={() => {
               setCode(currentLanguage.code);
               setTerminal(currentLanguage.terminal);
-            }}>Reset</button>
-            <button>Fork</button>
-            <div className={style.executar}> <button>Executar</button></div>
+            }}><FaRedo/>Reset</button>
+            <div className={style.executar}><button><FaPlay /> Executar</button></div>
           </div>
           <div className={style.editor}>
             <div className="code">

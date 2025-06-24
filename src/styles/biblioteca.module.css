@@ -36,25 +36,30 @@
 .botoes_editor{
     display: flex;
     justify-self: end;
-    padding: 2vh;
+    padding: 2vh 1.5vh;
 }
 .botoes_editor button{
+    display: flex;
     border: none;
-    padding: 0.3rem 1rem;
+    padding: 0.5rem 1rem;
+    gap: 0.3rem;
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
-    background-color: #313244;
+    background-color: transparent;
     color: #fff;
     border-radius: 10px;
+    font-weight:600;
+}
+.botoes_editor button:hover{
+  transform: scale(1.06);
 }
 .executar button{
+  display: flex;
+  gap: 0.2rem;
   background-color: var(--color-botoes);
   font-weight: bold;
-  padding: 0.3rem 1rem;
-}
-.executar:hover{
-  transform: scale(1.07);
+  padding: 0.5rem 1rem;
 }
 .editor{
     display: flex;
