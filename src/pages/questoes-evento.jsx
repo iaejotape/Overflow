@@ -2,8 +2,17 @@ import React from "react";
 import styles from "../styles/menu-questao.module.css";
 import stylesEvento from "../styles/questoes-evento.module.css";
 import Layout from "../componentes/layout";
+import { useNavigate } from "react-router-dom";
 
 const QuestaoEventos = () => {
+  const navigate = useNavigate();
+  const sair=()=>{
+    navigate("/eventos");
+  }
+  const classEvento = () => {
+    navigate("/rank_evento");
+  };
+  
   return (
     <div className={styles.corpo}>
       <Layout >
@@ -68,7 +77,7 @@ const QuestaoEventos = () => {
 
             <div className={stylesEvento.tituloEvento}>
                 <h1><i className={`${stylesEvento.icone} bi bi-controller`}></i> <span className="nomeEvento">Maratona CaisTech</span></h1>
-                <button ><i className="bx bx-log-out"></i>Sair</button>
+                <button onClick={sair} ><i className="bx bx-log-out"></i>Sair</button>
             </div>
 
             <div className={stylesEvento.box_listaquestoes}>
@@ -262,7 +271,7 @@ Ela percebeu que as rosas só crescem quando são cuidadas em padrões muito esp
             </div>
             <div className={stylesEvento.opcoesEvento}>
                 <a href="" className={stylesEvento.questoes}><i className={` ${stylesEvento.opcaoIcone} bi bi-balloon-fill`}></i> Questões do Evento</a>
-                <a href="" className={stylesEvento.classificacao}><i className={` ${stylesEvento.opcaoIcone} bi bi-trophy-fill`}></i> Classificação do Evento</a>
+                <a onClick={classEvento} href="" className={stylesEvento.classificacao}><i className={` ${stylesEvento.opcaoIcone} bi bi-trophy-fill`}></i> Classificação do Evento</a>
             </div>
             </div>
           </div>

@@ -6,10 +6,16 @@ import qtd from '../assets/img_eventos/qtd.png';
 import eye from '../assets/img_eventos/eye.png';
 import lock from '../assets/img_eventos/lock.png';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const EntrarEventoModal = ({ onClose, inputId }) => {
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+     const entrar = () => {
+    navigate("/questoesevento");
+  };
+
   return (
     <div className={styles.overlay}>
       <div className={styles.modalContainer}>
@@ -83,7 +89,7 @@ const EntrarEventoModal = ({ onClose, inputId }) => {
                 className={styles.inputElement}
               />
             </div>
-            <button type="button" className={styles.submitButton}>
+            <button onClick={entrar} type="button" className={styles.submitButton}>
               Entrar no Evento
             </button>
           </div>

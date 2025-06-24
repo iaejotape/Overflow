@@ -234,8 +234,7 @@
   border-radius: 10px;
   position: relative;
   transition: transform 0.2s ease;
-  gap:3.5rem;
-  
+  gap:8em;
 }
 
 .cardEvento:hover {

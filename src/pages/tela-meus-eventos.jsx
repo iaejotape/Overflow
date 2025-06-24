@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/tela-meus-eventos.css";
 import Layout from "../componentes/layout";
 import NuvensFixas from "../componentes/nuvem-fixa";
+import ModalCriar from "./modal-criar-evento";
 import {
   FaGamepad,
   FaPlus,
@@ -51,6 +52,11 @@ export default function TelaMeusEventos() {
   const [modalVisualizarQuestoes, setModalVisualizarQuestoes] = useState(false);
   const [questoesSelecionadas, setQuestoesSelecionadas] = useState([]);
   const [uploadError, setUploadError] = useState({});
+  const [mostrarModal, setMostrarModal] = useState(false);
+
+  
+  const abrirModal = () => setMostrarModal(true);
+  const fecharModal = () => setMostrarModal(false);
 
   const togglePasswordVisibility = (eventId) => {
     setShowPassword((prev) => ({ ...prev, [eventId]: !prev[eventId] }));
@@ -106,9 +112,7 @@ export default function TelaMeusEventos() {
     setExpandedEvent(null);
   };
 
-  const handleCriar = () => {
-    alert("Criando novo evento...");
-  };
+
 
   const handleVoltar = () => {
     navigate("/eventos");
@@ -519,7 +523,7 @@ export default function TelaMeusEventos() {
               </div>
             </div>
             <div className="botoes-acao">
-              <button className="btn-criar" onClick={handleCriar}>
+              <button className="btn-criar" onClick={abrirModal}>
                 <FaPlus /> Criar
               </button>
               <button className="btn-voltar" onClick={handleVoltar}>
@@ -564,7 +568,10 @@ export default function TelaMeusEventos() {
             </div>
           </div>
         </div>
+        
+
       )}
+      {mostrarModal && <ModalCriar onClose={fecharModal} />}
     </Layout>
   );
 }

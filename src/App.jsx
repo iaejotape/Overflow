@@ -20,7 +20,8 @@ import TelaAddQuestoes from "./pages/Tela-add-questoes.jsx";
 import Trocar_senha from "./pages/tela_trocar_senha.jsx";
 import Contato from "./pages/tela-contato.jsx"
 import Usuario from "./pages/usuario.jsx";
-import Tela_biblioteca from "./pages/Tela_biblioteca.jsx";
+import ModalDica from "./pages/modal-dica.jsx";
+import RecuperarSenha from "./pages/recuperar-senha.jsx";
 
 function App() {
   return (
@@ -47,7 +48,8 @@ function App() {
             <Route path="/trocar_senha" element={<Trocar_senha/>}/>
             <Route path="/contato" element={<Contato/>}/>
             <Route path="/usuario" element={<Usuario/>}/>
-            <Route path="/biblioteca" element={<Tela_biblioteca/>}/>
+            <Route path="/modaldica" element={<ModalDica/>}/>
+            <Route path="/recuperar-senha" element={<RecuperarSenha/>}/>
           </Routes>
         </BrowserRouter>
       </div>

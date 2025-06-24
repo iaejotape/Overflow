@@ -47,8 +47,12 @@
     overflow-y:auto;
     overflow-x:hidden;
     max-height: calc(100vh - 90px);
-    padding-top:250px;
+    padding-top: 40px;
+    //padding-top:250px;
+    //margin: auto 0px;
 }
+
+
 
 @media (max-width:620px){
     .box_listaquestoes{
