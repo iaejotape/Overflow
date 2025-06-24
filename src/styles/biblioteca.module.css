@@ -30,28 +30,43 @@
     background-color: #0e0c2b;
     margin-left: 1rem;
     min-height: 64vh;
-    min-width: 150vh;
+    width: 160vh;
     border-radius: 10px;
 }
 .botoes_editor{
+    display: flex;
     justify-self: end;
     padding: 2vh;
 }
 .botoes_editor button{
-    margin-right: 3vh;
-    background-color: transparent;
     border: none;
-    color: #d1cbe9;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #313244;
+    color: #fff;
+    border-radius: 10px;
+}
+.executar button{
+  background-color: var(--color-botoes);
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+}
+.executar:hover{
+  transform: scale(1.07);
 }
 .editor{
     display: flex;
 }
+.saidaTeste{
+  width: 70vh;
+  border-radius: 10px;
+}
 .saidaTeste textarea{
     background-color: #171524;
-    border-radius: 10px;
-    min-width: 45%;
-    max-width: 100%;
-    width: 69vh;
+    border-radius: 12px;
+    width: 100%;
     height: 54.8vh;
     border: none;
     font-size: 3vh;
@@ -68,8 +83,8 @@
   color: white;
   border: none;
   text-align: left;
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -93,7 +108,6 @@
   padding-left: 0;
   border-left: 2px solid #333;
 }
-
 .topics li {
   padding: 0.35rem 0;
   font-size: 0.95rem;

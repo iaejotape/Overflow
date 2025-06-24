@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/biblioteca.module.css";
 import Barra from "../componentes/menu.jsx";
 import CodeMirror from "@uiw/react-codemirror";
-import { cpp} from "@codemirror/lang-cpp";
+import { cpp } from "@codemirror/lang-cpp";
 import { java } from "@codemirror/lang-java";
 import { python } from "@codemirror/lang-python";
 import { EditorView } from "@codemirror/view";
@@ -69,67 +69,130 @@ const customTheme = EditorView.theme({
   },
 });
 
-export default function Linguagens() {
-  const [sections, setSections] = useState({
-    Python: true,
-    C: false,
-    "C++": false,
-    Java: false,
-  });
-
-  const [code, setCode] = useState(`# Python
-print("Olá Mundo!")
-`);
-  const [languageExtension, setLanguageExtension] = useState(python());
-
-  const toggleSection = (lang) => {
-    setSections(() => ({
-      Python: false,
-      C: false,
-      "C++": false,
-      Java: false,
-      [lang]: true,
-    }));
-
-    switch (lang) {
-      case "Python":
-        setCode(`# Python\nprint("Hello Word!!")`);
-        setLanguageExtension(python());
-        break;
-      case "C":
-        setCode(`// C\n#include <stdio.h>\nint main() {\n    printf("Hello Word!!");\n    return 0;\n}`);
-        setLanguageExtension(c());
-        break;
-      case "C++":
-        setCode(`// C++\n#include <iostream>\nint main() {\n    std::cout << "Hello Word!!";\n    return 0;\n}`);
-        setLanguageExtension(cpp());
-        break;
-      case "Java":
-        setCode(`// Java\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello Word!!");\n    }\n}`);
-        setLanguageExtension(java());
-        break;
-      default:
-        break;
+// Dados estáticos para cada linguagem
+const languageData = {
+  Python: {
+    code: `# Overflows - 2025 - Python\nprint("Hello World!")`,
+    terminal: "Hello World!",
+    extension: python(),
+    topics: {
+      "Introdução": {
+        content: "Python é uma linguagem de programação interpretada, de alto nível e de propósito geral.",
+        examples: `# Exemplo de Introdução ao Python\nprint("Olá Mundo")`
+      },
+      "Sintaxe": {
+        content: "Python usa indentação para definir blocos de código.",
+        examples: `# Exemplo de Sintaxe\nif True:\n    print("Verdadeiro")\nelse:\n    print("Falso")`
+      },
+      "Variáveis": {
+        content: "Em Python, as variáveis são criadas quando você atribui um valor.",
+        examples: `# Exemplo de Variáveis\nnome = "João"\nidade = 25\nprint(f"{nome} tem {idade} anos")`
+      }
     }
+  },
+  C: {
+    code: `// Overflows - 2025 - C\n#include <stdio.h>\nint main() {\n    printf("Hello World!");\n    return 0;\n}`,
+    terminal: "Hello World!",
+    extension: cpp(),
+    topics: {
+      "Introdução": {
+        content: "C é uma linguagem de programação compilada de propósito geral.",
+        examples: `// Exemplo de Introdução ao C\n#include <stdio.h>\nint main() {\n    printf("Olá Mundo");\n    return 0;\n}`
+      },
+      "Sintaxe": {
+        content: "C usa chaves {} para delimitar blocos de código.",
+        examples: `// Exemplo de Sintaxe\n#include <stdio.h>\nint main() {\n    int x = 5;\n    if (x > 0) {\n        printf("Positivo");\n    }\n    return 0;\n}`
+      },
+      "Variáveis": {
+        content: "Em C, as variáveis devem ser declaradas com seu tipo.",
+        examples: `// Exemplo de Variáveis\n#include <stdio.h>\nint main() {\n    int idade = 25;\n    printf("Idade: %d", idade);\n    return 0;\n}`
+      }
+    }
+  },
+  "C++": {
+    code: `// Overflows - 2025 - C++\n#include <iostream>\nint main() {\n    std::cout << "Hello World!";\n    return 0;\n}`,
+    terminal: "Hello World!",
+    extension: cpp(),
+    topics: {
+      "Introdução": {
+        content: "C++ é uma extensão da linguagem C com orientação a objetos.",
+        examples: `// Exemplo de Introdução ao C++\n#include <iostream>\nint main() {\n    std::cout << "Olá Mundo";\n    return 0;\n}`
+      },
+      "Sintaxe": {
+        content: "C++ mantém a sintaxe de C com adições de OO.",
+        examples: `// Exemplo de Sintaxe\n#include <iostream>\nint main() {\n    int x = 5;\n    if (x > 0) {\n        std::cout << "Positivo";\n    }\n    return 0;\n}`
+      },
+      "Variáveis": {
+        content: "Variáveis em C++ devem ser declaradas com tipo.",
+        examples: `// Exemplo de Variáveis\n#include <iostream>\nint main() {\n    int idade = 25;\n    std::cout << "Idade: " << idade;\n    return 0;\n}`
+      }
+    }
+  },
+  Java: {
+    code: `// Overflows - 2025 - Java\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello World!");\n    }\n}`,
+    terminal: "Hello World!",
+    extension: java(),
+    topics: {
+      "Introdução": {
+        content: "Java é uma linguagem orientada a objetos executada na JVM.",
+        examples: `// Exemplo de Introdução ao Java\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Olá Mundo");\n    }\n}`
+      },
+      "Sintaxe": {
+        content: "Java usa sintaxe similar ao C++ com OO obrigatória.",
+        examples: `// Exemplo de Sintaxe\npublic class Main {\n    public static void main(String[] args) {\n        int x = 5;\n        if (x > 0) {\n            System.out.println("Positivo");\n        }\n    }\n}`
+      },
+      "Variáveis": {
+        content: "Variáveis em Java devem ser declaradas com tipo.",
+        examples: `// Exemplo de Variáveis\npublic class Main {\n    public static void main(String[] args) {\n        int idade = 25;\n        System.out.println("Idade: " + idade);\n    }\n}`
+      }
+    }
+  }
+};
+
+export default function Linguagens() {
+  const [activeLanguage, setActiveLanguage] = useState("Python");
+  const [activeTopic, setActiveTopic] = useState("Introdução");
+  const [code, setCode] = useState(languageData.Python.code);
+  const [terminal, setTerminal] = useState(languageData.Python.terminal);
+  
+  const currentLanguage = languageData[activeLanguage];
+  
+  const toggleSection = (lang) => {
+    setActiveLanguage(lang);
+    setActiveTopic("Introdução");
+    setCode(languageData[lang].code);
+    setTerminal(languageData[lang].terminal);
+  };
+
+  const handleTopicClick = (topic) => {
+    setActiveTopic(topic);
+    setCode(currentLanguage.topics[topic].examples);
+    setTerminal("Clique em 'Executar' para ver a saída");
   };
 
   return (
     <div className={style.main}>
       <Barra />
       <div className={style.sidebar}>
-        {["Python", "C", "C++", "Java"].map((lang) => (
+        {Object.keys(languageData).map((lang) => (
           <div key={lang} className={style["language-group"]}>
             <button
-              className={`${style.language} ${sections[lang] ? style.active : ""}`}
+              className={`${style.language} ${activeLanguage === lang ? style.active : ""}`}
               onClick={() => toggleSection(lang)}
             >
               {lang} <span className={style.arrow}>▾</span>
             </button>
-            {sections[lang] && (
+            {activeLanguage === lang && (
               <ul className={style.topics}>
-                <li>Introdução</li>
-                <li>Sintaxe</li>
-                <li>Variáveis</li>
+                {Object.keys(languageData[lang].topics).map((topic) => (
+                  <li 
+                    key={topic} 
+                    className={activeTopic === topic ? style.activeTopic : ""}
+                    onClick={() => handleTopicClick(topic)}
+                  >
+                    {topic}
+                  </li>
+                ))}
               </ul>
             )}
           </div>
@@ -140,8 +203,12 @@ print("Olá Mundo!")
         <div className={style.exemplo}>
           <div className={style.botoes_editor}>
             <button>Download</button>
-            <button>Reset</button>
+            <button onClick={() => {
+              setCode(currentLanguage.code);
+              setTerminal(currentLanguage.terminal);
+            }}>Reset</button>
             <button>Fork</button>
+            <div className={style.executar}> <button>Executar</button></div>
           </div>
           <div className={style.editor}>
             <div className="code">
@@ -157,35 +224,34 @@ print("Olá Mundo!")
                   borderRadius: "20px",
                 }}
                 theme="dark"
-                extensions={[languageExtension, customTheme]}
+                extensions={[currentLanguage.extension, customTheme]}
               />
             </div>
             <div className={style.saidaTeste}>
-              <textarea readOnly value="Hello Word!!" />
+              <textarea 
+                readOnly 
+                value={terminal}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "#161424",
+                  color: "#a6e3a1", 
+                  border: "none",
+                  padding: "10px",
+                  fontFamily: "monospace",
+                  borderRadius: "0 0 20px 20px",
+                  resize: "none"
+                }}
+              />
             </div>
           </div>
         </div>
         <div className={style.explicacao}>
-          <p>
-            Este código é um exemplo básico que demonstra como escrever um programa simples que imprime
-            uma mensagem. Ele ajuda a ilustrar a sintaxe da linguagem escolhida.
-          </p>
-          <h1>Funcionalidade do código:</h1>
-          <h2>1- Propósito Simples:</h2>
-          <p>
-            O código imprime a mensagem "Hello Word!!" na tela. É um clássico exemplo de introdução a uma
-            linguagem de programação.
-          </p>
-          <h2>2- Sintaxe Básica:</h2>
-          <p>
-            O comando de saída (como `print`, `printf`, ou `System.out.println`) é usado para exibir
-            informações no terminal.
-          </p>
-          <h2>3- Teste do Ambiente:</h2>
-          <p>
-            Esse programa serve para confirmar que o ambiente está configurado corretamente e pronto para
-            uso.
-          </p>
+          <h1>{activeTopic} em {activeLanguage}</h1>
+          <p>{currentLanguage.topics[activeTopic].content}</p>
+          
+          <h2>Como usar:</h2>
+          <p>Clique em um tópico à esquerda para carregar exemplos no editor.</p>
         </div>
       </div>
     </div>
