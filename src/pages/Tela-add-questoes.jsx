@@ -147,31 +147,33 @@ function TelaAddQuestoes() {
                   <input
                     type="checkbox"
                     name="categoria"
-                    value="Iniciante"
-                    checked={form.categoria.includes("Iniciante")}
+                    value="Estruturas de Dados"
+                    checked={form.categoria.includes("Estruturas de Dados")}
                     onChange={handleCategoriaChange}
                   />
                   <span
                     className={`custom-checkbox-addq ${
-                      form.categoria.includes("Iniciante") ? "checked" : ""
+                      form.categoria.includes("Estruturas de Dados")
+                        ? "checked"
+                        : ""
                     }`}
                   ></span>{" "}
-                  Iniciante
+                  Estruturas de Dados
                 </label>
                 <label className="checkbox-label-addq">
                   <input
                     type="checkbox"
                     name="categoria"
-                    value="Intermediário"
-                    checked={form.categoria.includes("Intermediário")}
+                    value="Algoritmos"
+                    checked={form.categoria.includes("Algoritmos")}
                     onChange={handleCategoriaChange}
                   />
                   <span
                     className={`custom-checkbox-addq ${
-                      form.categoria.includes("Intermediário") ? "checked" : ""
+                      form.categoria.includes("Algoritmos") ? "checked" : ""
                     }`}
                   ></span>{" "}
-                  Intermediário
+                  Algoritmos
                 </label>
               </div>
             </div>
