@@ -84,7 +84,7 @@ export default function Menu() {
               </a>
             </div>
             <div className={styles.opcao}>
-              <a href="#" title="Bibliotecas" className={`${styles.nav_link} ${currentPath === "/bibliotecas" ? styles.active : ""}`}>
+              <a href="/biblioteca" title="Bibliotecas" className={`${styles.nav_link} ${currentPath === "/biblioteca" ? styles.active : ""}`}>
                 <div className={styles.nav_inner}>
                   <i className={`bx bx-coffee ${styles.nav_icon}`}></i>
                   <span className={styles.nav_name}>Bibliotecas</span>

@@ -217,7 +217,7 @@ export default function Linguagens() {
                 onChange={(value) => setCode(value)}
                 style={{
                   height: "55vh",
-                  width: "82vh",
+                  width: "90vh",
                   marginLeft: "20px",
                   marginRight: "20px",
                   marginTop: "0px",
