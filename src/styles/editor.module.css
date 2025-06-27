@@ -7,18 +7,30 @@
     border-radius: 20px;
     margin-right: 10px;
 }
-.editor, .editor_dados{
-    height: calc(50rem - 90px);
+
+.editor, .editor_dados {
+    height: calc(48rem - 90px); 
 }
 
 .editor {
   display: flex;
   flex-direction: column;
   width: 70vw;
+  overflow: hidden;
+  padding-bottom: 20px;
 }
 
-.code{
-    padding: 20px;
+.code {
+  flex-grow: 1;
+  flex-shrink: 0; 
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #161424;
+  height: calc(100% - 60px);
+  max-height: calc(100% - 40px);
+  overflow: auto;
 }
 
 .opcoesEditor{
@@ -26,6 +38,7 @@
     justify-content: space-between;
     margin: 20px;
     height: 40px;
+    align-items: center;
 }
 
 .inputGroup{
@@ -96,7 +109,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaço entre os textareas */
+    gap: 10px; 
     height: calc(100vh - 100px); 
 }
 
@@ -148,7 +161,17 @@
 }
 
 .saidaTeste textarea {
-    height: 28rem; /* Altura para a área de entrada */
+    height: 28rem;
+}
+
+.entradaTeste textarea,
+.saidaTeste textarea {
+    min-height: 100px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.entradaTeste, .saidaTeste {
+    height: auto;
 }
 
 /* ===== RESPONSIVIDADE ===== */
@@ -160,23 +183,29 @@
   }
 
   .editor, .editor_dados {
-    width: 100% !important; /* Força ocupar toda a largura */
-    height: auto; /* Altura ajustável */
+    width: 100% !important;
+    height: auto;
     margin-right: 0;
   }
 
   .editor_dados {
-    order: -1; /* Opcional: coloca a seção de dados acima do editor */
+    order: -1;
   }
 
   .code {
-    padding: 10px;
+    padding: 0px;
+    margin-left: 0px; 
+    margin-right: 0px;
+    margin-top: 0px;
+    height: 200px;
+    max-height: 200px;
   }
 
   .opcoesEditor {
-    flex-direction: column; /* Empilha os botões */
+    flex-direction: column;
     height: auto;
     gap: 10px;
+    margin: 10px 0;
   }
 
   .inputGroup, .btnGroup, .execucao {

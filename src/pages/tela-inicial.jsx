@@ -66,7 +66,7 @@ export default function PaginaInicial() {
                     <div className={styles.dadosGerais}>
                         <div className={styles.foto_perfil}>
                             
-                                <img src={ImagemPerfil} height="200px" alt=""/>
+                                <img src={ImagemPerfil} alt="Imagem de Perfil"/>
                             
                         </div>
                         <div className={styles.tituloEquipe}>
@@ -120,7 +120,7 @@ export default function PaginaInicial() {
                             <div className={styles.conquistas}>
                                 <button className={styles.nav_button}><i class={`bx bx-chevron-left`}></i></button>
                                 <div className={styles.badges}>
-                                    <img src={ImagemConquista} alt="Badge 2" className="badge" title="Continue Focado(a) - 20Pts"/>
+                                    <img src={ImagemConquista} alt="Conquista - Continue Focado(a)" className={styles.badge} title="Continue Focado(a) - 20Pts"/>
                                 </div>
                                 <button className={styles.navButton}><i class='bx bx-chevron-right'></i></button>
                             </div>
@@ -132,7 +132,7 @@ export default function PaginaInicial() {
                             <div className={styles.insignias}>
                                 <button className={styles.nav_button}><i class='bx bx-chevron-left'></i></button>
                                 <div className={styles.badges}>
-                                    <img src={ImagemCaisTech} alt="Badge 1" className="badge" title="CaisTech - 30Pts"/>
+                                    <img src={ImagemCaisTech} alt="Insígnia - CaisTech 2025" className={styles.badge} title="CaisTech 2K25 - 30Pts"/>
                                 </div>
                                 <button className={styles.navButton}><i class='bx bx-chevron-right'></i></button>
                             </div>
@@ -164,19 +164,17 @@ export default function PaginaInicial() {
         <div className={styles.lateral_direita}>
             <div className={styles.containerCards}>
                 <div className={styles.clima}>
-                        <span className={styles.cidade}><i className='bx bx-map'></i> Floriano - PI</span>
-                        <img src={Clima} alt=""/>
-                        <span className={styles.modo_clima}>Tempestade</span>
-                        <div className={styles.temp}>
-                            <span id="temperatura-dia" className={styles.temperatura_num}>26°C</span>
-                        </div>
-                        <div className="infos">
-                            <span><i className='bx bx-wind'></i> 12,5km </span>
-                            <span><i className='bx bx-droplet'></i> 62% </span>
-                            <span><i className='bx bx-leaf'></i> 21</span>
-                        </div>
+                    <div className={styles.tituloAnucio}>
+                        <h2>Anúncios</h2>
+                    </div>
+                    <div className={styles.conteudo}>
+                        <span><i className={`bi bi-exclamation-circle-fill ${styles.biAnuncio}`}></i></span>
+                        <span>Nenhum Anúncio<br/> Encontrado!</span>
+                    </div>
                 </div>
-                <Calendario />
+                <div className={styles.discord}>
+                    <iframe src="https://discord.com/widget?id=1386134219528601651&theme=dark&locale=pt-BR" width="100%" height="100%" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                </div>
                 <div className={styles.centralMusica}>
                         <div className={styles.tituloCentral}>
                             <span><i className={`bi bi-spotify ${styles.bi}`}></i> Spotify</span>

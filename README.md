@@ -164,22 +164,36 @@ npm install
 #### Configurações em relação ao Back-End: (Conversar depois...)
 
 <details>
- <summary>🧱 | Framework Laravel - Passo a Passo Instalação e Configuração</summary>
+ <summary>🧱 | Framework NodeJS - Passo a Passo Instalação e Configuração</summary>
  <br>
     
-  ## Laravel:
+## NodeJS:
+Para rodar a aplicação, primeiro você precisa ter o Node.js instalado na sua máquina. Siga os passos abaixo:
 
-1. **Iniciar os Serviços**:
+1. Instalar o Node.js:
 
-    Execute os comandos abaixo para iniciar o servidor local e aguarde alguns segundos para garantir que tudo esteja pronto:
+   Acesse o site: [nodejs.org](https://nodejs.org/pt)
+   - Baixe o instalador recomendado para o seu sistema operacional (Windows, macOS ou Linux). 
+   - Escolha a versão LTS (Long Term Support), que é a mais estável e indicada para a maioria dos usuários.
+   - Execute o instalador e siga as instruções. Geralmente, basta clicar em "Next" até o final.
+   - Para verificar se a instalação foi bem-sucedida, abra seu terminal (ou Prompt de Comando/PowerShell no Windows, Terminal no macOS/Linux) e digite os seguintes comandos:
 
+   ```bash
+   node -v
+   npm -v
+   ```
+   Se você vir os números das versões do Node.js e do npm (gerenciador de pacotes do Node.js), significa que a instalação foi um sucesso!
+
+3. **Iniciar os Serviços**:
+
+    Vá até a pasta "backend-provisorio", abra o terminal e digite o seguinte comando para iniciar o servidor:
+   
     ```powershell
-    php artisan serve
+    node server.js
     ```
 
 </p> 
 </details>
-
 
 ---
 
