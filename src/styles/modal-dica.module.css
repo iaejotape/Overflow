@@ -1,21 +1,20 @@
-/* ModalDica.module.css - Estilos para o Modal de Dicas da Plataforma OverFlow */
 
-/* Overlay do Modal */
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.7);
+  //backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  backdrop-filter: blur(8px);
-  animation: fadeIn 0.3s ease-out;
+  z-index: 1004;
+  padding: 20px;
+  //animation: fadeIn 0.2s ease-out;
 }
-
+/*
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -23,22 +22,17 @@
   to {
     opacity: 1;
   }
-}
+}*/
 
-/* Container Principal do Modal */
-.modal {
-  background: #2a3441;
+.modalContent {
+  background: var(--color-roxo-escuro);
   border-radius: 16px;
-  border: 1px solid #374151;
-  max-width: 700px;
-  width: 90%;
-  max-height: 85vh;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
   overflow: hidden;
-  box-shadow: 
-    0 25px 50px -12px rgba(0, 0, 0, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
-  animation: slideIn 0.3s ease-out;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+ //animation: slideIn 0.3s ease-out;
 }
 
 @keyframes slideIn {
@@ -52,331 +46,196 @@
   }
 }
 
-/* Header do Modal */
 .modalHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid #374151;
-  background: linear-gradient(135deg, #2a3441 0%, #1f2937 100%);
+  justify-content: space-between;
+  padding: 24px 24px 16px 24px;
+  background-color: var(--color-roxo-terminal);
+  //border-bottom: 1px solid #374151;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbulbIcon {
+  width: 24px;
+  height: 24px;
+  color: #fbbf24;
+  filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.3));
 }
 
 .modalTitle {
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: #ffffff;
+  color: #f9fafb;
+  font-size: 18px;
+  font-weight: 600;
   margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.iconeDica {
-  font-size: 1.5rem;
-  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.3));
 }
 
 .closeButton {
   background: none;
   border: none;
-  color: #9ca3af;
+  color: var(--first-color-light);
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  font-size: 1.25rem;
-  width: 40px;
-  height: 40px;
+  padding: 8px;
+  transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.closeButton:hover {
-  background: #374151;
-  color: #ffffff;
-  transform: scale(1.1);
+
+.closeButton svg {
+  width: 20px;
+  height: 20px;
 }
 
-/* Conteúdo do Modal */
-.modalContent {
-  display: flex;
-  flex-direction: column;
-  height: calc(85vh - 120px);
+.modalBody {
+  padding: 24px;
 }
 
-.dicasContainer {
-  flex: 1;
-  padding: 2rem;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #4b5563 #1f2937;
-}
-
-.dicasContainer::-webkit-scrollbar {
-  width: 8px;
-}
-
-.dicasContainer::-webkit-scrollbar-track {
-  background: #1f2937;
-  border-radius: 4px;
-}
-
-.dicasContainer::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 4px;
-}
-
-.dicasContainer::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
-}
-
-/* Seções de Dicas */
-.dicaSection {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #1f2937;
-  border-radius: 12px;
-  border: 1px solid #374151;
-  transition: all 0.2s ease;
-}
-
-.dicaSection:hover {
-  border-color: #4f46e5;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
-}
-
-.dicaSection:last-child {
-  margin-bottom: 0;
-}
-
-.dicaTitulo {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #f3f4f6;
-  margin: 0 0 1rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.dicaIcone {
-  font-size: 1.25rem;
-}
-
-.dicaDescricao {
-  color: #d1d5db;
-  line-height: 1.6;
-  margin: 0 0 1.5rem 0;
-  font-size: 0.95rem;
-}
-
-/* Container de Código */
-.codigoContainer {
-  background: #111827;
-  border: 1px solid #374151;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 1rem 0;
-}
-
-.codigoHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  background: #1f2937;
-  border-bottom: 1px solid #374151;
-}
-
-.codigoLinguagem {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.copiarButton {
-  background: #374151;
-  border: 1px solid #4b5563;
-  border-radius: 6px;
-  padding: 0.375rem 0.75rem;
-  color: #d1d5db;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.copiarButton:hover {
-  background: #4b5563;
-  border-color: #6b7280;
-  transform: translateY(-1px);
-}
-
-.codigoBloco {
-  padding: 1.25rem;
-  margin: 0;
-  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: #e5e7eb;
-  background: #111827;
-  overflow-x: auto;
-  white-space: pre;
-}
-
-.codigoBloco code {
-  color: #e5e7eb;
-}
-
-/* Observações */
-.observacao {
+.warningBox {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 12px;
   background: rgba(245, 158, 11, 0.1);
   border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: 8px;
-  margin-top: 1rem;
+  padding: 16px;
+  margin-bottom: 24px;
 }
 
-.observacaoIcone {
-  font-size: 1.125rem;
+.warningIcon {
+  width: 20px;
+  height: 20px;
+  color: #f59e0b;
   flex-shrink: 0;
-  margin-top: 0.125rem;
+  margin-top: 2px;
 }
 
-.observacaoTexto {
+.warningText {
   color: #fbbf24;
-  font-size: 0.875rem;
+  font-size: 14px;
+  margin: 0;
   line-height: 1.5;
 }
 
-/* Footer do Modal */
+.hintContent {
+  background: #111827;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #374151;
+}
+
+.hintLabel {
+  color: #10b981;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hintText {
+  color: #e5e7eb;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
 .modalFooter {
-  padding: 1.5rem 2rem;
-  border-top: 1px solid #374151;
-  background: #1f2937;
-}
-
-.dicaRodape {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #9ca3af;
-  font-size: 0.875rem;
-  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px 24px 24px;
+  justify-content: flex-end;
 }
 
-.dicaInfo {
-  font-size: 1.125rem;
-  color: #8b5cf6;
+.cancelButton {
+  background: #374151;
+  color: #d1d5db;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cancelButton:hover {
+  background: #4b5563;
+  color: #f9fafb;
+  border-color: #6b7280;
+}
+
+.confirmButton {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.confirmButton:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
+}
+
+.confirmButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .modal {
-    width: 95%;
-    max-height: 90vh;
-    margin: 1rem;
+  .modalOverlay {
+    padding: 16px;
+  }
+  
+  .modalContent {
+    max-width: 100%;
     border-radius: 12px;
   }
   
   .modalHeader {
-    padding: 1rem 1.5rem;
+    padding: 20px 20px 12px 20px;
   }
   
   .modalTitle {
-    font-size: 1.25rem;
+    font-size: 16px;
   }
   
-  .dicasContainer {
-    padding: 1.5rem;
+  .modalBody {
+    padding: 20px;
   }
   
-  .dicaSection {
-    padding: 1rem;
+  .warningBox {
+    padding: 12px;
+  }
+  
+  .hintContent {
+    padding: 16px;
   }
   
   .modalFooter {
-    padding: 1rem 1.5rem;
+    padding: 12px 20px 20px 20px;
+    flex-direction: column-reverse;
   }
   
-  .dicaRodape {
-    font-size: 0.8rem;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal {
+  .cancelButton,
+  .confirmButton {
     width: 100%;
-    height: 100vh;
-    max-height: 100vh;
-    border-radius: 0;
-    margin: 0;
+    justify-content: center;
   }
-  
-  .modalContent {
-    height: calc(100vh - 120px);
-  }
-  
-  .codigoBloco {
-    font-size: 0.8rem;
-    padding: 1rem;
-  }
-}
-
-/* Estados de Foco para Acessibilidade */
-.closeButton:focus,
-.copiarButton:focus {
-  outline: 2px solid #4f46e5;
-  outline-offset: 2px;
-}
-
-/* Animações de Hover */
-.dicaSection {
-  position: relative;
-  overflow: hidden;
-}
-
-.dicaSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.1), transparent);
-  transition: left 0.5s ease;
-}
-
-.dicaSection:hover::before {
-  left: 100%;
-}
-
-/* Melhorias de Performance */
-.modalOverlay,
-.modal,
-.dicaSection {
-  will-change: transform, opacity;
-}
-
-/* Tema Escuro Aprimorado */
-.modal {
-  color-scheme: dark;
-}
-
-/* Seleção de Texto */
-.dicaDescricao::selection,
-.codigoBloco::selection {
-  background: rgba(79, 70, 229, 0.3);
-  color: #ffffff;
 }
 

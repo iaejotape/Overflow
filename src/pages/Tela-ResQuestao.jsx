@@ -9,6 +9,7 @@ import { java } from '@codemirror/lang-java';
 import { python } from '@codemirror/lang-python';
 import { EditorView } from "@codemirror/view";
 import { HighlightStyle, tags as t } from "@codemirror/highlight";
+import ModalDica from "./modal-dica.jsx";
 
 import { useNavigate } from "react-router-dom";
 
@@ -76,7 +77,33 @@ const customTheme = EditorView.theme({
   },
 });
 
-const TelaResQuestao = () => {
+const TelaResQuestao =({ 
+  questionId, 
+  difficulty = 'hard', 
+  hints = ["Lembre-se da função de impressão padrão da sua linguagem.",
+    "A saída precisa ser exatamente igual à do enunciado, incluindo maiúsculas e minúsculas."], 
+  onHintUsed = () => {} 
+}) => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [usedHints, setUsedHints] = useState(0);
+  const [availableHints, setAvailableHints] = useState(0);
+
+
+  const getMaxHints = (difficulty) => {
+    switch (difficulty.toLowerCase()) {
+      case 'easy':
+        return 1;
+      case 'medium':
+      case 'intermediate':
+        return 2;
+      case 'hard':
+      case 'difficult':
+        return 3;
+      default:
+        return 1;
+          }
+  };
 
     const [selectedLanguage, setSelectedLanguage] = useState("python");
     const [code, setCode] = useState("");
@@ -102,7 +129,41 @@ const TelaResQuestao = () => {
     useEffect(() => {
         const { exampleCode } = getLanguageDetails(selectedLanguage);
         setCode(exampleCode);
-    }, [selectedLanguage]);
+        const maxHints = getMaxHints(difficulty);
+    setAvailableHints(maxHints);
+    
+    /*Recupera o estado das dicas usadas do localStorage
+    const savedHints = localStorage.getItem(`hints_used_${questionId}`);
+    if (savedHints) {
+      setUsedHints(parseInt(savedHints, 10));
+    }*/
+    }, [selectedLanguage, questionId, difficulty]);
+
+    const handleHintClick = () => {
+    if (usedHints < availableHints && hints.length > 0) {
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleHintConfirm = () => {
+    const newUsedHints = usedHints + 1;
+    setUsedHints(newUsedHints);
+    
+    
+    localStorage.setItem(`hints_used_${questionId}`, newUsedHints.toString());
+    
+    // Callback para o componente pai
+    onHintUsed(newUsedHints);
+    
+    setIsModalOpen(false);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const isDisabled = usedHints >= availableHints || hints.length === 0;
+  const currentHint = hints[usedHints] || '';
 
     const handleLanguageChange = (e) => {
         const selectedValue = e.target.value;
@@ -215,7 +276,38 @@ const TelaResQuestao = () => {
                         </p>
                     </section>
                     <aside className="resolucao-lateral">
+
                         <div className="botoes">
+                            <button
+                            className={`hintButton ${isDisabled ? "disabled" : ''}`}
+                            onClick={handleHintClick}
+                            disabled={isDisabled}
+                            title={
+                            isDisabled 
+                                ? usedHints >= availableHints 
+                                ? 'Você já usou todas as dicas disponíveis'
+                                : 'Nenhuma dica disponível'
+                                : `Dica disponível (${availableHints - usedHints} restante${availableHints - usedHints !== 1 ? 's' : ''})`
+                            }
+                        >
+                            <svg 
+                            className="lightbulbIcon" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            >
+                            <path
+                                d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.5-1.5 4.5-3 5.5V17a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.5C7.5 13.5 6 11.5 6 9a6 6 0 0 1 6-6z"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            </svg>
+                            <span className="hintCount">
+                            {availableHints - usedHints}
+                            </span>
+                        </button>
                             <button
                                 className="btn-debug"
                                 onClick={() => alert("A função Debug será implementada em breve!")}
@@ -335,7 +427,18 @@ const TelaResQuestao = () => {
                             </button>
                         </div>
                     </aside>
+                    {isModalOpen && (
+        <ModalDica
+          hint={currentHint}
+          hintNumber={usedHints + 1}
+          totalHints={availableHints}
+          onConfirm={handleHintConfirm}
+          onClose={handleModalClose}
+        />
+      )}
+      
                 </div>
+                
             </div>
         </Layout>
     );

@@ -54,6 +54,35 @@
     }
 }
 
+/* Telas muito grandes (desktops grandes) */
+@media (min-width: 1200px) {
+    .box_listaquestoes {
+        padding: 25px;
+        padding-top: 50px; /* Corrigido: valor mais razoável em vez de 1020px */
+        gap: 12px;
+        max-height: calc(100vh - 100px);
+    }
+}
+
+/* Ajustes adicionais para garantir responsividade */
+@media (max-height: 600px) {
+    .box_listaquestoes {
+        max-height: calc(100vh - 40px);
+        padding-top: 15px;
+    }
+}
+
+/* Para telas com altura muito pequena */
+@media (max-height: 400px) {
+    .box_listaquestoes {
+        max-height: calc(100vh - 20px);
+        padding-top: 10px;
+        padding: 10px;
+        gap: 5px;
+    }
+}
+
+
 .progresso{
     width:190px;
     height:190px;

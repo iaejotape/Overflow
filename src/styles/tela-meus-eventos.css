@@ -42,15 +42,15 @@
   background: var(--color-roxo-box, #2a1b4d);
   border-radius: 20px;
   box-shadow: 0px 0px 4px 4px #222141;
-  padding: 30px; 
+  padding: 30px;
   margin: 0;
   position: relative;
 }
 
 .eventos-content-wrapper {
-    display: flex;
-    gap: 30px;
-    width: 100%;
+  display: flex;
+  gap: 30px;
+  width: 100%;
 }
 
 .eventos-lista {
@@ -70,7 +70,7 @@
 }
 
 .evento-card:last-child {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 .evento-card-header-wrapper {
@@ -481,12 +481,48 @@
 
 .botoes-acao {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: flex-end;
-  position: absolute; 
-  bottom: 100px;
-  padding: 0;
+  position: static;
+  bottom: 210px;
+  padding: 15px;
   width: auto;
+}
+
+/* Centraliza e ajusta espaçamento em telas menores */
+@media screen and (max-width: 1920px) {
+  .botoes-acao {
+    position: static;
+    justify-content: center;
+    width: auto;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .botoes-acao {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    gap: 12px;
+  }
+}
+
+/* Para smartphones, garante que fiquem em coluna e centralizados */
+@media screen and (max-width: 767px) {
+  .botoes-acao {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 18px;
+  }
+  .btn-criar,
+  .btn-voltar {
+    width: 100%;
+    max-width: 220px;
+  }
 }
 
 .btn-criar,
@@ -671,43 +707,43 @@
     padding: 50px;
     gap: 40px;
   }
-  
+
   .meus-eventos-header {
     padding: 30px 35px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 5rem;
     margin-right: 20px;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 3.5rem;
   }
-  
+
   .eventos-content {
     padding: 40px;
     gap: 40px;
   }
-  
+
   .eventos-content-wrapper {
     gap: 40px;
   }
-  
+
   .estatisticas {
     max-width: 400px;
     gap: 35px;
   }
-  
+
   .estatistica-circulo {
     width: 180px;
     height: 180px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 3rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 1.1rem;
   }
@@ -719,38 +755,38 @@
     padding: 45px;
     gap: 35px;
   }
-  
+
   .meus-eventos-header {
     padding: 25px 30px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 4.5rem;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 3.2rem;
   }
-  
+
   .eventos-content {
     padding: 35px;
     gap: 35px;
   }
-  
+
   .eventos-content-wrapper {
     gap: 35px;
   }
-  
+
   .estatisticas {
     max-width: 360px;
     gap: 30px;
   }
-  
+
   .estatistica-circulo {
     width: 170px;
     height: 170px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 2.8rem;
   }
@@ -761,24 +797,24 @@
   .meus-eventos-container {
     padding: 42px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 4.2rem;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 3rem;
   }
-  
+
   .estatisticas {
     max-width: 340px;
   }
-  
+
   .estatistica-circulo {
     width: 160px;
     height: 160px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 2.7rem;
   }
@@ -789,23 +825,23 @@
   .meus-eventos-container {
     padding: 38px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 3.8rem;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 2.6rem;
   }
-  
+
   .eventos-content {
     gap: 25px;
   }
-  
+
   .eventos-content-wrapper {
     gap: 25px;
   }
-  
+
   .estatisticas {
     max-width: 300px;
   }
@@ -816,36 +852,36 @@
   .meus-eventos-container {
     padding: 35px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 3.5rem;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 2.4rem;
   }
-  
+
   .eventos-content {
     gap: 20px;
   }
-  
+
   .eventos-content-wrapper {
     gap: 20px;
   }
-  
+
   .estatisticas {
     max-width: 280px;
   }
-  
+
   .estatistica-circulo {
     width: 140px;
     height: 140px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 2.2rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 0.85rem;
   }
@@ -857,53 +893,53 @@
     padding: 30px;
     gap: 25px;
   }
-  
+
   .meus-eventos-header {
     padding: 18px 22px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 3.2rem;
     margin-right: 12px;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 2.2rem;
   }
-  
+
   .eventos-content {
     flex-direction: column;
     gap: 25px;
     padding: 25px;
   }
-  
+
   .eventos-content-wrapper {
     flex-direction: column;
     gap: 25px;
   }
-  
+
   .estatisticas {
     max-width: none;
     flex-direction: row;
     justify-content: space-around;
     gap: 20px;
   }
-  
+
   .estatistica-card {
     flex: 1;
     max-width: 300px;
     min-height: 200px;
   }
-  
+
   .estatistica-circulo {
     width: 130px;
     height: 130px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 2rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 0.8rem;
   }
@@ -915,98 +951,98 @@
     padding: 25px;
     gap: 20px;
   }
-  
+
   .meus-eventos-header {
     padding: 16px 20px;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 2.8rem;
     margin-right: 10px;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 2rem;
   }
-  
+
   .eventos-content {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
   }
-  
+
   .eventos-content-wrapper {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .evento-card-header-wrapper {
     padding: 16px 20px;
     flex-wrap: wrap;
     gap: 10px;
   }
-  
+
   .evento-card-info {
     gap: 15px;
     margin-left: 0;
     padding-left: 0;
   }
-  
+
   .toggle-btn {
     margin-left: 0;
   }
-  
+
   .evento-card-expanded {
     padding: 20px;
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .evento-form-group.full-width {
     grid-column: span 1;
   }
-  
+
   .btn-salvar {
     grid-column: 1;
     justify-self: stretch;
   }
-  
+
   .estatisticas {
     flex-direction: row;
     justify-content: space-around;
     gap: 15px;
     max-width: none;
   }
-  
+
   .estatistica-card {
     flex: 1;
     max-width: 250px;
     min-height: 180px;
     padding: 20px;
   }
-  
+
   .estatistica-circulo {
     width: 120px;
     height: 120px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 1.8rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 0.75rem;
   }
-  
+
   .botoes-acao {
     position: static;
     justify-content: center;
     margin-top: 20px;
   }
-  
+
   .btn-criar,
   .btn-voltar {
     padding: 16px 20px;
@@ -1020,43 +1056,43 @@
     padding: 20px;
     gap: 18px;
   }
-  
+
   .meus-eventos-header {
     padding: 14px 18px;
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 2.5rem;
     margin-right: 0;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 1.8rem;
   }
-  
+
   .eventos-content {
     padding: 18px;
     gap: 18px;
   }
-  
+
   .evento-card-header-wrapper {
     padding: 14px 18px;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-  
+
   .evento-card-header {
     width: 100%;
   }
-  
+
   .evento-card-header .evento-nome {
     font-size: 1rem;
   }
-  
+
   .evento-card-info {
     width: 100%;
     justify-content: space-between;
@@ -1064,7 +1100,7 @@
     padding-left: 0;
     gap: 10px;
   }
-  
+
   .toggle-btn {
     position: absolute;
     top: 14px;
@@ -1073,17 +1109,17 @@
     height: 28px;
     font-size: 0.9rem;
   }
-  
+
   .evento-card-expanded {
     padding: 18px;
     gap: 12px;
   }
-  
+
   .botoes-questao {
     flex-wrap: wrap;
     gap: 10px;
   }
-  
+
   .btn-adicionar-questao,
   .btn-visualizar-questoes,
   .btn-salvar {
@@ -1092,60 +1128,60 @@
     flex: 1;
     min-width: 120px;
   }
-  
+
   .estatisticas {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .estatistica-card {
     max-width: none;
     min-height: 160px;
     padding: 18px;
   }
-  
+
   .estatistica-circulo {
     width: 110px;
     height: 110px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 1.6rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 0.7rem;
   }
-  
+
   .botoes-acao {
     flex-direction: column;
     gap: 12px;
     align-items: center;
   }
-  
+
   .btn-criar,
   .btn-voltar {
     width: 100%;
     max-width: 200px;
     padding: 14px 18px;
   }
-  
+
   .modal-questoes {
     min-width: 90vw;
     padding: 24px 16px 16px 16px;
   }
-  
+
   .modal-questoes-header h2 {
     font-size: 1.6rem;
   }
-  
+
   .modal-questao-card {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     padding: 14px 16px;
   }
-  
+
   .modal-questao-info {
     width: 100%;
     justify-content: space-between;
@@ -1158,39 +1194,39 @@
     padding: 15px;
     gap: 15px;
   }
-  
+
   .meus-eventos-header {
     padding: 12px 15px;
     gap: 8px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 2.2rem;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 1.6rem;
   }
-  
+
   .eventos-content {
     padding: 15px;
     gap: 15px;
   }
-  
+
   .evento-card-header-wrapper {
     padding: 12px 15px;
     gap: 10px;
   }
-  
+
   .evento-card-header .evento-nome {
     font-size: 0.95rem;
     padding-left: 12px;
   }
-  
+
   .info-item span {
     font-size: 0.8rem;
   }
-  
+
   .toggle-btn {
     top: 12px;
     right: 15px;
@@ -1198,27 +1234,27 @@
     height: 26px;
     font-size: 0.8rem;
   }
-  
+
   .evento-card-expanded {
     padding: 15px;
     gap: 10px;
   }
-  
+
   .evento-form-group label {
     font-size: 0.85rem;
   }
-  
+
   .evento-form-group input,
   .evento-form-group select,
   .evento-form-group textarea {
     padding: 10px 12px;
     font-size: 0.9rem;
   }
-  
+
   .botoes-questao {
     gap: 8px;
   }
-  
+
   .btn-adicionar-questao,
   .btn-visualizar-questoes,
   .btn-salvar {
@@ -1226,71 +1262,71 @@
     font-size: 0.8rem;
     min-width: 100px;
   }
-  
+
   .estatistica-card {
     min-height: 140px;
     padding: 15px;
   }
-  
+
   .estatistica-circulo {
     width: 100px;
     height: 100px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 1.4rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 0.65rem;
   }
-  
+
   .btn-criar,
   .btn-voltar {
     padding: 12px 16px;
     font-size: 0.9rem;
   }
-  
+
   .modal-questoes {
     padding: 20px 12px 12px 12px;
   }
-  
+
   .modal-questoes-header {
     gap: 12px;
     margin-bottom: 20px;
   }
-  
+
   .modal-questoes-icon {
     font-size: 2rem;
   }
-  
+
   .modal-questoes-header h2 {
     font-size: 1.4rem;
   }
-  
+
   .modal-close-btn {
     font-size: 1.6rem;
   }
-  
+
   .modal-questao-card {
     padding: 12px 14px;
     gap: 10px;
   }
-  
+
   .modal-questao-titulo {
     font-size: 1.1rem;
   }
-  
+
   .modal-questao-desc {
     font-size: 0.9rem;
   }
-  
+
   .modal-questao-nivel,
   .modal-questao-pontos {
     padding: 3px 8px;
     font-size: 0.85rem;
   }
-  
+
   .modal-questao-btn {
     font-size: 1.1rem;
     padding: 3px 6px;
@@ -1303,32 +1339,32 @@
     padding: 12px;
     gap: 12px;
   }
-  
+
   .meus-eventos-header {
     padding: 10px 12px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 2rem;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 1.4rem;
   }
-  
+
   .eventos-content {
     padding: 12px;
   }
-  
+
   .evento-card-header-wrapper {
     padding: 10px 12px;
   }
-  
+
   .evento-card-header .evento-nome {
     font-size: 0.9rem;
     padding-left: 10px;
   }
-  
+
   .toggle-btn {
     top: 10px;
     right: 12px;
@@ -1336,11 +1372,11 @@
     height: 24px;
     font-size: 0.75rem;
   }
-  
+
   .evento-card-expanded {
     padding: 12px;
   }
-  
+
   .btn-adicionar-questao,
   .btn-visualizar-questoes,
   .btn-salvar {
@@ -1348,32 +1384,32 @@
     font-size: 0.75rem;
     min-width: 80px;
   }
-  
+
   .estatistica-circulo {
     width: 90px;
     height: 90px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 1.2rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 0.6rem;
   }
-  
+
   .modal-questoes {
     padding: 16px 10px 10px 10px;
   }
-  
+
   .modal-questoes-header h2 {
     font-size: 1.2rem;
   }
-  
+
   .modal-questao-titulo {
     font-size: 1rem;
   }
-  
+
   .modal-questao-desc {
     font-size: 0.85rem;
   }
@@ -1385,51 +1421,51 @@
     padding: 10px;
     gap: 10px;
   }
-  
+
   .meus-eventos-header {
     padding: 8px 12px;
   }
-  
+
   .meus-eventos-header .icon {
     font-size: 1.8rem;
   }
-  
+
   .meus-eventos-header h1 {
     font-size: 1.3rem;
   }
-  
+
   .eventos-content {
     padding: 10px;
   }
-  
+
   .estatisticas {
     flex-direction: row;
     gap: 10px;
   }
-  
+
   .estatistica-card {
     min-height: 120px;
     padding: 10px;
   }
-  
+
   .estatistica-circulo {
     width: 80px;
     height: 80px;
   }
-  
+
   .estatistica-circulo .numero {
     font-size: 1rem;
   }
-  
+
   .estatistica-circulo .texto {
     font-size: 0.55rem;
   }
-  
+
   .botoes-acao {
     flex-direction: row;
     gap: 10px;
   }
-  
+
   .btn-criar,
   .btn-voltar {
     padding: 8px 12px;
@@ -1437,4 +1473,3 @@
     min-width: 80px;
   }
 }
-

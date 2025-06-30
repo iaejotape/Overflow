@@ -1,3 +1,108 @@
+
+.hintButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+ // box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+  margin: 0px 9px;
+}
+
+.hintButton:hover:not(.disabled) {
+  background: linear-gradient(135deg, #5b52f0 0%, #8b47f2 100%);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+  transform: scale(1.15);
+}
+
+.hintButton:active:not(.disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3);
+}
+
+.hintButton.disabled {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lightbulbIcon {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+  transition: color 0.2s ease-in-out;
+}
+
+.hintButton.disabled .lightbulbIcon {
+  color: #9ca3af;
+}
+
+.hintCount {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1f2937;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hintButton.disabled .hintCount {
+  background: #6b7280;
+  color: #d1d5db;
+}
+
+/* Animação de pulso quando há dicas disponíveis */
+.hintButton:not(.disabled) {
+  animation: hintPulse 2s infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.5), 0 0 0 4px rgba(79, 70, 229, 0.1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hintButton {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .lightbulbIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .hintCount {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    top: -4px;
+    right: -4px;
+  }
+}
+
+
 .resolucao-container {
   background: var(--color-roxo-background);
   min-height: 100vh;
