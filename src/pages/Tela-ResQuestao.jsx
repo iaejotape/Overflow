@@ -79,17 +79,17 @@ const customTheme = EditorView.theme({
 
 const TelaResQuestao =({ 
   questionId, 
-  difficulty = 'easy', 
+  difficulty = 'hard', 
   hints = ["Lembre-se da função de impressão padrão da sua linguagem.",
     "A saída precisa ser exatamente igual à do enunciado, incluindo maiúsculas e minúsculas."], 
   onHintUsed = () => {} 
 }) => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [usedHints, setUsedHints] = useState(0);
   const [availableHints, setAvailableHints] = useState(0);
 
-  // Define o número máximo de dicas baseado na dificuldade
+
   const getMaxHints = (difficulty) => {
     switch (difficulty.toLowerCase()) {
       case 'easy':
@@ -149,7 +149,7 @@ const TelaResQuestao =({
     const newUsedHints = usedHints + 1;
     setUsedHints(newUsedHints);
     
-    // Salva no localStorage
+    
     localStorage.setItem(`hints_used_${questionId}`, newUsedHints.toString());
     
     // Callback para o componente pai
@@ -279,35 +279,35 @@ const TelaResQuestao =({
 
                         <div className="botoes">
                             <button
-        className={`hintButton ${isDisabled ? "disabled" : ''}`}
-        onClick={handleHintClick}
-        disabled={isDisabled}
-        title={
-          isDisabled 
-            ? usedHints >= availableHints 
-              ? 'Você já usou todas as dicas disponíveis'
-              : 'Nenhuma dica disponível'
-            : `Dica disponível (${availableHints - usedHints} restante${availableHints - usedHints !== 1 ? 's' : ''})`
-        }
-      >
-        <svg 
-          className="lightbulbIcon" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.5-1.5 4.5-3 5.5V17a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.5C7.5 13.5 6 11.5 6 9a6 6 0 0 1 6-6z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <span className="hintCount">
-          {availableHints - usedHints}
-        </span>
-      </button>
+                            className={`hintButton ${isDisabled ? "disabled" : ''}`}
+                            onClick={handleHintClick}
+                            disabled={isDisabled}
+                            title={
+                            isDisabled 
+                                ? usedHints >= availableHints 
+                                ? 'Você já usou todas as dicas disponíveis'
+                                : 'Nenhuma dica disponível'
+                                : `Dica disponível (${availableHints - usedHints} restante${availableHints - usedHints !== 1 ? 's' : ''})`
+                            }
+                        >
+                            <svg 
+                            className="lightbulbIcon" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            >
+                            <path
+                                d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.5-1.5 4.5-3 5.5V17a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.5C7.5 13.5 6 11.5 6 9a6 6 0 0 1 6-6z"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            </svg>
+                            <span className="hintCount">
+                            {availableHints - usedHints}
+                            </span>
+                        </button>
                             <button
                                 className="btn-debug"
                                 onClick={() => alert("A função Debug será implementada em breve!")}
@@ -436,6 +436,7 @@ const TelaResQuestao =({
           onClose={handleModalClose}
         />
       )}
+      
                 </div>
                 
             </div>

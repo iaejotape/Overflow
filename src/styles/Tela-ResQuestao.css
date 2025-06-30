@@ -4,21 +4,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
-  margin-left: 8px;
+ // box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+  margin: 0px 9px;
 }
 
 .hintButton:hover:not(.disabled) {
   background: linear-gradient(135deg, #5b52f0 0%, #8b47f2 100%);
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
-  transform: translateY(-1px);
+  transform: scale(1.15);
 }
 
 .hintButton:active:not(.disabled) {
@@ -46,14 +46,14 @@
 
 .hintCount {
   position: absolute;
-  top: -6px;
+  bottom: -6px;
   right: -6px;
   background: #10b981;
   color: #ffffff;
-  font-size: 10px;
-  font-weight: 600;
-  width: 18px;
-  height: 18px;
+  font-size: 13px;
+  font-weight: 900;
+  width: 21px;
+  height: 21px;
   border-radius: 50%;
   display: flex;
   align-items: center;
