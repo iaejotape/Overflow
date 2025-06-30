@@ -36,20 +36,14 @@
 }
 
 .box_listaquestoes{
+    height: calc(100vh - 100px);
     background-color: var(--color-roxo-box);
-    border-radius:20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items: center;
-    gap:10px;
-    padding:20px;
-    overflow-y:auto;
-    overflow-x:hidden;
-    max-height: calc(100vh - 90px);
-    padding-top: 40px;
-    //padding-top:250px;
-    //margin: auto 0px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 
