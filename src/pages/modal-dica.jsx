@@ -2,142 +2,114 @@ import React, { useEffect } from 'react';
 import styles from '../styles/modal-dica.module.css';
 
 const ModalDica = ({ 
-  isOpen, 
-  onClose, 
-  titulo = "Dica para o Desafio",
-  dicas = []
+  hint, 
+  hintNumber, 
+  totalHints, 
+  onConfirm, 
+  onClose 
 }) => {
-
+  // Fecha o modal com a tecla ESC
   useEffect(() => {
-    const handleEscape = (event) => {
-      if (event.key === 'Escape') {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
         onClose();
       }
     };
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      
-      document.body.style.overflow = 'hidden';
-    }
-
+    document.addEventListener('keydown', handleEsc);
+    
+    // Previne scroll do body quando modal está aberto
+    document.body.style.overflow = 'hidden';
+    
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('keydown', handleEsc);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose]);
-
-  const handleOverlayClick = (event) => {
-    if (event.target === event.currentTarget) {
-      onClose();
-    }
-  };
-
-  if (!isOpen) return null;
+  }, [onClose]);
 
   return (
-    <div className={styles.modalOverlay} onClick={handleOverlayClick}>
-      <div className={styles.modal}>
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <div className={styles.modalHeader}>
-          <h2 className={styles.modalTitle}>
-            <span className={styles.iconeDica}>💡</span>
-            {titulo}
-          </h2>
+          <div className={styles.headerLeft}>
+            <svg 
+              className={styles.lightbulbIcon} 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 21h6M12 3a6 6 0 0 1 6 6c0 2.5-1.5 4.5-3 5.5V17a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.5C7.5 13.5 6 11.5 6 9a6 6 0 0 1 6-6z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <h2 className={styles.modalTitle}>
+              Dica {hintNumber} de {totalHints}
+            </h2>
+          </div>
           <button 
             className={styles.closeButton}
             onClick={onClose}
             aria-label="Fechar modal"
           >
-            ✕
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6l12 12"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         </div>
-        
-        <div className={styles.modalContent}>
-          <div className={styles.dicasContainer}>
-            {dicas.length > 0 ? (
-              dicas.map((dica, index) => (
-                <div key={index} className={styles.dicaSection}>
-                  <h3 className={styles.dicaTitulo}>
-                    {dica.icone && <span className={styles.dicaIcone}>{dica.icone}</span>}
-                    {dica.titulo}
-                  </h3>
-                  
-                  {dica.descricao && (
-                    <p className={styles.dicaDescricao}>{dica.descricao}</p>
-                  )}
-                  
-                  {dica.codigo && (
-                    <div className={styles.codigoContainer}>
-                      <div className={styles.codigoHeader}>
-                        <span className={styles.codigoLinguagem}>
-                          {dica.linguagem || 'Código'}
-                        </span>
-                        <button 
-                          className={styles.copiarButton}
-                          onClick={() => navigator.clipboard.writeText(dica.codigo)}
-                          title="Copiar código"
-                        >
-                          📋
-                        </button>
-                      </div>
-                      <pre className={styles.codigoBloco}>
-                        <code>{dica.codigo}</code>
-                      </pre>
-                    </div>
-                  )}
-                  
-                  {dica.observacao && (
-                    <div className={styles.observacao}>
-                      <span className={styles.observacaoIcone}>⚠️</span>
-                      <span className={styles.observacaoTexto}>{dica.observacao}</span>
-                    </div>
-                  )}
-                </div>
-              ))
-            ) : (
-              <div className={styles.dicaSection}>
-                <h3 className={styles.dicaTitulo}>
-                  <span className={styles.dicaIcone}>💡</span>
-                  Conceito Principal
-                </h3>
-                <p className={styles.dicaDescricao}>
-                  Este é um desafio básico de saída de dados. Você precisa usar a função 
-                  de impressão da linguagem escolhida para exibir o texto exato.
-                </p>
-                
-                <div className={styles.codigoContainer}>
-                  <div className={styles.codigoHeader}>
-                    <span className={styles.codigoLinguagem}>Python</span>
-                    <button 
-                      className={styles.copiarButton}
-                      onClick={() => navigator.clipboard.writeText('print("Olá Overflows!!")')}
-                      title="Copiar código"
-                    >
-                      📋
-                    </button>
-                  </div>
-                  <pre className={styles.codigoBloco}>
-                    <code>print("Olá Overflows!!")</code>
-                  </pre>
-                </div>
-                
-                <div className={styles.observacao}>
-                  <span className={styles.observacaoIcone}>⚠️</span>
-                  <span className={styles.observacaoTexto}>
-                    Certifique-se de que o texto está exatamente como especificado, 
-                    incluindo pontuação e capitalização.
-                  </span>
-                </div>
-              </div>
-            )}
+
+        <div className={styles.modalBody}>
+          <div className={styles.warningBox}>
+            <svg 
+              className={styles.warningIcon}
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 9v4M12 17h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <p className={styles.warningText}>
+              Atenção: Usar uma dica reduzirá sua pontuação final. Tem certeza que deseja continuar?
+            </p>
           </div>
-          
-          <div className={styles.modalFooter}>
-            <div className={styles.dicaRodape}>
-              <span className={styles.dicaInfo}>💬</span>
-              <span>Precisa de mais ajuda? Entre em contato com o suporte!</span>
-            </div>
+
+          <div className={styles.hintContent}>
+            <h3 className={styles.hintLabel}>Sua dica:</h3>
+            <p className={styles.hintText}>{hint}</p>
           </div>
+        </div>
+
+        <div className={styles.modalFooter}>
+          <button 
+            className={styles.cancelButton}
+            onClick={onClose}
+          >
+            Cancelar
+          </button>
+          <button 
+            className={styles.confirmButton}
+            onClick={onConfirm}
+          >
+            Usar Dica
+          </button>
         </div>
       </div>
     </div>
