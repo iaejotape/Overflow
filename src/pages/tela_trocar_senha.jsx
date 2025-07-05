@@ -97,9 +97,9 @@ function TrocarSenha() {
             setSenhaAtual
           )}
 
-          <div className={styles.esqueci_senha}>
+          {/* <div className={styles.esqueci_senha}>
             <a href="#">Esqueci minha senha</a>
-          </div>
+          </div> */}
 
           {renderCampoSenha(
             "Nova senha:",

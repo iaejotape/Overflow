@@ -22,7 +22,7 @@ import Contato from "./pages/tela-contato.jsx"
 import Usuario from "./pages/usuario.jsx";
 import ModalDica from "./pages/modal-dica.jsx";
 import RecuperarSenha from "./pages/recuperar-senha.jsx";
-
+import Biblioteca from "./pages/Tela_biblioteca.jsx"
 function App() {
   return (
     <>
@@ -50,6 +50,7 @@ function App() {
             <Route path="/usuario" element={<Usuario/>}/>
             <Route path="/modaldica" element={<ModalDica/>}/>
             <Route path="/recuperar-senha" element={<RecuperarSenha/>}/>
+            <Route path="/biblioteca" element={<Biblioteca/>}/>
           </Routes>
         </BrowserRouter>
       </div>

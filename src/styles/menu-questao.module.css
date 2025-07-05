@@ -34,64 +34,23 @@
         gap:20px;
     }
 }
-.box_listaquestoes {
+
+.box_listaquestoes{
+    height: calc(100vh - 100px);
     background-color: var(--color-roxo-box);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Mudança: flex-start em vez de center */
-    align-items: center;
     gap: 10px;
     padding: 20px;
     overflow-y: auto;
-    overflow-x: hidden;
-    max-height: calc(100vh - 90px);
-    padding-top: 40px;
-    width: 100%; /* Garantir largura total */
-    box-sizing: border-box; /* Incluir padding no cálculo da largura */
 }
 
-/* Media queries para diferentes tamanhos de tela */
 
-/* Telas muito pequenas (smartphones em modo retrato) */
-@media (max-width: 480px) {
-    .box_listaquestoes {
-        padding: 15px;
-        padding-top: 20px;
-        gap: 8px;
-        max-height: calc(100vh - 60px); /* Reduzir altura máxima */
-        border-radius: 15px;
-    }
-}
 
-/* Telas pequenas (smartphones em modo paisagem e tablets pequenos) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .box_listaquestoes {
-        padding: 18px;
-        padding-top: 30px;
-        gap: 9px;
-        max-height: calc(100vh - 70px);
-        border-radius: 18px;
-    }
-}
-
-/* Telas médias (tablets) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .box_listaquestoes {
-        padding: 20px;
-        padding-top: 35px;
-        gap: 10px;
-        max-height: calc(100vh - 80px);
-    }
-}
-
-/* Telas grandes (desktops) */
-@media (min-width: 1025px) and (max-width: 1199px) {
-    .box_listaquestoes {
-        padding: 20px;
-        padding-top: 40px;
-        gap: 10px;
-        max-height: calc(100vh - 90px);
+@media (max-width:620px){
+    .box_listaquestoes{
+        paddin-top:0px;
     }
 }
 
