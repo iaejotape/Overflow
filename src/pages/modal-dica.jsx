@@ -49,7 +49,7 @@ const ModalDica = ({
               Dica {hintNumber} de {totalHints}
             </h2>
           </div>
-          <button 
+         { /*<button 
             className={styles.closeButton}
             onClick={onClose}
             aria-label="Fechar modal"
@@ -67,7 +67,7 @@ const ModalDica = ({
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </button>*/}
         </div>
 
         <div className={styles.modalBody}>
@@ -98,12 +98,12 @@ const ModalDica = ({
         </div>
 
         <div className={styles.modalFooter}>
-          <button 
+         {/* <button 
             className={styles.cancelButton}
             onClick={onClose}
           >
             Cancelar
-          </button>
+          </button>*/}
           <button 
             className={styles.confirmButton}
             onClick={onConfirm}

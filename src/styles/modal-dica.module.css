@@ -75,23 +75,6 @@
   margin: 0;
 }
 
-.closeButton {
-  background: none;
-  border: none;
-  color: var(--first-color-light);
-  cursor: pointer;
-  padding: 8px;
-  transition: all 0.2s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.closeButton svg {
-  width: 20px;
-  height: 20px;
-}
 
 .modalBody {
   padding: 24px;
@@ -131,7 +114,7 @@
 }
 
 .hintLabel {
-  color: #10b981;
+  color: var(--color-botoes);
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 12px 0;
@@ -154,23 +137,6 @@
   justify-content: flex-end;
 }
 
-.cancelButton {
-  background: #374151;
-  color: #d1d5db;
-  border: 1px solid #4b5563;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.cancelButton:hover {
-  background: #4b5563;
-  color: #f9fafb;
-  border-color: #6b7280;
-}
 
 .confirmButton {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
@@ -182,13 +148,11 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
 .confirmButton:hover {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
-  transform: translateY(-1px);
+ //transform: scale(1.05);
 }
 
 .confirmButton:active {
