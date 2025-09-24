@@ -3,7 +3,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  root: 'src', // <-- define que o index.html está dentro de src
   plugins: [react()],
+  build: {
+    outDir: '../dist', // <-- coloca o dist fora de src
+    emptyOutDir: true, // <-- garante que limpa a pasta dist a cada build
+  },
   optimizeDeps: {
     include: [
       '@codemirror/state',
@@ -15,12 +20,11 @@ export default defineConfig({
       '@uiw/react-codemirror',
     ],
   },
-  resolve: { // <--- ADICIONE ESTA SEÇÃO
+  resolve: {
     dedupe: [
       '@codemirror/state',
       '@codemirror/view',
-      '@codemirror/language', // Pode ser útil dedup de language também
-      // Se o erro persistir, adicione aqui qualquer pacote @codemirror que aparecer no stack trace
+      '@codemirror/language',
     ],
   },
 });
